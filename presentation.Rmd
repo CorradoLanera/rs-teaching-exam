@@ -85,6 +85,84 @@ pre {
 # Learner persona: *Luke Lab*
 
 
+### In Brief
+
+An active post-doctoral researcher who strives to be more autonomous in
+the preparation of high quality and reproducible documents related to
+his research (e.g., lectures, papers and reports).
+
+
+
+
+### General Background
+
+Luke is a post-doc researcher in an academic unit of Biostatistics with
+significant experience in laboratory analyses, responsible for teaching
+statistics to clinical students, an active researcher in machine
+learning.
+
+
+
+
+### Relevant knowledge
+
+Domain | Statistics | Programming | `{ggplot2}`
+-------|------------|-------------|------------
+Expert | Competent  | Novice      | Competent
+
+
+
+
+---
+
+# Learner persona: *Luke Lab*
+
+### Starting Point
+
+- He started to use R after his Ph.D., from the beginning of his
+  post-doc career three years ago.
+
+- He already knows (and likes) the main Tidyverse tools. He has not
+  taken any specific course about Tidyverse, and he learn it "by doing";
+  he has also read some parts of R4DS and Adv-R.
+  
+- He started to study and apply reproducible instruments (eg, reprex,
+  and Rmarkdown) and principles (eg, version-control, package development)
+  for his research projects.
+
+- He already uses `{ggplot2}` to draw his plots using its essential
+  tools (ie, mainly without knowledge regarding scales, themes, and
+  customization).
+  
+- He is very active in writing lectures, reports, papers, and project
+  proposals; he would like to be more autonomous in drawing his 
+  plots.
+
+
+
+---
+
+# Learner persona: *Luke Lab*
+
+### Needs
+
+- He need *how-to* guides and some *ready-to-use* chunks of code as a
+  starting point for him to explore new concepts independently.
+  
+- He would like to improve his skills in drawing plots using
+  `{ggplot2}`, particularly regarding customization.
+
+
+### Special Considerations
+
+- He explicitly stated that he did not want to spend time listening to
+  "useless theories," preferring to go straight to the point of
+  "learning to do something new."
+
+
+
+
+
 
 
 
@@ -93,7 +171,6 @@ pre {
 class: inverse
 
 # Learning objectives
-
 
 
 
