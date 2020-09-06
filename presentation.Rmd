@@ -1,0 +1,121 @@
+---
+title: "(Meta)data labeling in `{ggplot2}`"
+subtitle: "an introduction to the personalization of axes, legends, and points labels"
+author: "Corrado Lanera"
+output:
+  xaringan::moon_reader:
+    seal: false
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+class: center, inverse
+
+# **(Meta)data labeling in `{ggplot2}`**
+# an introduction to the personalization of axes, legends, and points labels
+
+<br><br>
+
+<br><br>
+
+## Corrado Lanera
+## RStudio Instructor Certification
+### Teaching exam - 2020/09/14
+
+```{r setup, echo=FALSE}
+library(xaringanExtra)
+library(flair)
+```
+
+```{r xaringan-panelset, echo=FALSE}
+xaringanExtra::use_panelset()
+```
+
+```{r style-share-again, echo=FALSE}
+xaringanExtra::style_share_again(
+  share_buttons = c("twitter", "linkedin", "pocket")
+)
+```
+
+```{r meta, echo=FALSE}
+library(metathis)
+meta() %>%
+  meta_general(
+    description = "(Meta)data labeling in ggplot2: an introduction to the personalization of axes, legends, and points labels",
+    generator = "xaringan and remark.js"
+  ) %>% 
+  meta_name("github-repo" = "CorradoLanera/rs-teaching-exam") %>% 
+  meta_social(
+    title = "Introduction to (meta)data labeling in ggplot2",
+    # url = "url/to/slide/website/",
+    # image = "url/to/website/image-card.png",
+    og_type = "website",
+    og_author = "Corrado Lanera",
+    # twitter_card_type = "summary_large_image",
+    twitter_creator = "@CorradoLanera"
+  )
+```
+
+```{css, echo=FALSE}
+pre {
+  max-width: 100%;
+  overflow-x: scroll;
+}
+.inverse {
+  background-color: #272822;
+  color: #d6d6d6;
+  text-shadow: 0 0 20px #333;
+}
+```
+
+
+
+
+
+
+
+
+
+
+
+
+---
+
+# Learner persona: *Luke Lab*
+
+
+
+
+
+
+---
+class: inverse
+
+# Learning objectives
+
+
+
+
+
+---
+# Concept map
+
+<!-- ![](img/cm.png) -->
+
+
+
+
+
+
+
+
+---
+
+class: center, middle
+
+# Thanks!
+
+Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan).
+
+The chakra comes from [remark.js](https://remarkjs.com), [**knitr**](http://yihui.org/knitr), and [R Markdown](https://rmarkdown.rstudio.com).
