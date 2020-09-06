@@ -172,6 +172,46 @@ class: inverse
 
 # Learning objectives
 
+1. **Review** basics of `{ggplot2}` regarding data, aesthetics, and 
+  geoms.
+
+2. **Learn** differences for text *to be*
+  - data
+  - meta-data
+  - annotation
+
+3. **Apply** an example of the different type of labeling a plot
+  - `geom_label()`
+  - `scale_*_*()`, `labs()`, and `theme()`
+  - `annotate()`
+
+
+
+
+### In their terms
+
+This fifteen-minute hands-on will introduce you to the useful tools
+available in `{ggplot2}` to start exploring in practice how to use
+text in plots and have the basics for your own in-depth study.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
