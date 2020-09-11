@@ -1,0 +1,237 @@
+---
+title: "(Meta)data texting in `{ggplot2}`"
+subtitle: "Check `{ggplot2}` bases"
+author: "Corrado Lanera"
+output:
+  learnr::tutorial:
+    progressive: true
+    allow_skip: false
+runtime: shiny_prerendered
+---
+
+```{r setup, include=FALSE}
+library(learnr)
+library(parsons)
+library(tidyverse)
+library(palmerpenguins)
+
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+## Checks
+
+### Data
+
+```{r base-data}
+quiz(caption = "Data-quiz",
+  question("What can you use as data input to `ggplot()`",
+           
+    answer("A `data.frame` (maybe a _tibble_)",
+           correct = TRUE,
+           message = random_praise()),
+    
+    answer("One vector for each dimension to plot",
+           message = "`ggplot()` require a single object."),
+    
+    answer("A `matrix`",
+           message = "What if you need columns of distinct types?"),
+    
+    answer("A tibble only (standard `data.frames` must be converted)",
+           message = "The Tidyverse is an inclusive place ;-)"),
+    
+    try_again = random_encouragement(),
+    allow_retry = TRUE,
+    random_answer_order = TRUE
+  )
+)
+
+```
+
+### Aesthetics
+
+```{r base-aes}
+quiz(caption = "Aesthetics-quiz",
+  question("What are the first two default aesthetics/input of `aes()`",
+           
+    answer("`x` and `y` (both optional)",
+           correct = TRUE,
+           message = random_praise()),
+    
+    answer("There is no default, you must name all the aesthetics you require (`x` and `y` included)",
+           message = "`x` and `y` are really sooo common ;-)."),
+    
+    answer("`x` and `y` (at least one mandatory)",
+           message = "What if you would like to inherits previous `x` and `y` aesthetics (e.g. into a `geom_*()`), and set only some new ones?"),
+    
+    answer("`x` and `y` (both mandatory)",
+           message = "How many aesthetics require `geom_density()` to plot a distribution?"),
+    
+
+    try_again = random_encouragement(),
+    allow_retry = TRUE,
+    random_answer_order = TRUE
+  ),
+    
+
+  question("What is the expected input for `x` in `aes(x = ___)`?",
+           
+    answer("The unquoted name of a variable from the data used (eg, `my_var`)",
+           correct = TRUE,
+           message = random_praise()),
+    
+    answer("The quoted name of a variable from the data used (eg, `\"my_var\"`",
+           message = "This won't throw an error, but generally won't produce the output you expect (_de facto_ `\"my_var\"` is a single, textual, data)"),
+    
+    answer("A vector of values to map into the x-axis",
+           message = "You _can_ use a vector to map explicitely into an aesthetic, but you don't do that inside `aes()`"),
+    
+
+    try_again = random_encouragement(),
+    allow_retry = TRUE,
+    random_answer_order = TRUE
+  )
+)
+```
+
+
+### Geoms
+
+```{r base-geom}
+quiz(caption = "Geom-quiz",
+  question("Can you use more than one `geom_*()` drowing a plot?",
+           
+    answer("Yes, and even with multiple instances of the same `geom_*()`",
+           correct = TRUE,
+           message = random_praise()),
+    
+    answer("No, you cannot: a plot can reports only a single geometry",
+           message = "Think about a scatter plot with their regression line superimposed... how many geometries are there?"),
+    
+    answer("Yes, but only if all the `geom_*()`s are distinct each-other",
+           message = "Why you don't want to be able to disply, eg,  multiple regression line using distinct methods for the same set of points?"),
+    
+    try_again = random_encouragement(),
+    allow_retry = TRUE,
+    random_answer_order = TRUE
+  ),
+  
+  question_parsons(
+    initial = c(
+      "ggplot(penguins)",
+      "ggplot(penguins, aes(year, body_mass_g))",
+      "ggplot(penguins, aes(\"year\", \"body_mass_g\"))",
+      "ggplot(penguins, \"year\", \"body_mass_g\")",
+      "ggplot(penguins, year, body_mass_g)",
+      "ggplot(penguins$year, penguins$body_mass_g)",
+      "geom_point()",
+      "geom_point(year, body_mass_g)",
+      "geom_point(aes(year, body_mass_g))"
+    ),
+    answer(
+      c(
+        "ggplot(penguins, aes(year, body_mass_g))",
+        "geom_point()"
+      ),
+      correct = TRUE,
+      message = random_praise()
+    ),
+    answer(
+      c(
+        "ggplot(penguins)",
+        "geom_point(aes(x = year, y = body_mass_g))"
+      ),
+      correct = TRUE,
+      message = random_praise()
+    ),
+
+    orientation = "vertical",
+    problem_type = "ggplot2",
+    try_again = random_encouragement(),
+    submit_button = "Submit Answer",
+    allow_retry = TRUE
+  )
+)
+```
+
+
+### Free space
+
+Feel free to explore your own code and solutions here.
+
+```{r base-explore, exercise=TRUE, exercise.lines=5}
+library(tidyverse)
+library(palmerpenguins)
+
+
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+```{r quiz-template, eval=FALSE, include=FALSE}
+quiz(caption = "Geom-quiz",
+  question("",
+           
+    answer("",
+           correct = TRUE,
+           message = random_praise()),
+    
+    answer("",
+           message = ""),
+    
+    answer("",
+           message = ""),
+    
+    answer("",
+           message = ""),
+    
+    try_again = random_encouragement(),
+    allow_retry = TRUE,
+    random_answer_order = TRUE
+  )
+)
+```
+
+
+
+```{r parsons-template, eval=FALSE, include=FALSE}
+question_parsons(
+  initial = c(
+    "iris",
+    "mutate(...)",
+    "summarize(...)",
+    "print()"
+  ),
+  pass_if(
+    c(
+      "iris",
+      "mutate(...)",
+      "summarize(...)"
+    )
+  ),
+  fail_if(
+    ~length(.) < 2,
+    message = "Include at least two answers"
+  ),
+  fail_if(
+    function(x){"print()" %in% x},
+    message = "You should not include print() in your answer"
+  ),
+  fail_if(
+    ~{.[1] != "iris"},
+    message = "Your solution should start with 'iris'"
+  )
+)
+```
+
+
