@@ -43,6 +43,8 @@ test_plots <- function(x, y) {
 
 ### Data
 
+Answer the following questions.
+
 ```{r quiz-data}
 quiz(caption = "Data-quiz",
   question("Textual information you found for each observation into your
@@ -90,6 +92,8 @@ quiz(caption = "Data-quiz",
 
 ### Aesthetics
 
+Answer the following question.
+
 ```{r quiz-aes}
 quiz(caption = "Aes-quiz",
   question("Suppose you have a variable `var` reporting textual 
@@ -133,6 +137,9 @@ penguins %>%
 
 ### Geom
 
+Answer the following questions (in the first one you can select more
+than one correct answer).
+
 ```{r quiz-geom}
 quiz(caption = "Geom-quiz",
   question("Which `geom_*`s are suitable for text?",
@@ -154,7 +161,7 @@ quiz(caption = "Geom-quiz",
            point at every set of coordinates (x, y) in the data, without 
            text or labels."),
     
-    answer("geom_word()",
+    answer("`geom_word()`",
            message = "This geom does not exist in `{ggplot2}`
            currently."),
     
@@ -229,6 +236,9 @@ penguins %>%
 
 ### Scales
 
+Answer the following question (select all the answers you think are
+correct)
+
 ```{r quiz-scales}
 quiz(caption = "Scale-quiz",
   question("What labeling functions you can use from the package
@@ -288,6 +298,8 @@ penguins %>%
 
 
 ### Facets
+
+Answer the following question.
 
 ```{r quiz-facet}
 quiz(caption = "Facet-quiz",
@@ -351,6 +363,9 @@ facet_grid(island~sex,
 
 
 ### Theme
+
+Answer the following questions (you can select more than one correct
+answer in the second-to-last).
 
 ```{r quiz-theme}
 quiz(caption = "Data-quiz",
@@ -455,10 +470,35 @@ quiz(caption = "Data-quiz",
 ```
 
 
+### {data-allow-skip=TRUE}
+Check for yourself (you have some `hints` here)
+
+```{r quiz-theme-code, exercise = TRUE, eval=FALSE}
+penguins %>% 
+  ggplot(aes(x = bill_length_mm, y = bill_depth_mm,
+             label = species, colour = island)) +
+  geom_text() +
+  labels(___ = "Title")
+  theme(plot.___ = ___(___ = "bold"),
+        legend.title = ___(___ = "darkgreen"),
+        axis.___.x = ___(angle = -30))
+```
+
+
+### {data-allow-skip=TRUE}
+Wonderful!! You have completed all the step-by-step assessment for this
+class. You are now ready to take the _Final Test_.
+
+Feel free to play with penguins and `{ggplot2}` as much as you like! 
+When you are ready, press `Continue`/`Next Topic`.
+
+```{r thopic-free, exercise=TRUE, exercise.lines = 5}
+library(tidyverse)
+library(palmerpenguins)
 
 
 
-
+```
 
 
 
