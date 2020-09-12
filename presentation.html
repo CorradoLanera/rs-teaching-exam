@@ -1,44 +1,46 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>(Meta)data labeling in {ggplot2}</title>
+    <title>(Meta)data texting in {ggplot2}</title>
     <meta charset="utf-8" />
     <meta name="author" content="Corrado Lanera" />
     <link href="presentation_files/remark-css-0.0.1/default.css" rel="stylesheet" />
     <link href="presentation_files/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
-    <link href="presentation_files/panelset-0.2.3/panelset.css" rel="stylesheet" />
-    <script src="presentation_files/panelset-0.2.3/panelset.js"></script>
-    <meta name="description" content="(Meta)data labeling in ggplot2: an introduction to the personalization of axes, legends, and points labels"/>
+    <meta name="description" content="(Meta)data texting in `{ggplot2}`: an introduction to the usage of text with axes, legends, points, and plots"/>
     <meta name="generator" content="xaringan and remark.js"/>
     <meta name="github-repo" content="CorradoLanera/rs-teaching-exam"/>
-    <meta name="twitter:title" content="Introduction to (meta)data labeling in ggplot2"/>
-    <meta name="twitter:description" content="(Meta)data labeling in ggplot2: an introduction to the personalization of axes, legends, and points labels"/>
+    <meta name="twitter:title" content="Introduction to (meta)data texting in ggplot2"/>
+    <meta name="twitter:description" content="(Meta)data texting in `{ggplot2}`: an introduction to the usage of text with axes, legends, points, and plots"/>
+    <meta name="twitter:url" content="https://corradolanera.shinyapps.io/text-gg-presentation/"/>
     <meta name="twitter:card" content="summary"/>
     <meta name="twitter:creator" content="@CorradoLanera"/>
     <meta name="twitter:site" content="@CorradoLanera"/>
-    <meta name="og:title" content="Introduction to (meta)data labeling in ggplot2"/>
-    <meta name="og:description" content="(Meta)data labeling in ggplot2: an introduction to the personalization of axes, legends, and points labels"/>
+    <meta name="og:title" content="Introduction to (meta)data texting in ggplot2"/>
+    <meta name="og:description" content="(Meta)data texting in `{ggplot2}`: an introduction to the usage of text with axes, legends, points, and plots"/>
+    <meta name="og:url" content="https://corradolanera.shinyapps.io/text-gg-presentation/"/>
     <meta name="og:type" content="website"/>
     <meta name="og:locale" content="en_US"/>
     <meta name="article:author" content="Corrado Lanera"/>
+    <link href="presentation_files/countdown-0.3.5/countdown.css" rel="stylesheet" />
+    <script src="presentation_files/countdown-0.3.5/countdown.js"></script>
   </head>
   <body>
     <textarea id="source">
 
 class: center, inverse
 
-# **(Meta)data labeling in `{ggplot2}`**
-# an introduction to the personalization of axes, legends, and points labels
+# **(Meta)data texting in `{ggplot2}`**
+## an introduction to the usage of text with axes, legends, points, and plots.
 
-&lt;br&gt;&lt;br&gt;
+&lt;br&gt;
 
-&lt;br&gt;&lt;br&gt;
+&lt;img src="img/gg-logo.png" width="20%" /&gt;
 
-## Corrado Lanera
-## RStudio Instructor Certification
-### Teaching exam - 2020/09/14
+&lt;br&gt;
 
+#### @CorradoLanera
 
+**RStudio Instructor Certification - Teaching exam - 2020/09/14**
 
 
 
@@ -57,10 +59,40 @@ pre {
   max-width: 100%;
   overflow-x: scroll;
 }
+
 .inverse {
   background-color: #272822;
   color: #d6d6d6;
   text-shadow: 0 0 20px #333;
+}
+
+.left-code {
+  color: #777;
+  width: 38%;
+  height: 92%;
+  float: left;
+}
+
+.right-code {
+  color: #777;
+  width: 55%;
+  height: 92%;
+  float: right;
+  padding-top: 0.5em;
+}
+
+.left-plot {
+  width: 43%;
+  float: left;
+}
+
+.right-plot {
+  width: 60%;
+  float: right;
+}
+
+.remark-code {
+  font-size: 60%;
 }
 &lt;/style&gt;
 
@@ -80,7 +112,7 @@ pre {
 # Learner persona: *Luke Lab*
 
 
-### In Brief
+### .center[In Brief]
 
 An active post-doctoral researcher who strives to be more autonomous in
 the preparation of high quality and reproducible documents related to
@@ -89,7 +121,7 @@ his research (e.g., lectures, papers and reports).
 
 
 
-### General Background
+### .center[General Background]
 
 Luke is a post-doc researcher in an academic unit of Biostatistics with
 significant experience in laboratory analyses, responsible for teaching
@@ -99,7 +131,7 @@ learning.
 
 
 
-### Relevant knowledge
+### .center[Relevant knowledge]
 
 Domain | Statistics | Programming | `{ggplot2}`
 -------|------------|-------------|------------
@@ -174,16 +206,22 @@ class: inverse
   - data
   - meta-data
   - annotation
+  - stylish
+  
+  and how they are related/managed by `{ggplot2}`.
 
-3. **Apply** an example of the different type of labeling a plot
-  - `geom_label()`
-  - `scale_*_*()`, `labs()`, and `theme()`
+3. **Apply** examples of different types of labeling a plot using:
+  - `geom_text()`, `geom_label()`
+  - `scale_*_*()`, `labs()` (for `facet_*` too)
   - `annotate()`
+  - `theme()` (ones involving `element_text()` only)
 
+  and use them all together in a single plot.
 
+---
+class: inverse, middle center
 
-
-### In their terms
+# In their terms
 
 This fifteen-minute hands-on will introduce you to the useful tools
 available in `{ggplot2}` to start exploring in practice how to use
@@ -195,42 +233,443 @@ text in plots and have the basics for your own in-depth study.
 
 
 
+---
+
+# Text in a plot: where and how
+
+&lt;br&gt;
+
+![](img/concept-map-1.PNG)
 
 
 
+---
+name: gg-review
+background-image: url(img/gg-logo.png)
+background-position: 90% 5%
+background-size: 10%
+
+# Text in {ggplot2}
+
+A `ggplot()` is made up of _layers_: &lt;small&gt;&lt;small&gt;([check your bases](https://corradolanera.shinyapps.io/base-gg-checks))&lt;/small&gt;&lt;/small&gt;
+
+![](img/concept-map-2.PNG)
+
+---
+name: gg-review
+background-image: url(img/lter_penguins.png)
+background-position: 90% 5%
+background-size: 35%
+
+# Text in {ggplot2}
+
+A `ggplot()` is made up of _layers_: &lt;small&gt;&lt;small&gt;([step-by-step checks](https://corradolanera.shinyapps.io/text-gg-checks/#section-step-by-step-checks))&lt;/small&gt;&lt;/small&gt;
+
+.left-plot[
+1. **Data**
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+]
+
+
+.right-code[
+.center[Artwork by @allison_horst]
+
+```r
+library(tidyverse)
+library(palmerpenguins)
+
+*penguins %&gt;%
+  glimpse()
+```
+
+```
+Rows: 344
+Columns: 8
+$ species           &lt;fct&gt; Adelie, Adelie, Adelie, Adelie…
+$ island            &lt;fct&gt; Torgersen, Torgersen, Torgerse…
+$ bill_length_mm    &lt;dbl&gt; 39.1, 39.5, 40.3, NA, 36.7, 39…
+$ bill_depth_mm     &lt;dbl&gt; 18.7, 17.4, 18.0, NA, 19.3, 20…
+$ flipper_length_mm &lt;int&gt; 181, 186, 195, NA, 193, 190, 1…
+$ body_mass_g       &lt;int&gt; 3750, 3800, 3250, NA, 3450, 36…
+$ sex               &lt;fct&gt; male, female, female, NA, fema…
+$ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, …
+```
+]
 
 
 
+---
+name: gg-review
+background-image: url(img/culmen_depth.png)
+background-position: 90% 5%
+background-size: 35%
+
+# Text in {ggplot2}
+
+A `ggplot()` is made up of _layers_: &lt;small&gt;&lt;small&gt;([step-by-step checks](https://corradolanera.shinyapps.io/text-gg-checks/#section-step-by-step-checks))&lt;/small&gt;&lt;/small&gt;
+
+.left-plot[
+1. Data
+2. **Aesthetics**
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+
+&lt;img src="presentation_files/figure-html/gg-aes-out-1.png" width="100%" /&gt;
+]
+
+.right-code[
+.center[Artwork by @allison_horst]
+
+```r
+penguins %&gt;% 
+  ggplot(aes(x = bill_length_mm, y = bill_depth_mm,
+*   label = sex,
+    colour = species))
+```
+]
+
+
+---
+
+# Text in a plot: `geom_*()`etrical usage
+
+&lt;br&gt;
+
+![](img/concept-map-3.PNG)
 
 
 
+---
+name: gg-review
+background-image: url(img/culmen_depth.png)
+background-position: 90% 5%
+background-size: 35%
 
+# Text in {ggplot2}
+
+A `ggplot()` is made up of _layers_: &lt;small&gt;&lt;small&gt;([step-by-step checks](https://corradolanera.shinyapps.io/text-gg-checks/#section-step-by-step-checks))&lt;/small&gt;&lt;/small&gt;
+
+.left-plot[
+1. Data
+2. Aesthetics
+3. **Geoms**
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+
+&lt;img src="presentation_files/figure-html/gg-geom-out-1.png" width="100%" /&gt;
+]
+
+.right-code[
+.center[Artwork by @allison_horst]
+
+```r
+penguins %&gt;% 
+  ggplot(aes(x = bill_length_mm, y = bill_depth_mm,
+    label = sex,
+    colour = species)) +
+* geom_text(check_overlap = TRUE)
+```
+]
+
+---
+
+# Text in a plot: `annotation()`s
+
+&lt;br&gt;
+
+![](img/concept-map-4.PNG)
+
+
+
+---
+name: gg-review
+background-image: url(img/culmen_depth.png)
+background-position: 90% 5%
+background-size: 35%
+
+# Text in {ggplot2}
+
+A `ggplot()` is made up of _layers_: &lt;small&gt;&lt;small&gt;([step-by-step checks](https://corradolanera.shinyapps.io/text-gg-checks/#section-step-by-step-checks))&lt;/small&gt;&lt;/small&gt;
+
+.left-plot[
+1. Data
+2. Aesthetics
+3. **Geoms**
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+
+&lt;img src="presentation_files/figure-html/gg-annotation-out-1.png" width="100%" /&gt;
+]
+
+.right-code[
+.center[Artwork by @allison_horst]
+
+```r
+penguins %&gt;% 
+  ggplot(aes(x = bill_length_mm, y = bill_depth_mm,
+    label = sex,
+    colour = species)) +
+  geom_text(check_overlap = TRUE) +
+* annotate("label", x = 30, y = 22.5, label = "STUMPY",
+           hjust = "inward", vjust = "inward") +
+* annotate("label", x = 60, y = 12.5, label = "TAPERED",
+           vjust = "inward", hjust = "inward")
+```
+]
+
+
+---
+
+# Text in a plot: legends' `labs()`
+
+&lt;br&gt;
+
+![](img/concept-map-5.PNG)
+
+
+
+---
+name: gg-review
+background-image: url(img/lter_penguins.png)
+background-position: 90% 5%
+background-size: 35%
+
+# Text in {ggplot2}
+
+A `ggplot()` is made up of _layers_: &lt;small&gt;&lt;small&gt;([step-by-step checks](https://corradolanera.shinyapps.io/text-gg-checks/#section-step-by-step-checks))&lt;/small&gt;&lt;/small&gt;
+
+.left-plot[
+1. Data
+2. Aesthetics
+3. Geoms
+4. **Scales**
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+
+&lt;img src="presentation_files/figure-html/gg-scale-out-1.png" width="100%" /&gt;
+]
+
+
+
+.right-code[
+.center[Artwork by @allison_horst]
+
+```r
+penguins %&gt;% 
+  ggplot(aes(x = bill_length_mm, y = bill_depth_mm,
+    label = sex,
+    colour = species)) +
+  geom_text(check_overlap = TRUE) +
+  annotate("label", x = 30, y = 22.5, label = "STUMPY",
+           hjust = "inward", vjust = "inward") +
+  annotate("label", x = 60, y = 12.5, label = "TAPERED",
+           vjust = "inward", hjust = "inward") +
+* scale_x_continuous("Bill length",
+*   labels = scales::label_number(suffix = " cm")) +
+* scale_y_continuous("Bill depth",
+*   labels = scales::label_number(suffix = " cm")) +
+  scale_colour_manual(
+    values = c("#C55ACA", "#0E7274", "#FF6F04"),
+    breaks = c("Chinstrap", "Gentoo", "Adelie"),
+*   labels = c("CHINSTRAP", "GENTOO", "ADÉLIE"))
+```
+]
+
+
+---
+
+# Text in a plot: split in `facet_*()`s
+
+&lt;br&gt;
+
+![](img/concept-map-6.PNG)
+
+
+
+---
+name: gg-review
+background-image: url(img/lter_penguins.png)
+background-position: 90% 5%
+background-size: 35%
+
+# Text in {ggplot2}
+
+A `ggplot()` is made up of _layers_: &lt;small&gt;&lt;small&gt;([step-by-step checks](https://corradolanera.shinyapps.io/text-gg-checks/#section-step-by-step-checks))&lt;/small&gt;&lt;/small&gt;
+
+.left-plot[
+1. Data
+2. Aesthetics
+3. Geoms
+4. Scales
+5. **Facets**
+&lt;br&gt;
+&lt;br&gt;
+
+&lt;img src="presentation_files/figure-html/gg-facet-out-1.png" width="100%" /&gt;
+]
+
+
+
+.right-code[
+.center[Artwork by @allison_horst]
+
+```r
+penguins %&gt;% 
+  ggplot(aes(x = bill_length_mm, y = bill_depth_mm,
+    label = sex,
+    colour = species)) +
+  geom_text(check_overlap = TRUE) +
+  annotate("label", x = 30, y = 22.5, label = "STUMPY",
+           hjust = "inward", vjust = "inward") +
+  annotate("label", x = 60, y = 12.5, label = "TAPERED",
+           vjust = "inward", hjust = "inward") +
+  scale_x_continuous("Bill length",
+    labels = scales::label_number(suffix = " cm")) +
+  scale_y_continuous("Bill depth",
+    labels = scales::label_number(suffix = " cm")) +
+  scale_colour_manual(
+    values = c("#C55ACA", "#0E7274", "#FF6F04"),
+    breaks = c("Chinstrap", "Gentoo", "Adelie"),
+    labels = c("CHINSTRAP", "GENTOO", "ADÉLIE")) +
+* facet_grid(island~., labeller = "label_both")
+```
+]
+
+
+---
+
+# Text in a plot: adding `themes()`
+
+&lt;br&gt;
+
+![](img/concept-map-7.PNG)
+
+
+---
+name: gg-review
+background-image: url(img/lter_penguins.png)
+background-position: 90% 5%
+background-size: 35%
+
+
+# Text in {ggplot2}
+
+A `ggplot()` is made up of _layers_: &lt;small&gt;&lt;small&gt;([step-by-step checks](https://corradolanera.shinyapps.io/text-gg-checks/#section-step-by-step-checks))&lt;/small&gt;&lt;/small&gt;
+
+.left-plot[
+1. Data
+2. Aesthetics
+3. Geoms
+4. Scales
+5. Facets
+6. **Themes**
+
+&lt;img src="presentation_files/figure-html/gg-theme-out-1.png" width="100%" /&gt;
+]
+
+
+
+.right-code[
+.center[Artwork by @allison_horst]
+
+```r
+penguins %&gt;% 
+  ggplot(aes(x = bill_length_mm, y = bill_depth_mm,
+    label = sex,
+    colour = species)) +
+  geom_text(check_overlap = TRUE) +
+  annotate("label", x = 30, y = 22.5, label = "STUMPY",
+           hjust = "inward", vjust = "inward") +
+  annotate("label", x = 60, y = 12.5, label = "TAPERED",
+           vjust = "inward", hjust = "inward") +
+  scale_x_continuous("Bill length",
+    labels = scales::label_number(suffix = " cm")) +
+  scale_y_continuous("Bill depth",
+    labels = scales::label_number(suffix = " cm")) +
+  scale_colour_manual(
+    values = c("#C55ACA", "#0E7274", "#FF6F04"),
+    breaks = c("Chinstrap", "Gentoo", "Adelie"),
+    labels = c("CHINSTRAP", "GENTOO", "ADÉLIE")) +
+  facet_grid(island~., labeller = "label_both") +
+  labs(title = "Penguins' bills across islands",
+       caption = "Data from {palmerpenguins} package.",
+*      colour = "Species") +
+* theme(plot.title = element_text(size = 24),
+*       legend.text = element_text(family = "mono"),
+*       axis.text = element_text(colour = "blue"),
+*       strip.text.y = element_text(face = "bold"))
+```
+]
+
+
+---
+class: inverse, middle, center
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+
+# --Your Turn--
+
+Click [HERE](https://corradolanera.shinyapps.io/text-gg-checks/#section-final-test)
+to test your brand-new skills in managing text in `ggplot()`s, and the efficacy of this class
+
+<div class="countdown" id="timer_5f5d0129" style="bottom:35%;left:34%;" data-audio="true" data-warnwhen="180">
+<code class="countdown-time"><span class="countdown-digits minutes">15</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+
+&lt;small&gt;&lt;small&gt;&lt;small&gt;&lt;small&gt;Click the timer to start the countdown&lt;/small&gt;&lt;/small&gt;&lt;/small&gt;&lt;/small&gt;
+
+&lt;br&gt;&lt;br&gt;
+
+
+# Thank you for your attention!
+[@CorradoLanera](https://www.CorradoLanera.it/)
+
+---
+# Full concept map
+
+![](img/concept-map-7.PNG)
 
 
 
 
 
 ---
-# Concept map
 
-&lt;!-- ![](img/cm.png) --&gt;
+class: inverse
 
+# Main resources
 
+- [**ggplot2**](https://ggplot2-book.org/) book by [**Hadley Wickham**](http://hadley.nz/) (Par: 8, 12, 13, 16)
 
+- [How to change ggplot facet labels](https://www.datanovia.com/en/blog/how-to-change-ggplot-facet-labels/) by [**kassambara**](https://www.datanovia.com/en/blog/author/kassambara/)
 
+- ggplot2 [cheatsheet](https://rstudio.com/wp-content/uploads/2019/01/Cheatsheets_2019.pdf) (Pag: 12-13)
 
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
 
+## Credits
 
-
----
-
-class: center, middle
-
-# Thanks!
-
-Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan).
-
-The chakra comes from [remark.js](https://remarkjs.com), [**knitr**](http://yihui.org/knitr), and [R Markdown](https://rmarkdown.rstudio.com).
+&lt;small&gt;&lt;small&gt;&lt;small&gt;
+- Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan).
+- Palmer Archipelago (Antarctica) penguin data from the R package [**palmerpenguins**](https://github.com/allisonhorst/palmerpenguins), penguins' artworks by [**@allison_horst**](https://www.allisonhorst.com/).
+- Assessment created via the R package [**learnr**](https://rstudio.github.io/learnr/index.html) and published via [**ShinyApps.io**](https://www.shinyapps.io/) freely offered by [**RStudio**](https://rstudio.com/).
+- Interactive timer created via the R package [**countdown**](https://github.com/gadenbuie/countdown).
+- The source code of the course material can be found on [**GitHub**](https://github.com/), [**here**]().
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
