@@ -667,4 +667,4 @@ class: inverse
 - Palmer Archipelago (Antarctica) penguin data from the R package [**palmerpenguins**](https://github.com/allisonhorst/palmerpenguins), penguins' artworks by [**@allison_horst**](https://www.allisonhorst.com/).
 - Assessment created via the R package [**learnr**](https://rstudio.github.io/learnr/index.html) and published via [**ShinyApps.io**](https://www.shinyapps.io/) freely offered by [**RStudio**](https://rstudio.com/).
 - Interactive timer created via the R package [**countdown**](https://github.com/gadenbuie/countdown).
-- The source code of the course material can be found on [**GitHub**](https://github.com/), [**here**]().
+- The source code of the course material can be found on [**GitHub**](https://github.com/), [**here**](https://github.com/CorradoLanera/rs-teaching-exam).
