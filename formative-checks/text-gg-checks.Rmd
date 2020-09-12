@@ -1,7 +1,7 @@
 ---
 title: "(Meta)data texting in `{ggplot2}`"
 subtitle: "Formative assessments"
-author: Corrado Lanera
+author: "Corrado Lanera"
 output:
   learnr::tutorial:
     progressive: true
@@ -11,14 +11,13 @@ runtime: shiny_prerendered
 
 ```{r setup, include=FALSE}
 library(learnr)
-library(parsons)
 library(gradethis)
 library(vdiffr)
 library(tidyverse)
 library(palmerpenguins)
 
 knitr::opts_chunk$set(echo = FALSE)
-gradethis_setup()
+gradethis::gradethis_setup()
 
 
 # https://github.com/rstudio-education/gradethis/issues/97
@@ -123,7 +122,7 @@ quiz(caption = "Aes-quiz",
 ### {data-allow-skip=TRUE}
 Check for yourself
 
-```{r quiz-aes-code, exercise = TRUE}
+```{r quiz-aes-code, exercise = TRUE, eval=FALSE}
 penguins %>% 
   ggplot(aes(x = bill_length_mm, y = bill_depth_mm, ___ = species))
 ```
@@ -212,7 +211,7 @@ quiz(caption = "Geom-quiz",
 ### {data-allow-skip=TRUE}
 Check for yourself
 
-```{r quiz-geom-code, exercise = TRUE}
+```{r quiz-geom-code, exercise = TRUE, eval=FALSE}
 penguins %>% 
   ggplot(aes(x = bill_length_mm, y = bill_depth_mm, label = species)) +
   geom____() + # try: colour = "blue" / aes(colour = "blue") ?
@@ -272,7 +271,7 @@ quiz(caption = "Scale-quiz",
 ### {data-allow-skip=TRUE}
 Check for yourself
 
-```{r quiz-scales-code, exercise = TRUE}
+```{r quiz-scales-code, exercise = TRUE, eval=FALSE}
 penguins %>% 
   ggplot(aes(x = bill_length_mm, y = bill_depth_mm, label = species)) +
   geom_point() +
@@ -322,7 +321,7 @@ quiz(caption = "Facet-quiz",
 ### {data-allow-skip=TRUE}
 Check for yourself (you have some `hints` here)
 
-```{r quiz-facet-code, exercise = TRUE}
+```{r quiz-facet-code, exercise = TRUE, eval=FALSE}
 penguins %>% 
   ggplot(aes(x = bill_length_mm, y = bill_depth_mm, label = species)) +
   geom_point() +
@@ -330,7 +329,7 @@ penguins %>%
 ```
 
 
-```{r quiz-facet-code-hint}
+```{r quiz-facet-code-hint, eval=FALSE}
 # try
 facet_grid(island~sex, labeller = "label_both")
 
@@ -517,12 +516,12 @@ grade_result(pass_if(~{
 ```
 
 
-```{r final-data-hint-1}
+```{r final-data-hint-1, eval = FALSE}
 # modify only (you do not need to add or remove lines of code)
 aes(x = ___, y = ___, label = ___, colour = ___)
 ```
 
-```{r final-data-hint-2}
+```{r final-data-hint-2, eval = FALSE}
 # modify only (you do not need to add or remove lines of code)
 aes(x = body_mass_g, y = flipper_length_mm,
     label = species, colour = sex)
@@ -561,13 +560,13 @@ grade_result(pass_if(~{
 }), incorrect = "Wrong answer.")
 ```
 
-```{r final-geom-hint-1}
+```{r final-geom-hint-1, eval = FALSE}
 # use the following coordinate for the annotations
 x = 4500, y = 170 # short
 x = 4500, y = 230 # long
 ```
 
-```{r final-geom-hint-2}
+```{r final-geom-hint-2, eval = FALSE}
 # use the following coordinate for the annotations
 x = 4500, y = 170 # short
 x = 4500, y = 230 # long
@@ -577,7 +576,7 @@ annotate("label", x = ___, y = ___, label = ___,
          hjust = "inward", vjust = "inward")
 ```
 
-```{r final-geom-hint-3}
+```{r final-geom-hint-3, eval = FALSE}
 # use the following coordinate for the annotations
 x = 4500, y = 170 # short
 x = 4500, y = 230 # long
@@ -672,19 +671,19 @@ grade_result(pass_if(~{
 ```
 
 
-```{r final-scale-hint-1}
+```{r final-scale-hint-1, eval = FALSE}
 # you can use
   scale_x_continuous(___, labels = scales::label_number(suffix = ___))
 ```
 
-```{r final-scale-hint-2}
+```{r final-scale-hint-2, eval = FALSE}
 # you can use
   scale_x_continuous(___, labels = scales::label_number(suffix = ___))
 
 # To style the axes' titles you can use the `them()` function
 ```
 
-```{r final-scale-hint-3}
+```{r final-scale-hint-3, eval = FALSE}
 # you can use
   scale_x_continuous(___, labels = scales::label_number(suffix = ___))
 
@@ -745,12 +744,12 @@ grade_result(pass_if(~{
 
 
 
-```{r final-legend-hint-1}
+```{r final-legend-hint-1, eval = FALSE}
 # If you do not need to change colours, you should go with 
 scale_colour_discrete() # and don't use the `value` option
 ```
 
-```{r final-legend-hint-2}
+```{r final-legend-hint-2, eval = FALSE}
 # If you do not need to change colours, you should go with 
 scale_colour_discrete() # and don't use the `value` option
 
@@ -759,7 +758,7 @@ scale_colour_discrete(
     labels = c(___, ___, ___))
 ```
 
-```{r final-legend-hint-3}
+```{r final-legend-hint-3, eval = FALSE}
 # If you do not need to change colours, you should go with 
 scale_colour_discrete() # and don't use the `value` option
 
@@ -770,7 +769,7 @@ scale_colour_discrete(
     labels = c(___, ___, ___))
 ```
 
-```{r final-legend-hint-4}
+```{r final-legend-hint-4, eval = FALSE}
 # If you do not need to change colours, you should go with 
 scale_colour_discrete() # and don't use the `value` option
 
@@ -789,7 +788,7 @@ scale_colour_discrete(___,
 labs(colour = ___) 
 ```
 
-```{r final-legend-hint-5}
+```{r final-legend-hint-5, eval = FALSE}
 # If you do not need to change colours, you should go with 
 scale_colour_discrete() # and don't use the `value` option
 
@@ -873,11 +872,11 @@ grade_result(pass_if(~{
 ```
 
 
-```{r final-facet-hint-1}
+```{r final-facet-hint-1, eval = FALSE}
 # Remember to keep the call to `theme()` as the last one
 ```
 
-```{r final-facet-hint-2}
+```{r final-facet-hint-2, eval = FALSE}
 # Remember to keep the call to `theme()` as the last one
 
 # For faceting, remember that `<LHS> ~ <RHS>` will display the <LHS> 
@@ -886,7 +885,7 @@ grade_result(pass_if(~{
 facet_grid(___~___)
 ```
 
-```{r final-facet-hint-3}
+```{r final-facet-hint-3, eval = FALSE}
 # Remember to keep the call to `theme()` as the last one
 
 # For faceting, remember that `<LHS> ~ <RHS>` will display the <LHS> 
@@ -901,7 +900,7 @@ facet_grid(___~___)
 facet_grid(___~___, labeller = ___)
 ```
 
-```{r final-facet-hint-4}
+```{r final-facet-hint-4, eval = FALSE}
 # Remember to keep the call to `theme()` as the last one
 
 # For faceting, remember that `<LHS> ~ <RHS>` will display the <LHS> 
@@ -920,7 +919,7 @@ facet_grid(___~___, labeller = ___)
 element_text(face = ___)
 ```
 
-```{r final-facet-hint-5}
+```{r final-facet-hint-5, eval = FALSE}
 # Remember to keep the call to `theme()` as the last one
 
 # For faceting, remember that `<LHS> ~ <RHS>` will display the <LHS> 
@@ -1010,13 +1009,13 @@ grade_result(pass_if(~{
 
 
 
-```{r final-theme-hint-1}
+```{r final-theme-hint-1, eval = FALSE}
 # You can add main titles (plot title, caption and all the title's
 # legend for the aesthetics) using `labs()`
 labs(title = ___,  caption = ___)
 ```
 
-```{r final-theme-hint-2}
+```{r final-theme-hint-2, eval = FALSE}
 # You can add main titles (plot title, caption and all the title's
 # legend for the aesthetics) using `labs()`
 labs(title = ___,  caption = ___)
@@ -1106,38 +1105,6 @@ quiz(caption = "XXX-quiz",
     try_again = random_encouragement(),
     allow_retry = TRUE,
     random_answer_order = TRUE
-  )
-)
-```
-
-
-
-```{r parsons-template, eval=FALSE, include=FALSE}
-question_parsons(
-  initial = c(
-    "iris",
-    "mutate(...)",
-    "summarize(...)",
-    "print()"
-  ),
-  pass_if(
-    c(
-      "iris",
-      "mutate(...)",
-      "summarize(...)"
-    )
-  ),
-  fail_if(
-    ~length(.) < 2,
-    message = "Include at least two answers"
-  ),
-  fail_if(
-    function(x){"print()" %in% x},
-    message = "You should not include print() in your answer"
-  ),
-  fail_if(
-    ~{.[1] != "iris"},
-    message = "Your solution should start with 'iris'"
   )
 )
 ```

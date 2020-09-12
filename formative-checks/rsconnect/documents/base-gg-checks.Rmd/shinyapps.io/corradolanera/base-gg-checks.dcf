@@ -1,0 +1,13 @@
+name: base-gg-checks
+title: base-gg-checks
+username:
+account: corradolanera
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 2796167
+bundleId: 3621744
+url: https://corradolanera.shinyapps.io/base-gg-checks/
+when: 1599910434.07568
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: text-gg-checks.Rmd
