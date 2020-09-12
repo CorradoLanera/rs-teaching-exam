@@ -60,7 +60,7 @@ meta() %>%
     image = "https://github.com/CorradoLanera/rs-teaching-exam/raw/master/img/concept-map.gif",
     og_type = "website",
     og_author = "Corrado Lanera",
-    twitter_card_type = "summary_large_image",
+    twitter_card_type = "summary",
     twitter_creator = "@CorradoLanera"
   )
 ```
