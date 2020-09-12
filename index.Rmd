@@ -56,8 +56,8 @@ meta() %>%
   meta_name("github-repo" = "CorradoLanera/rs-teaching-exam") %>% 
   meta_social(
     title = "Introduction to (meta)data texting in ggplot2",
-    url = "https://corradolanera.shinyapps.io/text-gg-presentation/",
-    image = "https://github.com/CorradoLanera/rs-teaching-exam/blob/master/img/concept-map.gif",
+    url = "https://corradolanera.github.io/rs-teaching-exam/",
+    image = "https://github.com/CorradoLanera/rs-teaching-exam/raw/master/img/concept-map.gif",
     og_type = "website",
     og_author = "Corrado Lanera",
     twitter_card_type = "summary_large_image",
