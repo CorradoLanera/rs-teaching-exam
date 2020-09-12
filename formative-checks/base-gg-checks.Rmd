@@ -1,6 +1,6 @@
 ---
 title: "(Meta)data texting in `{ggplot2}`"
-subtitle: "Check `{ggplot2}` bases"
+subtitle: "Check `{ggplot2}` basics"
 author: "Corrado Lanera"
 output:
   learnr::tutorial:
@@ -28,7 +28,9 @@ wrong will be displayed.
 
 ### Data
 
-Data are _the_ information you want to display.
+> Info: Data are _the_ information you want to display.
+
+Answer the following question.
 
 ```{r base-data}
 quiz(caption = "Data-quiz",
@@ -57,8 +59,10 @@ quiz(caption = "Data-quiz",
 
 ### Aesthetics
 
-Aesthetics are maps from the (variables into the) data to the 
+> Info: Aesthetics are maps from the (variables into the) data to the 
 corresponding parts of the plot they will be used for.
+
+Answer the following question.
 
 ```{r base-aes}
 quiz(caption = "Aesthetics-quiz",
@@ -107,12 +111,16 @@ quiz(caption = "Aesthetics-quiz",
 
 ### Geoms
 
-Geoms are the graphical objects used in the plot to draw the information
+> Info: Geoms are the graphical objects used in the plot to draw the information
 in your data in the way described by the aesthetics.
+
+Answer the following question. Next, drag and drop the right components
+to define a valid syntax for a `{ggplot2}` plot (not all the purposed 
+component are valid).
 
 ```{r base-geom}
 quiz(caption = "Geom-quiz",
-  question("Can you use more than one `geom_*()` drowing a plot?",
+  question("Can you use more than one `geom_*()` drawing a plot?",
            
     answer("Yes, and even with multiple instances of the same `geom_*()`",
            correct = TRUE,
@@ -168,9 +176,13 @@ quiz(caption = "Geom-quiz",
 ```
 
 
-### Free space
+### Well done! {data-allow-skip=TRUE}
 
-Feel free to explore your own code and solutions here playing with 
+This quick check is finished, and it was a great success!
+Congratulation! You can be confident in following the introductory 
+class on using text within `ggplot()`s!
+
+Now, feel free to explore your own code and solutions here playing with 
 penguins and `{ggplot2}` as much as you like!
 
 ```{r base-explore, exercise=TRUE, exercise.lines=5}
