@@ -640,7 +640,7 @@ countdown(minutes = 15, warn_when = 180, play_sound = TRUE,
 ---
 # Full concept map
 
-![](img/concept-map-7.PNG)
+![](img/concept-map.gif)
 
 
 
