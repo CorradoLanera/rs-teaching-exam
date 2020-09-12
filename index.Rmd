@@ -57,10 +57,10 @@ meta() %>%
   meta_social(
     title = "Introduction to (meta)data texting in ggplot2",
     url = "https://corradolanera.shinyapps.io/text-gg-presentation/",
-    # image = "url/to/website/image-card.png",
+    image = "https://github.com/CorradoLanera/rs-teaching-exam/blob/master/img/concept-map.gif",
     og_type = "website",
     og_author = "Corrado Lanera",
-    # twitter_card_type = "summary_large_image",
+    twitter_card_type = "summary_large_image",
     twitter_creator = "@CorradoLanera"
   )
 ```
