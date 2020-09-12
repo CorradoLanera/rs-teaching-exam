@@ -54,7 +54,7 @@ quiz(caption = "Data-quiz",
            message = random_praise()),
     
     answer("meta-data",
-           message = "a meta-data is a property of the data you have,
+           message = "Meta-data are a properties of the data you have,
            not the data itself"),
     
     try_again = random_encouragement(),
@@ -68,17 +68,17 @@ quiz(caption = "Data-quiz",
     answer("data",
            correct = TRUE,
            message = paste(random_praise(), "It is a single new data
-             point. You can create a new data frame with a single row
+             point. You can create a new data frame with a single row 
              and pass this data to a suitable geoms, and continue to
-             work in the standard basic way. On the other hand the
-             `annotation()` layer is provided for exact this reason, and
-             it is much much quicker and simpler to use!")),
+             work in the standard primary way. On the other hand, the 
+             `annotation()` layer is provided for precisely this reason,
+             and it is much much quicker and simpler to use!")),
     
     answer("meta-data",
-           message = "a meta-data is a property of the data you have,
+           message = "Meta-data are properties of the data you have,
            not the data itself. In this case this piece of data are not
-           a data included in your main dataset, but it still a (single)
-           data."),
+           a data included in your main dataset, but it still a
+           (single-instance of new) data."),
     
     try_again = random_encouragement(),
     allow_retry = TRUE,
@@ -93,11 +93,11 @@ quiz(caption = "Data-quiz",
 
 ```{r quiz-aes}
 quiz(caption = "Aes-quiz",
-  question("Suppose that in your data you have a varaible `var` 
-           reporting textual information for each observation. 
-           You would like to plot those directly into the plot.
-           What aesthetics will you set for that variable 
-           into the `aes()` call?",
+  question("Suppose you have a variable `var` reporting textual 
+           information for each observation in the data. You would like
+           to plot those pieces of information into the plot directly.
+           What aesthetics will you set for that variable into the
+           `aes()` call?",
            
     answer("label: `aes(x, y, label = var)`",
            correct = TRUE,
@@ -149,10 +149,10 @@ quiz(caption = "Geom-quiz",
            making it easier to read")),
     
     answer("`geom_point()`",
-           message = "Text will be used like points in a scatterplot,
+           message = "The text will be used as points in a scatterplot, 
            but they are not \"point\", they are text, sometimes called
            labels. If you call `geom_point()` you will obtain a simple
-           point at every set of coordinates (x, y) in the data, without
+           point at every set of coordinates (x, y) in the data, without 
            text or labels."),
     
     answer("geom_word()",
@@ -165,7 +165,7 @@ quiz(caption = "Geom-quiz",
   ),
   
   
-  question("If you want to draw ALL your textual data in blue How can
+  question("If you want to draw ALL your textual data in blue, How can
            you do?",
            
     answer("`geom_text(colour = \"blue\")`",
@@ -173,12 +173,12 @@ quiz(caption = "Geom-quiz",
            message = random_praise()),
     
     answer("`geom_text(aes(colour = \"blue\"))`",
-           message = "This, surprisingly, will create a new aesthetic
-           map to draw the **data** \"blue\" (which is constant) to the
-           color property. So this is not what you want, ie **set** a 
-           custom property without any map from any data. Surpirisgly,
-           the call will draw all your data in red :-)... if you are 
-           curious why, take a look at chapter 12.4 of the
+           message = "Surprisingly, this will create a new aesthetic map 
+           to draw the **data** \"blue\" (which is constant) to the 
+           colour property. So this is not what you want, ie, **set** a
+           custom property without any data map. Surprisingly, the call 
+           will draw all your data in red :-)... if you are curious 
+           about the why you can take a look at chapter 12.4 of the 
            [ggplot2 book](https://ggplot2-book.org/)"),
     
     try_again = random_encouragement(),
@@ -191,15 +191,15 @@ quiz(caption = "Geom-quiz",
            
     answer("A character string matching a (any) geom, like \"text\"",
            correct = TRUE,
-           message = paste(random_praise(), "Yes, annotate can draw
+           message = paste(random_praise(), "Yes, `annotate()` can draw
              any explicitly provided data point(s) using any geoms.
-             Particolarly useful but not limited to text and labels")),
+             Particularly useful but not limited to text and labels")),
     
     answer("A character string of the text annotation to plot",
-           message = "`annotate()` is a wrapper for a single occurence
-           of a geom. You need to firstly decide the geom to know which
-           aesthetics to use. Next, you will set explicitely those
-           aesthetics here (without mapping any variable to them)."),
+           message = "`annotate()` is a wrapper for a single occurrence 
+           of a geom. You need to first decide the geom to know which
+           aesthetics to use. Next, you will explicitly set those 
+           aesthetics without any data mapping."),
     
     try_again = random_encouragement(),
     allow_retry = TRUE,
@@ -232,7 +232,7 @@ penguins %>%
 
 ```{r quiz-scales}
 quiz(caption = "Scale-quiz",
-  question("What labelling functions you can use from the package
+  question("What labeling functions you can use from the package
            `{scale}` (automatically imported with `{ggplot2}`) to 
            format ticks' labels for the axes",
            
@@ -301,8 +301,8 @@ quiz(caption = "Facet-quiz",
     
     answer("Changing the content of the facetting varible(s) in the
            input data frame.",
-           message = "This surely works, but use a `labeller`
-           would be be much better. Take aa look to `?labeller` and
+           message = "This indeed works, but use a `labeller` would be 
+           much better. Take a look at `?labeller` and  
            http://bit.ly/change-facets-titles"),
     
     answer("Using the `strip.text` option of `theme()` and the
@@ -362,13 +362,13 @@ quiz(caption = "Data-quiz",
            message = random_praise()),
     
     answer("Data",
-           message = "`theme()` invole style only, no data change.
-           using `theme()` you can only change _how_ things are viewed,
+           message = "`theme()` involves style only, no data change.
+           Using `theme()` you can only change _how_ things are viewed,
            not _what_!"),
     
     answer("Meta-data",
-           message = "`theme()` invole style only, no meta-data change.
-           using `theme()` you can only change _how_ things are viewed,
+           message = "`theme()` involves style only, no meta-data change.
+           Using `theme()` you can only change _how_ things are viewed,
            not _what_!"),
     
     try_again = random_encouragement(),
@@ -376,7 +376,7 @@ quiz(caption = "Data-quiz",
     random_answer_order = TRUE
   ),
   
-  question("What would you use to change the style of a something
+  question("What would you use to change the style of something
            related to the whole plot (like its title)",
            
     answer("`plot.*`",
@@ -393,7 +393,7 @@ quiz(caption = "Data-quiz",
     random_answer_order = TRUE
   ),
   
-  question("What would you use to change the style of a something
+  question("What would you use to change the style of something
            related to the faceting's strips?",
            
     answer("`strip.*`",
@@ -403,17 +403,17 @@ quiz(caption = "Data-quiz",
     answer("`axis.*`"),
     answer("`legend.*`"),
     answer("`plot.*`"),
-    answer("`facet.*`", message = "Unfortunately, `facet.*` is not how
-           ggplot call facets when referring to them. But, they looks
-           like strips..."),
+    answer("`facet.*`", message = "Unfortunately, `facet.*` is not how 
+           `{ggplot2}` call facets when referring to them. But, they
+           look like strips..."),
     
     try_again = random_encouragement(),
     allow_retry = TRUE,
     random_answer_order = TRUE
   ),
   
-  question("What can you use to change the style of the name of 
-           both axes in the same way?",
+  question("What can you use to change the style of both the axes' names 
+           in the same way??",
            
     answer("`axis.title`",
            correct = TRUE,
@@ -422,7 +422,7 @@ quiz(caption = "Data-quiz",
     answer("set `axis.title.x`, `axis.title.y` in the same way",
            correct = TRUE,
            message = paste(random_praise(), "Anyway, this would not be 
-             the best choice if the changes are the same")),
+             the best choice if the changes are the same.")),
     answer("axis.text"),
     answer("set `axis.text.x`, `axis.text.y` in the same way"),
 
@@ -433,18 +433,18 @@ quiz(caption = "Data-quiz",
   
   question("What can you set using `element_text()`?",
            
-    answer("Only style, like font face, family, size, angle, colour,
+    answer("Only the style, like font face, family, size, angle, colour,
            etc",
            correct = TRUE,
            message = random_praise()),
     
-    answer("Only textual element, like lables, and their position",
-           message = paste(random_praise(), "`theme()` invole style
+    answer("Only textual elements, like lables, and their position",
+           message = paste(random_praise(), "`theme()` involves style
            only, no data nor meta-data change. Using `theme()` you can
            only change _how_ things are viewed, not _what_!")),
     answer("All the element involved in text data, like the elements
            displayed and their style",
-           message = paste(random_praise(), "`theme()` invole style
+           message = paste(random_praise(), "`theme()` involves style
            only, no data nor meta-data change. Using `theme()` you can
            only change _how_ things are viewed, not _what_!")),
 
@@ -469,24 +469,23 @@ quiz(caption = "Data-quiz",
 
 ###
 
-In the following, you will asked to create a plot similar to the one 
-created in the class. We will reach the final result step by step! 
+In the following, you will be asked to create a plot similar to the one
+created in the class. We will reach the final result step by step!
 
-In the following you will be required to modify/update a purposed code
+In the following, you will be required to modify/update a purposed code
 (similar to the one used in the class) accordingly to some instruction.
 
-You can experiment your code as much as you want cliccking on the
+You can experiment with your code as much as you want to click on the
 `Run Code` button. You can click on `Start Over` to reset the code chunk
-to original purposed one. You can click to `Hints` to come across some
-hints if you need them. 
+to the original purposed one. You can click to `Hints` to come across
+some hints if you need them.
 
-When you think you have reached the correct result, you can click on
-`Submit Answer` to check it. 
+When you think you have reached the correct result, you can click on the
+`Submit Answer` to check it.
 
-> NOTE: if your answer is wrong, you can try again as much time as you 
-  like. But you are required to pass a stage to go to the next one 
-  (there is only one stage marked as "optional", which you can skip if
-  you won't pass it).
+> NOTE: if your answer is wrong, you can try again as much time as you
+like. But you must pass a stage to go to the next one (there is only one
+stage marked as "optional", which you can skip if you won't pass it).
 
 
 Ready!? Let's go!
@@ -495,8 +494,8 @@ Ready!? Let's go!
 
 ### Data and aesthetics
 
-Map `body_mass_g` against `flipper_length_mm` showing the `species` at
-   each data-point, coloured by `sex`
+Map `body_mass_g` against `flipper_length_mm` showing the `species` at 
+each data-point, coloured by `sex`.
 
 ```{r final-data, exercise=TRUE, exercise.lines = 4}
 penguins %>% 
@@ -533,10 +532,9 @@ aes(x = body_mass_g, y = flipper_length_mm,
 
 ### Annotations (_una tantum_ data)
 
-Draw a label in the middle-left and in the middle-right part of
-the plot reporting "Short" and "Long" respectively (use the "invard"
-options as in class for a nicer (and graded correct) result)
-
+Draw a label in the middle-left and in the middle-right part of the plot
+reporting "Short" and "Long" respectively (use the "inward" options as
+in class for a nicer (and graded correctly) result)
 
 ```{r final-geom, exercise=TRUE, exercise.lines = 8}
 penguins %>% 
@@ -634,10 +632,10 @@ grade_result(
 
 ### Scales - axes (Meta-data + style)
 
-Mark on the axes, weights with "g", and lengths with "mm" unit of
-  measure; remove those units from the axes title, replace "_"s with 
-  more readable " "s, Capitalize the first letter of the axes's titles.
-  Write them in blue using sans-serif (`sans`) font family.
+Mark the axes: weights with "g" and lengths with "mm" unit of measure; 
+remove those units from the axes' titles, replace "_"s with more 
+readable " "s, capitalize the first letter of the axes' titles. Write 
+them in blue using sans-serif (`sans`) font family.
 
 ```{r final-scale, exercise=TRUE, exercise.lines = 13}
 penguins %>% 
@@ -698,7 +696,7 @@ theme(axis.___ = element_text(___ = "sans", colour = ___)
 
 ### Scale - legend (Meta-data + theme)
 
-Capitalizethe legend's title (replacing "_"s with " "s) and texts, and
+Capitalize the legend's title (replacing "_"s with " "s) and texts, and
 made the legend's title dark green. 
    
 ```{r final-legend, exercise=TRUE, exercise.lines = 17}
@@ -765,7 +763,7 @@ scale_colour_discrete(
 # If you do not need to change colours, you should go with 
 scale_colour_discrete() # and don't use the `value` option
 
-# Remember to capitaliza the labels and that NA _is_ a missing, while
+# Remember to capitalize the labels and that NA _is_ a missing, while
 # "NA" is a string
 scale_colour_discrete(
     breaks = c("female", "male", NA),
@@ -776,7 +774,7 @@ scale_colour_discrete(
 # If you do not need to change colours, you should go with 
 scale_colour_discrete() # and don't use the `value` option
 
-# Remember to capitaliza the labels and that NA _is_ a missing, while
+# Remember to capitalize the labels and that NA _is_ a missing, while
 # "NA" is a string
 scale_colour_discrete(
     breaks = c("female", "male", NA),
@@ -795,7 +793,7 @@ labs(colour = ___)
 # If you do not need to change colours, you should go with 
 scale_colour_discrete() # and don't use the `value` option
 
-# Remember to capitaliza the labels and that NA _is_ a missing, while
+# Remember to capitalize the labels and that NA _is_ a missing, while
 # "NA" is a string
 scale_colour_discrete(
     breaks = c("female", "male", NA),
@@ -820,9 +818,9 @@ theme(legend.___ = element_text(___ = ___))
    
 ### Facets (Theme + very little of meta-data)
 
-Divide the plot in a grid of plots. Display years into the columns and
-islands into the rows, keeping the indication of the variable in the
-rows and columns titles and write them both in **bold** and _italic_.
+Divide the plot into a grid of plots. Display the years into the columns 
+and the islands into the rows. Keep the indication of variables in rows 
+and columns' titles, and write them both in **bold** and _italic_.
 
 
 ```{r final-facet, exercise=TRUE}
@@ -896,8 +894,8 @@ facet_grid(___~___)
 # of <LHS>), and `<RHS>` across the grid column
 facet_grid(___~___)
 
-# You can use (the labeller is usefull if you do not 
-# want standard label, see `?labeller` for more informations)
+# You can use (the labeller is useful if you do not 
+# want standard label, see `?labeller` for more information)
 # to put the variable indication before the corresponding levels you can
 # use `"label_both"`
 facet_grid(___~___, labeller = ___)
@@ -911,8 +909,8 @@ facet_grid(___~___, labeller = ___)
 # of <LHS>), and `<RHS>` across the grid column
 facet_grid(___~___)
 
-# You can use (the labeller is usefull if you do not 
-# want standard label, see `?labeller` for more informations)
+# You can use (the labeller is useful if you do not 
+# want standard label, see `?labeller` for more information)
 # to put the variable indication before the corresponding levels you can
 # use `"label_both"`
 facet_grid(___~___, labeller = ___)
@@ -930,8 +928,8 @@ element_text(face = ___)
 # of <LHS>), and `<RHS>` across the grid column
 facet_grid(___~___)
 
-# You can use (the labeller is usefull if you do not 
-# want standard label, see `?labeller` for more informations)
+# You can use (the labeller is useful if you do not 
+# want standard label, see `?labeller` for more information)
 # to put the variable indication before the corresponding levels you can
 # use `"label_both"`
 facet_grid(___~___, labeller = ___)
@@ -1031,45 +1029,45 @@ theme(___.title = element_text(___ = 24, ___ = "orange"))
 
 ### Greetings!!!
 
-We agree our final plot is not nice, nor insightful... but our excuse
+We agree our final plot is not lovely, nor insightful... but our excuse 
 for that is: it was only a _pre**text**_ plot ;-)
 
 ###
 
 You are now a master of text and labels into `{ggplot2}`.
-Remember to distinguish when your "text" requirements comes from:
+Remember to distinguish when your "text" requirements come from:
 
 - **data**: map the corresponding variable to the `label` aesthetic,
   and draw them with `geom_text()` or `geom_label()` at your convenience
 
-- **meta-data**: maybe that means you whant to manage some title or text
-  in some legends (or axis, which are nothing more than the legend for
-  the axes ;-). So, you can go with the corresponding `scale_<AES>_<TYPE>()`
-  function (which first argument is the legend title), and you can use
-  the `break`, and `label` to control which label to plot and their 
+- **meta-data**: maybe that means you want to manage some title or text
+  in some legends (or axis, which are nothing more than the axes' 
+  legend). So, you can go with the corresponding scale_<AES>_<TYPE>()`
+  function (which the first argument is the legend title), and you can 
+  use the `break`, and `label` to control which label to plot and their
   corresponding name respectively. Or, just to change the title, you can
-  use the convenient wrapper `labs()` just assigning the title you lke
+  use the convenient wrapper `labs()` just assigning the title you like 
   to the corresponding aesthetics (eg, labs(colour = "Colour legend")).
 
-- **just an annotation**: so, you simply want to draw a `geom_*` for a
-  single-new not-in-data point ;-)... use the `annotation()` function,
-  and in its first argument set the geom you like (eg, "text" or
-  "label"), nex directly assign the value you need (eg, `x`, `y`,
+- **just an annotation**: so, you simply want to draw a `geom_*` for a 
+  single-new not-in-data point ;-)... use the `annotation()` function,  
+  and in its first argument, set the geom you like (eg, "text" or 
+  "label"), next directly assign the value you need (eg, `x`, `y`,  
   `label`).
 
 - **style**: maybe you already have some text you like to make more 
-  stylish. So, you need to put a call to `theme()` and adjust the
-  corresponding elements'characteristics. For text elements they are
+  stylish. So, you need to put a call to `theme()` and adjust the 
+  corresponding elements' characteristics. For text elements they are
   set calling `element_text()` for the corresponding argument
   of interest (eg, `plot.title`).
   
   
-  That's all!!
-  Congratulations!!
+That's all!!
+Congratulations!!
   
-  Thank you to have been part of this class.
+Thank you for having been part of this class.
   
-  ___\@CorradoLanera___
+___\@CorradoLanera___
 
 
 Feel free to play with penguins and `{ggplot2}` as much as you like!

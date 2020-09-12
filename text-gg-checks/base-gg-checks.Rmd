@@ -21,7 +21,14 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## Checks
 
+This introductory set of quiz aims to check the basic `{ggplot}`
+requirements for the class. In case of doubt, feel free to explore also
+the wrong answers: short feedback useful to understand why the answer is
+wrong will be displayed.
+
 ### Data
+
+Data are _the_ information you want to display.
 
 ```{r base-data}
 quiz(caption = "Data-quiz",
@@ -49,6 +56,9 @@ quiz(caption = "Data-quiz",
 ```
 
 ### Aesthetics
+
+Aesthetics are maps from the (variables into the) data to the 
+corresponding parts of the plot they will be used for.
 
 ```{r base-aes}
 quiz(caption = "Aesthetics-quiz",
@@ -96,6 +106,9 @@ quiz(caption = "Aesthetics-quiz",
 
 
 ### Geoms
+
+Geoms are the graphical objects used in the plot to draw the information
+in your data in the way described by the aesthetics.
 
 ```{r base-geom}
 quiz(caption = "Geom-quiz",
@@ -157,7 +170,8 @@ quiz(caption = "Geom-quiz",
 
 ### Free space
 
-Feel free to explore your own code and solutions here.
+Feel free to explore your own code and solutions here playing with 
+penguins and `{ggplot2}` as much as you like!
 
 ```{r base-explore, exercise=TRUE, exercise.lines=5}
 library(tidyverse)
