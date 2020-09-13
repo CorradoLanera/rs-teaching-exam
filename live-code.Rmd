@@ -1,0 +1,171 @@
+---
+title: "(Meta)data texting in `{ggplot2}`"
+subtitle: "Live-code"
+author: "Corrado Lanera"
+date: "lesson: 2020-09-14 (last update: `r Sys.Date()`)"
+output:
+  html_notebook:
+      toc: true
+      toc_float: true
+---
+
+# Setup
+
+```{r setup, message = FALSE}
+library(tidyverse)
+library(palmerpenguins)
+```
+
+
+# Data
+
+We are interested to use `penguins` data for our plot:
+
+```{r}
+citation("palmerpenguins")
+penguins
+```
+
+
+
+
+
+
+
+
+
+
+# Aesthetics
+
+We would like to map at `bill_length_mm` (in `x`) vs `bill_depth_mm` (in
+`y`) the `sex` of the penguins, coloured by their `species`. 
+
+```{r}
+penguins
+```
+
+
+
+
+
+
+
+
+
+
+# Geoms
+
+## Classic
+
+We would like to see in the plot the text reporting pengiuns' sex like
+in a scatterplot. 
+
+Considering to adjust transparency and size for a better visualization
+for overlapping labels.
+
+```{r}
+penguins
+```
+
+
+
+
+
+## Annotations
+
+We would also put two tags inside the plot as a reference for zone of
+stumpy and tapered penguins in the top-left and bottom-right corners 
+respectively.
+
+```{r}
+penguins
+```
+
+
+
+
+
+
+
+
+
+
+# Legends (Scales)
+
+## Legends
+
+We need to write in better way bot the title of the axis and the text 
+of the axes' ticks (possibly reporting the unit of measure).
+
+Also, write in al UPPERCASE the spieces in the legend, and try to 
+use colors coherently with the penguin's artwork by
+[@allison_horst](https://www.allisonhorst.com/).
+
+You can use the following colours' codes:
+
+ - `#C55ACA`: Chinstrap
+ - `#0E7274`: Gentoo
+ - `#FF6F04`: Adelie
+ 
+```{r}
+penguins
+```
+
+
+
+
+
+## `labs()`
+
+Now we can put a title ("penguins' bills across islands"), a caption
+("Data from {palmerpenguins} package."), and fix the title of the
+colour's legend (capitalize the first letter).
+
+```{r}
+penguins
+```
+
+
+
+
+
+
+
+
+
+
+# Facets
+
+We would like to draw this plot for each island in the same graph, in
+a grid of longwise plots (ie, three rows). We will love if in the
+strips' header will compare the indication that what is reporte is 
+actually the name of an island.
+
+```{r}
+penguins
+```
+
+
+
+
+
+
+
+
+
+
+# Theme
+
+Finally we twant to take care of the style of our plot:
+
+ - Set a bigger fon size for the title (eg 24px)
+ - Set the species names reported in the legend in monospaced characters
+ - Set the ticks' labels for both the axes in blue
+ - Set the strips' headers in boldface
+ 
+```{r}
+penguins
+```
+ 
+ 
+ 
