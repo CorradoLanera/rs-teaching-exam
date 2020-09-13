@@ -39,9 +39,7 @@ test_plots <- function(x, y) {
 ```
 
 
-## Step-by-step checks
-
-### Data
+## Data
 
 Answer the following questions.
 
@@ -90,7 +88,7 @@ quiz(caption = "Data-quiz",
 
 
 
-### Aesthetics
+## Aesthetics
 
 Answer the following question.
 
@@ -136,7 +134,7 @@ penguins %>%
 
 
 
-### Geom
+## Geom
 
 Answer the following questions (in the first one you can select more
 than one correct answer).
@@ -205,7 +203,7 @@ penguins %>%
 ```
 
 
-### Annotation
+## Annotation
 
 Answer the following questions (in the first one you can select more
 than one correct answer).
@@ -252,7 +250,7 @@ penguins %>%
 
 
 
-### Scales
+## Scales
 
 Answer the following question (select all the answers you think are
 correct)
@@ -348,7 +346,7 @@ penguins %>%
 
 
 
-### Facets
+## Facets
 
 Answer the following question.
 
@@ -416,7 +414,7 @@ facet_grid(island~sex,
 
 
 
-### Theme
+## Theme
 
 Answer the following questions (you can select more than one correct
 answer in the first and the second-to-last ones).

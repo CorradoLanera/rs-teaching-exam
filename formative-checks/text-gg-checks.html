@@ -117,10 +117,8 @@ $(document).ready(function () {
 
 <div class="topics">
 
-<div id="section-step-by-step-checks" class="section level2">
-<h2>Step-by-step checks</h2>
-<div id="section-data" class="section level3">
-<h3>Data</h3>
+<div id="section-data" class="section level2">
+<h2>Data</h2>
 <p>Answer the following questions.</p>
 <p><div class="panel-heading tutorial-quiz-title">Data-quiz</div><div class="panel panel-default">
 <div data-label="quiz-data-1" class="tutorial-question panel-body">
@@ -138,8 +136,8 @@ $(document).ready(function () {
 </div>
 </div></p>
 </div>
-<div id="section-aesthetics" class="section level3">
-<h3>Aesthetics</h3>
+<div id="section-aesthetics" class="section level2">
+<h2>Aesthetics</h2>
 <p>Answer the following question.</p>
 <p><div class="panel-heading tutorial-quiz-title">Aes-quiz</div><div class="panel panel-default">
 <div data-label="quiz-aes-1" class="tutorial-question panel-body">
@@ -149,18 +147,19 @@ $(document).ready(function () {
 <script>if (Tutorial.triggerMathJax) Tutorial.triggerMathJax()</script>
 </div>
 </div></p>
-</div>
 <div id="section-section" class="section level3" data-allow-skip="TRUE">
 <h3></h3>
 <p>Check for yourself</p>
 <div class="tutorial-exercise" data-label="quiz-aes-code" data-caption="R code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
 <pre class="text"><code>penguins %&gt;% 
-  ggplot(aes(x = bill_length_mm, y = bill_depth_mm, ___ = species))</code></pre>
+  ggplot(aes(x = bill_length_mm, y = bill_depth_mm, ___ = species)) +
+  geom_text()</code></pre>
 <script type="application/json" data-ui-opts="1">{"engine":"r","has_checker":false}</script>
 </div>
 </div>
-<div id="section-geom" class="section level3">
-<h3>Geom</h3>
+</div>
+<div id="section-geom" class="section level2">
+<h2>Geom</h2>
 <p>Answer the following questions (in the first one you can select more than one correct answer).</p>
 <p><div class="panel-heading tutorial-quiz-title">Geom-quiz</div><div class="panel panel-default">
 <div data-label="quiz-geom-1" class="tutorial-question panel-body">
@@ -177,19 +176,19 @@ $(document).ready(function () {
 <script>if (Tutorial.triggerMathJax) Tutorial.triggerMathJax()</script>
 </div>
 </div></p>
-</div>
 <div id="section-section-1" class="section level3" data-allow-skip="TRUE">
 <h3></h3>
 <p>Check for yourself</p>
 <div class="tutorial-exercise" data-label="quiz-geom-code" data-caption="R code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
 <pre class="text"><code>penguins %&gt;% 
   ggplot(aes(x = bill_length_mm, y = bill_depth_mm, label = species)) +
-  geom____() + # try: colour = &quot;blue&quot; / aes(colour = &quot;blue&quot;) ?</code></pre>
+  geom____() # try: colour = &quot;blue&quot; / aes(colour = &quot;blue&quot;) ?</code></pre>
 <script type="application/json" data-ui-opts="1">{"engine":"r","has_checker":false}</script>
 </div>
 </div>
-<div id="section-annotation" class="section level3">
-<h3>Annotation</h3>
+</div>
+<div id="section-annotation" class="section level2">
+<h2>Annotation</h2>
 <p>Answer the following questions (in the first one you can select more than one correct answer).</p>
 <p><div class="panel-heading tutorial-quiz-title">Geom-quiz</div><div class="panel panel-default">
 <div data-label="quiz-annotation-1" class="tutorial-question panel-body">
@@ -199,7 +198,6 @@ $(document).ready(function () {
 <script>if (Tutorial.triggerMathJax) Tutorial.triggerMathJax()</script>
 </div>
 </div></p>
-</div>
 <div id="section-section-2" class="section level3" data-allow-skip="TRUE">
 <h3></h3>
 <p>Check for yourself</p>
@@ -207,13 +205,14 @@ $(document).ready(function () {
 <pre class="text"><code>penguins %&gt;% 
   ggplot(aes(x = bill_length_mm, y = bill_depth_mm, label = species)) +
   geom_text(colour = &quot;blue&quot;) +
-  annotate(___, x = 45, y = 17.5, label = &quot;center&quot;,
+  annotate(___, x = 45, y = 17.5, label = &quot;center&quot;, # try both &quot;text&quot;, and &quot;label&quot;
            colour = &quot;red&quot;, fill = &quot;blue&quot;, size = 24)</code></pre>
 <script type="application/json" data-ui-opts="1">{"engine":"r","has_checker":false}</script>
 </div>
 </div>
-<div id="section-scales" class="section level3">
-<h3>Scales</h3>
+</div>
+<div id="section-scales" class="section level2">
+<h2>Scales</h2>
 <p>Answer the following question (select all the answers you think are correct)</p>
 <p><div class="panel-heading tutorial-quiz-title">Scale-quiz</div><div class="panel panel-default">
 <div data-label="quiz-scales-1" class="tutorial-question panel-body">
@@ -230,7 +229,6 @@ $(document).ready(function () {
 <script>if (Tutorial.triggerMathJax) Tutorial.triggerMathJax()</script>
 </div>
 </div></p>
-</div>
 <div id="section-section-3" class="section level3" data-allow-skip="TRUE">
 <h3></h3>
 <p>Check for yourself</p>
@@ -245,8 +243,9 @@ $(document).ready(function () {
 <script type="application/json" data-ui-opts="1">{"engine":"r","has_checker":false}</script>
 </div>
 </div>
-<div id="section-facets" class="section level3">
-<h3>Facets</h3>
+</div>
+<div id="section-facets" class="section level2">
+<h2>Facets</h2>
 <p>Answer the following question.</p>
 <p><div class="panel-heading tutorial-quiz-title">Facet-quiz</div><div class="panel panel-default">
 <div data-label="quiz-facet-1" class="tutorial-question panel-body">
@@ -256,7 +255,6 @@ $(document).ready(function () {
 <script>if (Tutorial.triggerMathJax) Tutorial.triggerMathJax()</script>
 </div>
 </div></p>
-</div>
 <div id="section-section-4" class="section level3" data-allow-skip="TRUE">
 <h3></h3>
 <p>Check for yourself (you have some <code>hints</code> here)</p>
@@ -280,8 +278,9 @@ facet_grid(island~sex,
            labeller = labeller(island = label_both, sex = label_value))</code></pre>
 </div>
 </div>
-<div id="section-theme" class="section level3">
-<h3>Theme</h3>
+</div>
+<div id="section-theme" class="section level2">
+<h2>Theme</h2>
 <p>Answer the following questions (you can select more than one correct answer in the first and the second-to-last ones).</p>
 <p><div class="panel-heading tutorial-quiz-title">Theme-quiz</div><div class="panel panel-default">
 <div data-label="quiz-theme-1" class="tutorial-question panel-body">
@@ -319,7 +318,6 @@ facet_grid(island~sex,
 <script>if (Tutorial.triggerMathJax) Tutorial.triggerMathJax()</script>
 </div>
 </div></p>
-</div>
 <div id="section-section-5" class="section level3" data-allow-skip="TRUE">
 <h3></h3>
 <p>Check for yourself (you have some <code>hints</code> here)</p>
@@ -769,13 +767,37 @@ learnr:::store_exercise_setup_chunk("__setup__", c("library(learnr)", "library(g
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-data-1", 
     question = structure("Textual information you found for each observation into your\n           data are:", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_d1af8e9", 
+    "character")), answers = list(structure(list(id = "lnr_ans_1bd722", 
         option = "data", value = "data", label = structure("data", html = TRUE, class = c("html", 
-        "character")), correct = TRUE, message = structure("Excellent!", html = TRUE, class = c("html", 
+        "character")), correct = TRUE, message = structure("Wonderful!", html = TRUE, class = c("html", 
         "character"))), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_5c725b4", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_584686d", 
         option = "meta-data", value = "meta-data", label = structure("meta-data", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = structure("Meta-data are a properties of the data you have,\n           not the data itself", html = TRUE, class = c("html", 
+        "character"))), class = c("tutorial_question_answer", 
+    "tutorial_quiz_answer"))), button_labels = list(submit = structure("Submit Answer", html = TRUE, class = c("html", 
+    "character")), try_again = structure("Try Again", html = TRUE, class = c("html", 
+    "character"))), messages = list(correct = structure("Correct!", html = TRUE, class = c("html", 
+    "character")), try_again = structure("Try it again. Perseverence is the key to success.", html = TRUE, class = c("html", 
+    "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
+    "character")), message = NULL, post_message = NULL), ids = list(
+        answer = "quiz-data-1-answer", question = "quiz-data-1"), 
+    loading = structure("<strong>Loading:<\u002fstrong> \nTextual information you found for each observation into your\n           data are:\n<br/><br/><br/>", html = TRUE, class = c("html", 
+    "character")), random_answer_order = TRUE, allow_retry = TRUE, 
+    seed = 2001527665.56797, options = list()), class = c("learnr_radio", 
+"tutorial_question")))
+</script>
+ 
+<script type="application/shiny-prerendered" data-context="server">
+learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-data-2", 
+    question = structure("When you want to add a new (i.e., not already contained in\n           your main data) single piece of text inside a plot, it is:", html = TRUE, class = c("html", 
+    "character")), answers = list(structure(list(id = "lnr_ans_6d3711c", 
+        option = "data", value = "data", label = structure("data", html = TRUE, class = c("html", 
+        "character")), correct = TRUE, message = structure(":) It is a single new data\n             point. You can create a new data frame with a single row \n             and pass this data to a suitable geoms, and continue to\n             work in the standard primary way. On the other hand, the \n             <code>annotation()<\u002fcode> layer is provided for precisely this reason,\n             and it is much much quicker and simpler to use!", html = TRUE, class = c("html", 
+        "character"))), class = c("tutorial_question_answer", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_f3d3ec2", 
+        option = "meta-data", value = "meta-data", label = structure("meta-data", html = TRUE, class = c("html", 
+        "character")), correct = FALSE, message = structure("Meta-data are properties of the data you have,\n           not the data itself. In this case this piece of data are not\n           a data included in your main dataset, but it still a\n           (single-instance of new) data.", html = TRUE, class = c("html", 
         "character"))), class = c("tutorial_question_answer", 
     "tutorial_quiz_answer"))), button_labels = list(submit = structure("Submit Answer", html = TRUE, class = c("html", 
     "character")), try_again = structure("Try Again", html = TRUE, class = c("html", 
@@ -783,61 +805,37 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
     "character")), try_again = structure("That&#39;s okay: you learn more from mistakes than successes. Let&#39;s do it one more time.", html = TRUE, class = c("html", 
     "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
     "character")), message = NULL, post_message = NULL), ids = list(
-        answer = "quiz-data-1-answer", question = "quiz-data-1"), 
-    loading = structure("<strong>Loading:<\u002fstrong> \nTextual information you found for each observation into your\n           data are:\n<br/><br/><br/>", html = TRUE, class = c("html", 
-    "character")), random_answer_order = TRUE, allow_retry = TRUE, 
-    seed = 1384696273.8552, options = list()), class = c("learnr_radio", 
-"tutorial_question")))
-</script>
- 
-<script type="application/shiny-prerendered" data-context="server">
-learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-data-2", 
-    question = structure("When you want to add a new (i.e., not already contained in\n           your main data) single piece of text inside a plot, it is:", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_7e486bd", 
-        option = "data", value = "data", label = structure("data", html = TRUE, class = c("html", 
-        "character")), correct = TRUE, message = structure("I couldn&#39;t have done it better myself. It is a single new data\n             point. You can create a new data frame with a single row \n             and pass this data to a suitable geoms, and continue to\n             work in the standard primary way. On the other hand, the \n             <code>annotation()<\u002fcode> layer is provided for precisely this reason,\n             and it is much much quicker and simpler to use!", html = TRUE, class = c("html", 
-        "character"))), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_9da10c4", 
-        option = "meta-data", value = "meta-data", label = structure("meta-data", html = TRUE, class = c("html", 
-        "character")), correct = FALSE, message = structure("Meta-data are properties of the data you have,\n           not the data itself. In this case this piece of data are not\n           a data included in your main dataset, but it still a\n           (single-instance of new) data.", html = TRUE, class = c("html", 
-        "character"))), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer"))), button_labels = list(submit = structure("Submit Answer", html = TRUE, class = c("html", 
-    "character")), try_again = structure("Try Again", html = TRUE, class = c("html", 
-    "character"))), messages = list(correct = structure("Correct!", html = TRUE, class = c("html", 
-    "character")), try_again = structure("Try it again. You get better each time.", html = TRUE, class = c("html", 
-    "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
-    "character")), message = NULL, post_message = NULL), ids = list(
         answer = "quiz-data-2-answer", question = "quiz-data-2"), 
     loading = structure("<strong>Loading:<\u002fstrong> \nWhen you want to add a new (i.e., not already contained in\n           your main data) single piece of text inside a plot, it is:\n<br/><br/><br/>", html = TRUE, class = c("html", 
     "character")), random_answer_order = TRUE, allow_retry = TRUE, 
-    seed = 1419748474.83888, options = list()), class = c("learnr_radio", 
+    seed = 970031712.548294, options = list()), class = c("learnr_radio", 
 "tutorial_question")))
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-aes-1", question = structure("Suppose you have a variable <code>var<\u002fcode> reporting textual \n           information for each observation in the data. You would like\n           to plot those pieces of information into the plot at the\n           corresponding coordinates indicated by the variables <code>x<\u002fcode>,\n           and <code>y<\u002fcode> (already in your data).\n           How would you set the main aesthetics into the <code>ggplot()<\u002fcode>\n           call?", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_c61173", 
+"character")), answers = list(structure(list(id = "lnr_ans_28e2fc2", 
     option = "`aes(x, y, label = var)`", value = "`aes(x, y, label = var)`", 
     label = structure("<code>aes(x, y, label = var)<\u002fcode>", html = TRUE, class = c("html", 
-    "character")), correct = TRUE, message = structure("Impressive work!", html = TRUE, class = c("html", 
+    "character")), correct = TRUE, message = structure(":)", html = TRUE, class = c("html", 
     "character"))), class = c("tutorial_question_answer", "tutorial_quiz_answer"
-)), structure(list(id = "lnr_ans_47149c5", option = "`aes(x, y, text = var)`", 
+)), structure(list(id = "lnr_ans_dcb12ab", option = "`aes(x, y, text = var)`", 
     value = "`aes(x, y, text = var)`", label = structure("<code>aes(x, y, text = var)<\u002fcode>", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = structure("geoms drawing text does not use the keyword\n           <code>text<\u002fcode> for that but <code>label<\u002fcode>", html = TRUE, class = c("html", 
     "character"))), class = c("tutorial_question_answer", "tutorial_quiz_answer"
-)), structure(list(id = "lnr_ans_d8a1622", option = "`aes(x, y, var)`", 
+)), structure(list(id = "lnr_ans_183b4ce", option = "`aes(x, y, var)`", 
     value = "`aes(x, y, var)`", label = structure("<code>aes(x, y, var)<\u002fcode>", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = structure("Only the first two aesthetics (<code>x<\u002fcode>, and <code>y<\u002fcode>) are\n           positional, ie, you won&#39;t require to set them by name.", html = TRUE, class = c("html", 
     "character"))), class = c("tutorial_question_answer", "tutorial_quiz_answer"
 ))), button_labels = list(submit = structure("Submit Answer", html = TRUE, class = c("html", 
 "character")), try_again = structure("Try Again", html = TRUE, class = c("html", 
 "character"))), messages = list(correct = structure("Correct!", html = TRUE, class = c("html", 
-"character")), try_again = structure("Try it again. You get better each time.", html = TRUE, class = c("html", 
+"character")), try_again = structure("That&#39;s okay: you learn more from mistakes than successes. Let&#39;s do it one more time.", html = TRUE, class = c("html", 
 "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
 "character")), message = NULL, post_message = NULL), ids = list(
     answer = "quiz-aes-1-answer", question = "quiz-aes-1"), loading = structure("<strong>Loading:<\u002fstrong> \nSuppose you have a variable <code>var<\u002fcode> reporting textual \n           information for each observation in the data. You would like\n           to plot those pieces of information into the plot at the\n           corresponding coordinates indicated by the variables <code>x<\u002fcode>,\n           and <code>y<\u002fcode> (already in your data).\n           How would you set the main aesthetics into the <code>ggplot()<\u002fcode>\n           call?\n<br/><br/><br/>", html = TRUE, class = c("html", 
 "character")), random_answer_order = TRUE, allow_retry = TRUE, 
-    seed = 1343944380.87418, options = list()), class = c("learnr_radio", 
+    seed = 1716819478.20054, options = list()), class = c("learnr_radio", 
 "tutorial_question")))
 </script>
  
@@ -850,7 +848,7 @@ output$`tutorial-exercise-quiz-aes-code-output` <- renderUI({
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache("quiz-aes-code", list(setup = NULL, chunks = list(list(label = "quiz-aes-code", 
-    code = "penguins %>% \n  ggplot(aes(x = bill_length_mm, y = bill_depth_mm, ___ = species))", 
+    code = "penguins %>% \n  ggplot(aes(x = bill_length_mm, y = bill_depth_mm, ___ = species)) +\n  geom_text()", 
     opts = list(label = "\"quiz-aes-code\"", exercise = "TRUE", 
         eval = "FALSE"), engine = "r")), code_check = NULL, error_check = NULL, 
     check = NULL, solution = NULL, options = list(eval = FALSE, 
@@ -873,54 +871,54 @@ learnr:::store_exercise_cache("quiz-aes-code", list(setup = NULL, chunks = list(
         exercise.checker = "function (label = NULL, solution_code = NULL, user_code = NULL, \n    check_code = NULL, envir_result = NULL, evaluate_result = NULL, \n    envir_prep = NULL, last_value = NULL, ...) \n{\n    (utils::getFromNamespace(\"grade_learnr_\", \"gradethis\"))(label = label, \n        solution_code = solution_code, user_code = user_code, \n        check_code = check_code, envir_result = envir_result, \n        evaluate_result = evaluate_result, envir_prep = envir_prep, \n        last_value = last_value, ...)\n}", 
         exercise.error.check.code = "grade_code()", label = "quiz-aes-code", 
         exercise = TRUE, out.width.px = 624, out.height.px = 384, 
-        code = c("penguins %>% ", "  ggplot(aes(x = bill_length_mm, y = bill_depth_mm, ___ = species))"
-        ), params.src = "quiz-aes-code, exercise = TRUE, eval=FALSE", 
+        code = c("penguins %>% ", "  ggplot(aes(x = bill_length_mm, y = bill_depth_mm, ___ = species)) +", 
+        "  geom_text()"), params.src = "quiz-aes-code, exercise = TRUE, eval=FALSE", 
         fig.num = 0, exercise.df_print = "paged"), engine = "r"))
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_checkbox", label = "quiz-geom-1", 
     question = structure("Which <code>geom_*<\u002fcode>s are suitable for text?", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_383ff5a", 
+    "character")), answers = list(structure(list(id = "lnr_ans_86d8a54", 
         option = "`geom_text()`", value = "`geom_text()`", label = structure("<code>geom_text()<\u002fcode>", html = TRUE, class = c("html", 
-        "character")), correct = TRUE, message = structure("Very good!", html = TRUE, class = c("html", 
+        "character")), correct = TRUE, message = structure("Smashing!", html = TRUE, class = c("html", 
         "character"))), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_cf8c43", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_d30d0b6", 
         option = "`geom_label()`", value = "`geom_label()`", 
         label = structure("<code>geom_label()<\u002fcode>", html = TRUE, class = c("html", 
-        "character")), correct = TRUE, message = structure("Lovely job! <code>geom_label()<\u002fcode> is like\n           <code>geom_text()<\u002fcode> but it draws a rectangle behind the text,\n           making it easier to read", html = TRUE, class = c("html", 
+        "character")), correct = TRUE, message = structure(":) <code>geom_label()<\u002fcode> is like\n           <code>geom_text()<\u002fcode> but it draws a rectangle behind the text,\n           making it easier to read", html = TRUE, class = c("html", 
         "character"))), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_9ff8851", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_a31be31", 
         option = "`geom_point()`", value = "`geom_point()`", 
         label = structure("<code>geom_point()<\u002fcode>", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = structure("The text will be used as points in a scatterplot, \n           but they are not &quot;point&quot;, they are text, sometimes called\n           labels. If you call <code>geom_point()<\u002fcode> you will obtain a simple\n           point at every set of coordinates (x, y) in the data, without \n           text or labels.", html = TRUE, class = c("html", 
         "character"))), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_1c3c9e1", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_f68ffb7", 
         option = "`geom_word()`", value = "`geom_word()`", label = structure("<code>geom_word()<\u002fcode>", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = structure("This geom does not exist in <code>{ggplot2}<\u002fcode>\n           currently.", html = TRUE, class = c("html", 
         "character"))), class = c("tutorial_question_answer", 
     "tutorial_quiz_answer"))), button_labels = list(submit = structure("Submit Answer", html = TRUE, class = c("html", 
     "character")), try_again = structure("Try Again", html = TRUE, class = c("html", 
     "character"))), messages = list(correct = structure("Correct!", html = TRUE, class = c("html", 
-    "character")), try_again = structure("Please try again.", html = TRUE, class = c("html", 
+    "character")), try_again = structure("Try it again. You get better each time.", html = TRUE, class = c("html", 
     "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
     "character")), message = NULL, post_message = NULL), ids = list(
         answer = "quiz-geom-1-answer", question = "quiz-geom-1"), 
     loading = structure("<strong>Loading:<\u002fstrong> \nWhich <code>geom_*<\u002fcode>s are suitable for text?\n<br/><br/><br/>", html = TRUE, class = c("html", 
     "character")), random_answer_order = TRUE, allow_retry = TRUE, 
-    seed = 171396872.920187, options = list()), class = c("learnr_checkbox", 
+    seed = 1812381442.65604, options = list()), class = c("learnr_checkbox", 
 "tutorial_question")))
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-geom-2", 
     question = structure("If you want to draw ALL your textual data in blue, How can\n           you set the call to <code>geom_text()<\u002fcode>?", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_a0f7c13", 
+    "character")), answers = list(structure(list(id = "lnr_ans_48d2b5e", 
         option = "`geom_text(colour = \"blue\")`", value = "`geom_text(colour = \"blue\")`", 
         label = structure("<code>geom_text(colour = &quot;blue&quot;)<\u002fcode>", html = TRUE, class = c("html", 
-        "character")), correct = TRUE, message = structure("That&#39;s glorious!", html = TRUE, class = c("html", 
+        "character")), correct = TRUE, message = structure("Swell job!", html = TRUE, class = c("html", 
         "character"))), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_f39d2ff", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_b4091ae", 
         option = "`geom_text(aes(colour = \"blue\"))`", value = "`geom_text(aes(colour = \"blue\"))`", 
         label = structure("<code>geom_text(aes(colour = &quot;blue&quot;))<\u002fcode>", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = structure("Surprisingly, this will create a new aesthetic map \n           to draw the <strong>data<\u002fstrong> &quot;blue&quot; (which is constant) to the \n           colour property. So this is not what you want, ie, <strong>set<\u002fstrong> a\n           custom property without any data map. Surprisingly, the call \n           will draw all your data in red :-)... if you are curious \n           about the why you can take a look at chapter 12.4 of the \n           <a href=\"https://ggplot2-book.org/\">ggplot2 book<\u002fa>", html = TRUE, class = c("html", 
@@ -928,13 +926,13 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
     "tutorial_quiz_answer"))), button_labels = list(submit = structure("Submit Answer", html = TRUE, class = c("html", 
     "character")), try_again = structure("Try Again", html = TRUE, class = c("html", 
     "character"))), messages = list(correct = structure("Correct!", html = TRUE, class = c("html", 
-    "character")), try_again = structure("Try it again; next time&#39;s the charm!", html = TRUE, class = c("html", 
+    "character")), try_again = structure("Let&#39;s try it again.", html = TRUE, class = c("html", 
     "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
     "character")), message = NULL, post_message = NULL), ids = list(
         answer = "quiz-geom-2-answer", question = "quiz-geom-2"), 
     loading = structure("<strong>Loading:<\u002fstrong> \nIf you want to draw ALL your textual data in blue, How can\n           you set the call to <code>geom_text()<\u002fcode>?\n<br/><br/><br/>", html = TRUE, class = c("html", 
     "character")), random_answer_order = TRUE, allow_retry = TRUE, 
-    seed = 705793699.671339, options = list()), class = c("learnr_radio", 
+    seed = 991396859.538345, options = list()), class = c("learnr_radio", 
 "tutorial_question")))
 </script>
  
@@ -947,7 +945,7 @@ output$`tutorial-exercise-quiz-geom-code-output` <- renderUI({
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache("quiz-geom-code", list(setup = NULL, chunks = list(list(label = "quiz-geom-code", 
-    code = "penguins %>% \n  ggplot(aes(x = bill_length_mm, y = bill_depth_mm, label = species)) +\n  geom____() + # try: colour = \"blue\" / aes(colour = \"blue\") ?", 
+    code = "penguins %>% \n  ggplot(aes(x = bill_length_mm, y = bill_depth_mm, label = species)) +\n  geom____() # try: colour = \"blue\" / aes(colour = \"blue\") ?", 
     opts = list(label = "\"quiz-geom-code\"", exercise = "TRUE", 
         eval = "FALSE"), engine = "r")), code_check = NULL, error_check = NULL, 
     check = NULL, solution = NULL, options = list(eval = FALSE, 
@@ -971,7 +969,7 @@ learnr:::store_exercise_cache("quiz-geom-code", list(setup = NULL, chunks = list
         exercise.error.check.code = "grade_code()", label = "quiz-geom-code", 
         exercise = TRUE, out.width.px = 624, out.height.px = 384, 
         code = c("penguins %>% ", "  ggplot(aes(x = bill_length_mm, y = bill_depth_mm, label = species)) +", 
-        "  geom____() + # try: colour = \"blue\" / aes(colour = \"blue\") ?"
+        "  geom____() # try: colour = \"blue\" / aes(colour = \"blue\") ?"
         ), params.src = "quiz-geom-code, exercise = TRUE, eval=FALSE", 
         fig.num = 0, exercise.df_print = "paged"), engine = "r"))
 </script>
@@ -979,13 +977,13 @@ learnr:::store_exercise_cache("quiz-geom-code", list(setup = NULL, chunks = list
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-annotation-1", 
     question = structure("What is the first argument of <code>annotate()<\u002fcode>?", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_90cd6c3", 
+    "character")), answers = list(structure(list(id = "lnr_ans_bbcef0a", 
         option = "A character string matching a (any) geom, like \"text\"", 
         value = "A character string matching a (any) geom, like \"text\"", 
         label = structure("A character string matching a (any) geom, like &quot;text&quot;", html = TRUE, class = c("html", 
-        "character")), correct = TRUE, message = structure("Absolutely fabulous! Yes, <code>annotate()<\u002fcode> can draw\n             any explicitly provided data point(s) using any geoms.\n             Particularly useful but not limited to text and labels", html = TRUE, class = c("html", 
+        "character")), correct = TRUE, message = structure("You aced it! Yes, <code>annotate()<\u002fcode> can draw\n             any explicitly provided data point(s) using any geoms.\n             Particularly useful but not limited to text and labels", html = TRUE, class = c("html", 
         "character"))), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_830c74c", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_4c8fa56", 
         option = "A character string of the text annotation to plot", 
         value = "A character string of the text annotation to plot", 
         label = structure("A character string of the text annotation to plot", html = TRUE, class = c("html", 
@@ -994,13 +992,13 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
     "tutorial_quiz_answer"))), button_labels = list(submit = structure("Submit Answer", html = TRUE, class = c("html", 
     "character")), try_again = structure("Try Again", html = TRUE, class = c("html", 
     "character"))), messages = list(correct = structure("Correct!", html = TRUE, class = c("html", 
-    "character")), try_again = structure("Try it again. I have a good feeling about this.", html = TRUE, class = c("html", 
+    "character")), try_again = structure("Please try again.", html = TRUE, class = c("html", 
     "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
     "character")), message = NULL, post_message = NULL), ids = list(
         answer = "quiz-annotation-1-answer", question = "quiz-annotation-1"), 
     loading = structure("<strong>Loading:<\u002fstrong> \nWhat is the first argument of <code>annotate()<\u002fcode>?\n<br/><br/><br/>", html = TRUE, class = c("html", 
     "character")), random_answer_order = TRUE, allow_retry = TRUE, 
-    seed = 1368757260.86262, options = list()), class = c("learnr_radio", 
+    seed = 502482824.266013, options = list()), class = c("learnr_radio", 
 "tutorial_question")))
 </script>
  
@@ -1013,7 +1011,7 @@ output$`tutorial-exercise-quiz-annotation-code-output` <- renderUI({
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache("quiz-annotation-code", list(setup = NULL, chunks = list(list(label = "quiz-annotation-code", 
-    code = "penguins %>% \n  ggplot(aes(x = bill_length_mm, y = bill_depth_mm, label = species)) +\n  geom_text(colour = \"blue\") +\n  annotate(___, x = 45, y = 17.5, label = \"center\",\n           colour = \"red\", fill = \"blue\", size = 24)", 
+    code = "penguins %>% \n  ggplot(aes(x = bill_length_mm, y = bill_depth_mm, label = species)) +\n  geom_text(colour = \"blue\") +\n  annotate(___, x = 45, y = 17.5, label = \"center\", # try both \"text\", and \"label\"\n           colour = \"red\", fill = \"blue\", size = 24)", 
     opts = list(label = "\"quiz-annotation-code\"", exercise = "TRUE", 
         eval = "FALSE"), engine = "r")), code_check = NULL, error_check = NULL, 
     check = NULL, solution = NULL, options = list(eval = FALSE, 
@@ -1037,7 +1035,7 @@ learnr:::store_exercise_cache("quiz-annotation-code", list(setup = NULL, chunks 
         exercise.error.check.code = "grade_code()", label = "quiz-annotation-code", 
         exercise = TRUE, out.width.px = 624, out.height.px = 384, 
         code = c("penguins %>% ", "  ggplot(aes(x = bill_length_mm, y = bill_depth_mm, label = species)) +", 
-        "  geom_text(colour = \"blue\") +", "  annotate(___, x = 45, y = 17.5, label = \"center\",", 
+        "  geom_text(colour = \"blue\") +", "  annotate(___, x = 45, y = 17.5, label = \"center\", # try both \"text\", and \"label\"", 
         "           colour = \"red\", fill = \"blue\", size = 24)"
         ), params.src = "quiz-annotation-code, exercise = TRUE, eval=FALSE", 
         fig.num = 0, exercise.df_print = "paged"), engine = "r"))
@@ -1045,87 +1043,87 @@ learnr:::store_exercise_cache("quiz-annotation-code", list(setup = NULL, chunks 
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_checkbox", label = "quiz-scales-1", 
-    question = structure("What labeling functions you can use from the package\n           <code>{scale}<\u002fcode> (automatically imported with <code>{ggplot2}<\u002fcode>) to \n           format ticks&#39; labels for the axes?", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_78e403", 
+    question = structure("What labeling functions you can use from the package\n           <code>{scale}<\u002fcode> (automatically imported with <code>{ggplot2}<\u002fcode>) to \n           format ticks&#39; labels for the axes? (Note: you are not supposed to know the correct answer(s) to this question...just guess it/them ;-))", html = TRUE, class = c("html", 
+    "character")), answers = list(structure(list(id = "lnr_ans_c1c3f7d", 
         option = "`label_number()` for decimal format (e.g. 0.12, 1,234)", 
         value = "`label_number()` for decimal format (e.g. 0.12, 1,234)", 
         label = structure("<code>label_number()<\u002fcode> for decimal format (e.g. 0.12, 1,234)", html = TRUE, class = c("html", 
-        "character")), correct = TRUE, message = structure("Smashing!", html = TRUE, class = c("html", 
+        "character")), correct = TRUE, message = structure("Out of this world!", html = TRUE, class = c("html", 
         "character"))), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_89e4d6", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_b7b3740", 
         option = "`label_scientific()` for scientific notation (e.g. 1e05, 1.5e-02)", 
         value = "`label_scientific()` for scientific notation (e.g. 1e05, 1.5e-02)", 
         label = structure("<code>label_scientific()<\u002fcode> for scientific notation (e.g. 1e05, 1.5e-02)", html = TRUE, class = c("html", 
-        "character")), correct = TRUE, message = structure("Someone knows what they&#39;re doing :)", html = TRUE, class = c("html", 
+        "character")), correct = TRUE, message = structure(":)", html = TRUE, class = c("html", 
         "character"))), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_6c366e5", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_cc15b18", 
         option = "`label_bytes()` to scale bytes into human friendly units (e.g. 1 kb, 2 MB, etc)", 
         value = "`label_bytes()` to scale bytes into human friendly units (e.g. 1 kb, 2 MB, etc)", 
         label = structure("<code>label_bytes()<\u002fcode> to scale bytes into human friendly units (e.g. 1 kb, 2 MB, etc)", html = TRUE, class = c("html", 
-        "character")), correct = TRUE, message = structure("Lovely job!", html = TRUE, class = c("html", 
+        "character")), correct = TRUE, message = structure("Cool job!", html = TRUE, class = c("html", 
         "character"))), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_8d6e1a0", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_6ccc20", 
         option = "`label_dollar()` to label currencies (i.e. not only dollars)", 
         value = "`label_dollar()` to label currencies (i.e. not only dollars)", 
         label = structure("<code>label_dollar()<\u002fcode> to label currencies (i.e. not only dollars)", html = TRUE, class = c("html", 
-        "character")), correct = TRUE, message = structure("You rock!", html = TRUE, class = c("html", 
+        "character")), correct = TRUE, message = structure("Delightful!", html = TRUE, class = c("html", 
         "character"))), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_2dc63b5", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_c318962", 
         option = "`label_percent()` for % to the number (e.g. 2.5%, 50%, etc)", 
         value = "`label_percent()` for % to the number (e.g. 2.5%, 50%, etc)", 
         label = structure("<code>label_percent()<\u002fcode> for % to the number (e.g. 2.5%, 50%, etc)", html = TRUE, class = c("html", 
-        "character")), correct = TRUE, message = structure("Success!", html = TRUE, class = c("html", 
+        "character")), correct = TRUE, message = structure("Impressive work!", html = TRUE, class = c("html", 
         "character"))), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_24b11fc", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_d208157", 
         option = "`label_pvalue()` use \"<\" and \">\" for p-values close to 0 and 1 (e.g. <0.001, 0.25, p >= 0.99)", 
         value = "`label_pvalue()` use \"<\" and \">\" for p-values close to 0 and 1 (e.g. <0.001, 0.25, p >= 0.99)", 
         label = structure("<code>label_pvalue()<\u002fcode> use &quot;&lt;&quot; and &quot;&gt;&quot; for p-values close to 0 and 1 (e.g. <0.001, 0.25, p >= 0.99)", html = TRUE, class = c("html", 
-        "character")), correct = TRUE, message = structure("Nice job!", html = TRUE, class = c("html", 
+        "character")), correct = TRUE, message = structure("Super job!", html = TRUE, class = c("html", 
         "character"))), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_65f65a", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_a965ca3", 
         option = "`label_number_si()` use SI prefixes (e.g. 2k, 1M, 5T etc)", 
         value = "`label_number_si()` use SI prefixes (e.g. 2k, 1M, 5T etc)", 
         label = structure("<code>label_number_si()<\u002fcode> use SI prefixes (e.g. 2k, 1M, 5T etc)", html = TRUE, class = c("html", 
-        "character")), correct = TRUE, message = structure("Impressive work!", html = TRUE, class = c("html", 
+        "character")), correct = TRUE, message = structure("Great work!", html = TRUE, class = c("html", 
         "character"))), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_59ad505", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_154eab5", 
         option = "`label_wrong()` for answer suggestion (e.g. \"check this too: wrong!`\")", 
         value = "`label_wrong()` for answer suggestion (e.g. \"check this too: wrong!`\")", 
         label = structure("<code>label_wrong()<\u002fcode> for answer suggestion (e.g. &quot;check this too: wrong!`&quot;)", html = TRUE, class = c("html", 
-        "character")), correct = TRUE, message = structure("That&#39;s a first-class answer!", html = TRUE, class = c("html", 
+        "character")), correct = FALSE, message = structure("Can we suppose that <code>label_wrong()<\u002fcode> could be...wrong? :-)", html = TRUE, class = c("html", 
         "character"))), class = c("tutorial_question_answer", 
     "tutorial_quiz_answer"))), button_labels = list(submit = structure("Submit Answer", html = TRUE, class = c("html", 
     "character")), try_again = structure("Try Again", html = TRUE, class = c("html", 
     "character"))), messages = list(correct = structure("Correct!", html = TRUE, class = c("html", 
-    "character")), try_again = structure("Try it again. Perseverence is the key to success.", html = TRUE, class = c("html", 
+    "character")), try_again = structure("That&#39;s okay: you learn more from mistakes than successes. Let&#39;s do it one more time.", html = TRUE, class = c("html", 
     "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
     "character")), message = NULL, post_message = NULL), ids = list(
         answer = "quiz-scales-1-answer", question = "quiz-scales-1"), 
-    loading = structure("<strong>Loading:<\u002fstrong> \nWhat labeling functions you can use from the package\n           <code>{scale}<\u002fcode> (automatically imported with <code>{ggplot2}<\u002fcode>) to \n           format ticks&#39; labels for the axes?\n<br/><br/><br/>", html = TRUE, class = c("html", 
+    loading = structure("<strong>Loading:<\u002fstrong> \nWhat labeling functions you can use from the package\n           <code>{scale}<\u002fcode> (automatically imported with <code>{ggplot2}<\u002fcode>) to \n           format ticks&#39; labels for the axes? (Note: you are not supposed to know the correct answer(s) to this question...just guess it/them ;-))\n<br/><br/><br/>", html = TRUE, class = c("html", 
     "character")), random_answer_order = TRUE, allow_retry = TRUE, 
-    seed = 1643113612.23487, options = list()), class = c("learnr_checkbox", 
+    seed = 619935744.21132, options = list()), class = c("learnr_checkbox", 
 "tutorial_question")))
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_checkbox", label = "quiz-scales-2", 
     question = structure("How can you set the title of the colour legend to &quot;New\n           title&quot;?", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_69c6135", 
+    "character")), answers = list(structure(list(id = "lnr_ans_5f3ba73", 
         option = "Using `labs(colour = \"New title\")`", value = "Using `labs(colour = \"New title\")`", 
         label = structure("Using <code>labs(colour = &quot;New title&quot;)<\u002fcode>", html = TRUE, class = c("html", 
-        "character")), correct = TRUE, message = structure("Amazing!", html = TRUE, class = c("html", 
+        "character")), correct = TRUE, message = structure("That&#39;s marvelous!", html = TRUE, class = c("html", 
         "character"))), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_8efed45", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_e9cf8a2", 
         option = "Using `labs(legend = \"New title\")`", value = "Using `labs(legend = \"New title\")`", 
         label = structure("Using <code>labs(legend = &quot;New title&quot;)<\u002fcode>", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = structure("You can have more than one legend in a plot,\n           so using <code>labs(legend = &quot;New title&quot;)<\u002fcode> would represent an \n           undefidend intent", html = TRUE, class = c("html", 
         "character"))), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_14bfc4", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_dd19769", 
         option = "`scale_colour_<TYPE>(\"New title\")`", value = "`scale_colour_<TYPE>(\"New title\")`", 
         label = structure("<code>scale_colour_&lt;TYPE&gt;(&quot;New title&quot;)<\u002fcode>", html = TRUE, class = c("html", 
-        "character")), correct = TRUE, message = structure("You rock!", html = TRUE, class = c("html", 
+        "character")), correct = TRUE, message = structure("Fantastic!", html = TRUE, class = c("html", 
         "character"))), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_2a3c54a", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_3887fa5", 
         option = "`ggplot(aes(x, y, colour = \"New title\"))`", 
         value = "`ggplot(aes(x, y, colour = \"New title\"))`", 
         label = structure("<code>ggplot(aes(x, y, colour = &quot;New title&quot;))<\u002fcode>", html = TRUE, class = c("html", 
@@ -1134,13 +1132,13 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_checkbox", lab
     "tutorial_quiz_answer"))), button_labels = list(submit = structure("Submit Answer", html = TRUE, class = c("html", 
     "character")), try_again = structure("Try Again", html = TRUE, class = c("html", 
     "character"))), messages = list(correct = structure("Correct!", html = TRUE, class = c("html", 
-    "character")), try_again = structure("But no need to fret, try it again.", html = TRUE, class = c("html", 
+    "character")), try_again = structure("Try it again. Perseverence is the key to success.", html = TRUE, class = c("html", 
     "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
     "character")), message = NULL, post_message = NULL), ids = list(
         answer = "quiz-scales-2-answer", question = "quiz-scales-2"), 
     loading = structure("<strong>Loading:<\u002fstrong> \nHow can you set the title of the colour legend to &quot;New\n           title&quot;?\n<br/><br/><br/>", html = TRUE, class = c("html", 
     "character")), random_answer_order = TRUE, allow_retry = TRUE, 
-    seed = 1613696385.24856, options = list()), class = c("learnr_checkbox", 
+    seed = 655331110.694838, options = list()), class = c("learnr_checkbox", 
 "tutorial_question")))
 </script>
  
@@ -1187,19 +1185,19 @@ learnr:::store_exercise_cache("quiz-scales-code", list(setup = NULL, chunks = li
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-facet-1", 
     question = structure("How can you personalize the titles of the facets in a grid\n           plot?", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_198b2e0", 
+    "character")), answers = list(structure(list(id = "lnr_ans_68fbd09", 
         option = "Using the `labeller` option of `facet_*()`", 
         value = "Using the `labeller` option of `facet_*()`", 
         label = structure("Using the <code>labeller<\u002fcode> option of <code>facet_*()<\u002fcode>", html = TRUE, class = c("html", 
-        "character")), correct = TRUE, message = structure("Smashing!", html = TRUE, class = c("html", 
+        "character")), correct = TRUE, message = structure("Awesome!", html = TRUE, class = c("html", 
         "character"))), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_6482e2", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_5b6afc4", 
         option = "Changing the content of the facetting varible(s) in the\n           input data frame.", 
         value = "Changing the content of the facetting varible(s) in the\n           input data frame.", 
         label = structure("Changing the content of the facetting varible(s) in the\n           input data frame.", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = structure("This indeed works, but use a <code>labeller<\u002fcode> would be \n           much better. Take a look at <code>?labeller<\u002fcode> and<br/>\n           <a href=\"http://bit.ly/change-facets-titles\">http://bit.ly/change-facets-titles<\u002fa>", html = TRUE, class = c("html", 
         "character"))), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_9b1e7e4", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_d188ed4", 
         option = "Using `labs(facet = ___)`", value = "Using `labs(facet = ___)`", 
         label = structure("Using <code>labs(facet = ___)<\u002fcode>", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = structure("<code>labs()<\u002fcode> set only titles! The names of the \n           facet&#39;s strips could seems like titles but they are actually \n           the &quot;text&quot; of that special kind of legends (ie, they are\n           the levels of the content of the faceting\n           variables, not their names!). On the other hand, keep in mind\n           that facets are not managed by scales function as it does \n           with all the other legends, but they require a special \n           labeller called directly inside the <code>facet_*()<\u002fcode> call.", html = TRUE, class = c("html", 
@@ -1207,13 +1205,13 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
     "tutorial_quiz_answer"))), button_labels = list(submit = structure("Submit Answer", html = TRUE, class = c("html", 
     "character")), try_again = structure("Try Again", html = TRUE, class = c("html", 
     "character"))), messages = list(correct = structure("Correct!", html = TRUE, class = c("html", 
-    "character")), try_again = structure("Try it again; next time&#39;s the charm!", html = TRUE, class = c("html", 
+    "character")), try_again = structure("Try it again. I have a good feeling about this.", html = TRUE, class = c("html", 
     "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
     "character")), message = NULL, post_message = NULL), ids = list(
         answer = "quiz-facet-1-answer", question = "quiz-facet-1"), 
     loading = structure("<strong>Loading:<\u002fstrong> \nHow can you personalize the titles of the facets in a grid\n           plot?\n<br/><br/><br/>", html = TRUE, class = c("html", 
     "character")), random_answer_order = TRUE, allow_retry = TRUE, 
-    seed = 417638814.305522, options = list()), class = c("learnr_radio", 
+    seed = 1676232561.71944, options = list()), class = c("learnr_radio", 
 "tutorial_question")))
 </script>
  
@@ -1258,46 +1256,46 @@ learnr:::store_exercise_cache("quiz-facet-code", list(setup = NULL, chunks = lis
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_checkbox", label = "quiz-theme-1", 
     question = structure("What can you change using <code>theme()<\u002fcode>?", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_dd97431", 
+    "character")), answers = list(structure(list(id = "lnr_ans_7a0154d", 
         option = "Style", value = "Style", label = structure("Style", html = TRUE, class = c("html", 
-        "character")), correct = TRUE, message = structure("Magnificent!", html = TRUE, class = c("html", 
+        "character")), correct = TRUE, message = structure("Awesome!", html = TRUE, class = c("html", 
         "character"))), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_cc2e194", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_d5b28d2", 
         option = "Data", value = "Data", label = structure("Data", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = structure("<code>theme()<\u002fcode> involves style only, no data change.\n           Using <code>theme()<\u002fcode> you can only change <em>how<\u002fem> things are viewed,\n           not <em>what<\u002fem>!", html = TRUE, class = c("html", 
         "character"))), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_daf4b9a", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_d4a5a30", 
         option = "Meta-data", value = "Meta-data", label = structure("Meta-data", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = structure("<code>theme()<\u002fcode> involves style only, no meta-data change.\n           Using <code>theme()<\u002fcode> you can only change <em>how<\u002fem> things are viewed,\n           not <em>what<\u002fem>!", html = TRUE, class = c("html", 
         "character"))), class = c("tutorial_question_answer", 
     "tutorial_quiz_answer"))), button_labels = list(submit = structure("Submit Answer", html = TRUE, class = c("html", 
     "character")), try_again = structure("Try Again", html = TRUE, class = c("html", 
     "character"))), messages = list(correct = structure("Correct!", html = TRUE, class = c("html", 
-    "character")), try_again = structure("Try it again. Perseverence is the key to success.", html = TRUE, class = c("html", 
+    "character")), try_again = structure("But no need to fret, try it again.", html = TRUE, class = c("html", 
     "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
     "character")), message = NULL, post_message = NULL), ids = list(
         answer = "quiz-theme-1-answer", question = "quiz-theme-1"), 
     loading = structure("<strong>Loading:<\u002fstrong> \nWhat can you change using <code>theme()<\u002fcode>?\n<br/><br/><br/>", html = TRUE, class = c("html", 
     "character")), random_answer_order = TRUE, allow_retry = TRUE, 
-    seed = 1864526145.63176, options = list()), class = c("learnr_checkbox", 
+    seed = 900608305.580622, options = list()), class = c("learnr_checkbox", 
 "tutorial_question")))
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-theme-2", 
     question = structure("What would you use to change the style of something\n           related to the whole plot (like the font family of its\n           title)", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_d391090", 
+    "character")), answers = list(structure(list(id = "lnr_ans_886f502", 
         option = "A call to `plot.*` inside `theme()`", value = "A call to `plot.*` inside `theme()`", 
         label = structure("A call to <code>plot.*<\u002fcode> inside <code>theme()<\u002fcode>", html = TRUE, class = c("html", 
-        "character")), correct = TRUE, message = structure("Absolutely fabulous!", html = TRUE, class = c("html", 
+        "character")), correct = TRUE, message = structure("Nice job!", html = TRUE, class = c("html", 
         "character"))), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_e4e6667", 
-        option = "Setting, eg, the `title.font` option into the `labs()` call", 
-        value = "Setting, eg, the `title.font` option into the `labs()` call", 
-        label = structure("Setting, eg, the <code>title.font<\u002fcode> option into the <code>labs()<\u002fcode> call", html = TRUE, class = c("html", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_3825371", 
+        option = "Setting, eg, the `title.family` option into the `labs()` call", 
+        value = "Setting, eg, the `title.family` option into the `labs()` call", 
+        label = structure("Setting, eg, the <code>title.family<\u002fcode> option into the <code>labs()<\u002fcode> call", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = structure("Using <code>labs()<\u002fcode> you can set the title (with <code>title =<\u002fcode>),\n           but it is used to define it only, not its style.", html = TRUE, class = c("html", 
         "character"))), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_3bacc15", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_e758406", 
         option = "Setting the aesthetic `family` in the main `aes()` into the\n           call to `ggplot()`", 
         value = "Setting the aesthetic `family` in the main `aes()` into the\n           call to `ggplot()`", 
         label = structure("Setting the aesthetic <code>family<\u002fcode> in the main <code>aes()<\u002fcode> into the\n           call to <code>ggplot()<\u002fcode>", html = TRUE, class = c("html", 
@@ -1306,64 +1304,65 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
     "tutorial_quiz_answer"))), button_labels = list(submit = structure("Submit Answer", html = TRUE, class = c("html", 
     "character")), try_again = structure("Try Again", html = TRUE, class = c("html", 
     "character"))), messages = list(correct = structure("Correct!", html = TRUE, class = c("html", 
-    "character")), try_again = structure("Try it again. I have a good feeling about this.", html = TRUE, class = c("html", 
+    "character")), try_again = structure("Try it again; next time&#39;s the charm!", html = TRUE, class = c("html", 
     "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
     "character")), message = NULL, post_message = NULL), ids = list(
         answer = "quiz-theme-2-answer", question = "quiz-theme-2"), 
     loading = structure("<strong>Loading:<\u002fstrong> \nWhat would you use to change the style of something\n           related to the whole plot (like the font family of its\n           title)\n<br/><br/><br/>", html = TRUE, class = c("html", 
     "character")), random_answer_order = TRUE, allow_retry = TRUE, 
-    seed = 227414084.394102, options = list()), class = c("learnr_radio", 
+    seed = 1933556155.59962, options = list()), class = c("learnr_radio", 
 "tutorial_question")))
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-theme-3", 
     question = structure("What would you use to change the style of something\n           related to the faceting&#39;s strips?", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_bcb5da", 
+    "character")), answers = list(structure(list(id = "lnr_ans_733e2fa", 
         option = "A call to `strip.*` inside `theme()`", value = "A call to `strip.*` inside `theme()`", 
         label = structure("A call to <code>strip.*<\u002fcode> inside <code>theme()<\u002fcode>", html = TRUE, class = c("html", 
-        "character")), correct = TRUE, message = structure("Superb work!", html = TRUE, class = c("html", 
+        "character")), correct = TRUE, message = structure("Swell job!", html = TRUE, class = c("html", 
         "character"))), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_2d7aa71", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_81711e", 
         option = "Setting a `family` property into a customized `labeller` \n           function to use inside the `facet_*()` call", 
         value = "Setting a `family` property into a customized `labeller` \n           function to use inside the `facet_*()` call", 
         label = structure("Setting a <code>family<\u002fcode> property into a customized <code>labeller<\u002fcode> \n           function to use inside the <code>facet_*()<\u002fcode> call", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = structure("A <code>labeller<\u002fcode> produce <em>what<\u002fem> will be displayed \n           into the faceting strips&#39; headers, i.e. it change the data\n           to use for them accordingly to your interest. Anyway, it does\n           not involve style, only the data.", html = TRUE, class = c("html", 
         "character"))), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_f20040b", 
-        option = "`facet.*`", value = "`facet.*`", label = structure("<code>facet.*<\u002fcode>", html = TRUE, class = c("html", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_1672b63", 
+        option = "A call to `facet.*` inside `theme()`", value = "A call to `facet.*` inside `theme()`", 
+        label = structure("A call to <code>facet.*<\u002fcode> inside <code>theme()<\u002fcode>", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = structure("Unfortunately, <code>facet.*<\u002fcode> is not how \n           <code>{ggplot2}<\u002fcode> call facets when referring to them. But, they\n           look like strips...", html = TRUE, class = c("html", 
         "character"))), class = c("tutorial_question_answer", 
     "tutorial_quiz_answer"))), button_labels = list(submit = structure("Submit Answer", html = TRUE, class = c("html", 
     "character")), try_again = structure("Try Again", html = TRUE, class = c("html", 
     "character"))), messages = list(correct = structure("Correct!", html = TRUE, class = c("html", 
-    "character")), try_again = structure("Try it again. Perseverence is the key to success.", html = TRUE, class = c("html", 
+    "character")), try_again = structure("Don&#39;t give up now, try it one more time.", html = TRUE, class = c("html", 
     "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
     "character")), message = NULL, post_message = NULL), ids = list(
         answer = "quiz-theme-3-answer", question = "quiz-theme-3"), 
     loading = structure("<strong>Loading:<\u002fstrong> \nWhat would you use to change the style of something\n           related to the faceting&#39;s strips?\n<br/><br/><br/>", html = TRUE, class = c("html", 
     "character")), random_answer_order = TRUE, allow_retry = TRUE, 
-    seed = 1867759160.63026, options = list()), class = c("learnr_radio", 
+    seed = 306689516.857187, options = list()), class = c("learnr_radio", 
 "tutorial_question")))
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_checkbox", label = "quiz-theme-4", 
     question = structure("What can you use to change the style of both the axes&#39; names \n           in the same way??", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_52a8e49", 
+    "character")), answers = list(structure(list(id = "lnr_ans_3af6440", 
         option = "`axis.title`", value = "`axis.title`", label = structure("<code>axis.title<\u002fcode>", html = TRUE, class = c("html", 
-        "character")), correct = TRUE, message = structure("Wicked smaht!", html = TRUE, class = c("html", 
+        "character")), correct = TRUE, message = structure("Magnificent!", html = TRUE, class = c("html", 
         "character"))), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_8a43c7", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_7cadb19", 
         option = "set `axis.title.x`, `axis.title.y` in the same way", 
         value = "set `axis.title.x`, `axis.title.y` in the same way", 
         label = structure("set <code>axis.title.x<\u002fcode>, <code>axis.title.y<\u002fcode> in the same way", html = TRUE, class = c("html", 
-        "character")), correct = TRUE, message = structure("You should be proud. Anyway, &quot;set\n           <code>axis.title.x<\u002fcode>, <code>axis.title.y<\u002fcode> in the same way&quot; would not be \n             the best choice if the changes are the same.", html = TRUE, class = c("html", 
+        "character")), correct = TRUE, message = structure("What first-rate work! Anyway, &quot;set\n           <code>axis.title.x<\u002fcode>, <code>axis.title.y<\u002fcode> in the same way&quot; would not be \n             the best choice if the changes are the same.", html = TRUE, class = c("html", 
         "character"))), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_385fcda", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_77d98fd", 
         option = "`axis.text`", value = "`axis.text`", label = structure("<code>axis.text<\u002fcode>", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_80628c8", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_e1e252c", 
         option = "set `axis.text.x`, `axis.text.y` in the same way", 
         value = "set `axis.text.x`, `axis.text.y` in the same way", 
         label = structure("set <code>axis.text.x<\u002fcode>, <code>axis.text.y<\u002fcode> in the same way", html = TRUE, class = c("html", 
@@ -1377,41 +1376,41 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_checkbox", lab
         answer = "quiz-theme-4-answer", question = "quiz-theme-4"), 
     loading = structure("<strong>Loading:<\u002fstrong> \nWhat can you use to change the style of both the axes&#39; names \n           in the same way??\n<br/><br/><br/>", html = TRUE, class = c("html", 
     "character")), random_answer_order = TRUE, allow_retry = TRUE, 
-    seed = 643732122.200239, options = list()), class = c("learnr_checkbox", 
+    seed = 1020061307.525, options = list()), class = c("learnr_checkbox", 
 "tutorial_question")))
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-theme-5", 
     question = structure("What can you set using <code>element_text()<\u002fcode>?", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_90fea4b", 
+    "character")), answers = list(structure(list(id = "lnr_ans_839429a", 
         option = "Only the style of the corresponding text: font face, family,\n           size, angle, colour, etc", 
         value = "Only the style of the corresponding text: font face, family,\n           size, angle, colour, etc", 
         label = structure("Only the style of the corresponding text: font face, family,\n           size, angle, colour, etc", html = TRUE, class = c("html", 
-        "character")), correct = TRUE, message = structure("Well done!", html = TRUE, class = c("html", 
+        "character")), correct = TRUE, message = structure("Awesome!", html = TRUE, class = c("html", 
         "character"))), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_c5b9fe0", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_6b3129c", 
         option = "Only textual elements: like lables, and their position", 
         value = "Only textual elements: like lables, and their position", 
         label = structure("Only textual elements: like lables, and their position", html = TRUE, class = c("html", 
-        "character")), correct = FALSE, message = structure("Resplendent! <code>theme()<\u002fcode> involves style\n           only, no data nor meta-data change. Using <code>theme()<\u002fcode> you can\n           only change <em>how<\u002fem> things are viewed, not <em>what<\u002fem>!", html = TRUE, class = c("html", 
+        "character")), correct = FALSE, message = structure(":) <code>theme()<\u002fcode> involves style\n           only, no data nor meta-data change. Using <code>theme()<\u002fcode> you can\n           only change <em>how<\u002fem> things are viewed, not <em>what<\u002fem>!", html = TRUE, class = c("html", 
         "character"))), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_fdd8a88", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_13e3c3", 
         option = "All the element involved in plotting text: fromt the\n           elements displayed to their style", 
         value = "All the element involved in plotting text: fromt the\n           elements displayed to their style", 
         label = structure("All the element involved in plotting text: fromt the\n           elements displayed to their style", html = TRUE, class = c("html", 
-        "character")), correct = FALSE, message = structure("Awesome! <code>theme()<\u002fcode> involves style\n           only, no data nor meta-data change. Using <code>theme()<\u002fcode> you can\n           only change <em>how<\u002fem> things are viewed, not <em>what<\u002fem>!", html = TRUE, class = c("html", 
+        "character")), correct = FALSE, message = structure("Smashing! <code>theme()<\u002fcode> involves style\n           only, no data nor meta-data change. Using <code>theme()<\u002fcode> you can\n           only change <em>how<\u002fem> things are viewed, not <em>what<\u002fem>!", html = TRUE, class = c("html", 
         "character"))), class = c("tutorial_question_answer", 
     "tutorial_quiz_answer"))), button_labels = list(submit = structure("Submit Answer", html = TRUE, class = c("html", 
     "character")), try_again = structure("Try Again", html = TRUE, class = c("html", 
     "character"))), messages = list(correct = structure("Correct!", html = TRUE, class = c("html", 
-    "character")), try_again = structure("Please try again.", html = TRUE, class = c("html", 
+    "character")), try_again = structure("Let&#39;s try it again.", html = TRUE, class = c("html", 
     "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
     "character")), message = NULL, post_message = NULL), ids = list(
         answer = "quiz-theme-5-answer", question = "quiz-theme-5"), 
     loading = structure("<strong>Loading:<\u002fstrong> \nWhat can you set using <code>element_text()<\u002fcode>?\n<br/><br/><br/>", html = TRUE, class = c("html", 
     "character")), random_answer_order = TRUE, allow_retry = TRUE, 
-    seed = 2040298715.04991, options = list()), class = c("learnr_radio", 
+    seed = 1873487063.62759, options = list()), class = c("learnr_radio", 
 "tutorial_question")))
 </script>
  
