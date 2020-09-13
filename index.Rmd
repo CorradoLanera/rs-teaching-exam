@@ -304,40 +304,6 @@ In the basics, we have the data (the information we want to plot), the aesthetic
 Next, we have the scale which, like in a map, define converts the reality (our data) in something to plot. We have facets, which permit to reproduce the same pattern-plot across different levels of our data, and at the and we have the theme, managing the style 
 
 
----
-class: inverse, middle, center
-
-# Step-by-Step guesses and exploration
-
-Please, open [**THIS**](https://corradolanera.shinyapps.io/text-gg-checks/#section-step-by-step-checks) interactive tutorial.
-
-
-You will be asked to explore it one stage at time.
-
-<br><br><br>
-
-
-```{r, echo = FALSE}
-countdown(minutes = 2, warn_when = 10, play_sound = TRUE,
-          left = "34%", bottom = "35%")
-```
-
-<br><br>
-
-<small><small><small><small>Click the timer to start the countdown</small></small></small></small>
-
-<br>
-
-You have an entire whole minute for each stage. 
-
-Are you ready? Let's start with the first two!
-<br><br><br><br>
-
-???
-
-At the end, go to the live code (ap to aesthetics included)
-
-
 
 ---
 name: gg-review
@@ -447,37 +413,6 @@ So we are ready to draw our scatterplot of text using the appropriate geoms, whi
 
 
 
-
----
-class: inverse, middle, center
-
-# Step-by-Step guesses and exploration
-
-Return to the [**TUTORIAL**](https://corradolanera.shinyapps.io/text-gg-checks/#section-step-by-step-checks) for the third stage about `geom_*()`s!
-
-
-<br><br><br>
-
-```{r, echo = FALSE}
-countdown(minutes = 1, warn_when = 10, play_sound = TRUE,
-          left = "34%", bottom = "35%")
-```
-
-<br><br>
-
-<small><small><small><small>Click the timer to start the countdown</small></small></small></small>
-
-<br>
-
-Are you ready? Let's go!
-<br><br><br><br>
-
-???
-
-At the end, go to the live code
-
-
-
 ---
 name: gg-review
 background-image: url(img/culmen_depth.png)
@@ -536,36 +471,6 @@ Skip if live-code, otherwise simply show the result and take a comment to "fixed
 As we said, if we like to add annotation that is only a single extra application of a **self-contained** geoms. We have the `annotate()` function we can personalize with almost every other geoms, simply calling it as character string as the first argument.
 For example we can ask for a "text" annotation or for a label annotation
 
-
-
----
-class: inverse, middle, center
-
-# Step-by-Step guesses and exploration
-
-Return to the [**TUTORIAL**](https://corradolanera.shinyapps.io/text-gg-checks/#section-step-by-step-checks) for the fourth stage about `annotate()`!
-
-
-<br><br><br>
-
-```{r, echo = FALSE}
-countdown(minutes = 1, warn_when = 10, play_sound = TRUE,
-          left = "34%", bottom = "35%")
-```
-
-<br><br>
-
-<small><small><small><small>Click the timer to start the countdown</small></small></small></small>
-
-<br>
-
-
-Are you ready? Let's go!
-<br><br><br><br>
-
-???
-
-At the end, go to the live code
 
 ---
 name: gg-review
@@ -642,37 +547,6 @@ So, properties of scales and leggends are managed by the scales function. But th
 
 
 
-
-
----
-class: inverse, middle, center
-
-# Step-by-Step guesses and exploration
-
-Return to the [**TUTORIAL**](https://corradolanera.shinyapps.io/text-gg-checks/#section-step-by-step-checks) for the fifth stage about `scale_<AES>_<TYPE>()`s, legends, and `labs()`!
-
-
-<br><br><br>
-
-```{r, echo = FALSE}
-countdown(minutes = 1, warn_when = 10, play_sound = TRUE,
-          left = "34%", bottom = "35%")
-```
-
-<br><br>
-
-<small><small><small><small>Click the timer to start the countdown</small></small></small></small>
-
-<br>
-
-
-Are you ready? Let's go!
-<br><br><br><br>
-
-
-???
-
-At the end, go to the live code
 
 
 
@@ -753,36 +627,6 @@ So we can facet the plot. That is a border-line special case.
 
 In this case, to set the header of the facets strip we need to call a labeller function inside the `facet_*()` function, and they are exceptionally not managed by the scales
 
-
-
----
-class: inverse, middle, center
-
-# Step-by-Step guesses and exploration
-
-Return to the [**TUTORIAL**](https://corradolanera.shinyapps.io/text-gg-checks/#section-step-by-step-checks) for the sixth stage about `facet_*()`s!
-
-
-<br><br><br>
-
-```{r, echo = FALSE}
-countdown(minutes = 1, warn_when = 10, play_sound = TRUE,
-          left = "34%", bottom = "35%")
-```
-
-<br><br>
-
-<small><small><small><small>Click the timer to start the countdown</small></small></small></small>
-
-<br>
-
-
-Are you ready? Let's go!
-<br><br><br><br>
-
-???
-
-At the end, go to the live code
 
 
 ---
@@ -879,37 +723,6 @@ In any case, the function inside the `theme()` one is the `element_text()` which
 
 
 
----
-class: inverse, middle, center
-
-# Step-by-Step guesses and exploration
-
-Return to the [**TUTORIAL**](https://corradolanera.shinyapps.io/text-gg-checks/#section-step-by-step-checks) for the seventh stage about `theme()`s!
-
-(You have reached the last one: you have gain a double-time gift)
-
-
-<br><br><br>
-
-```{r, echo = FALSE}
-countdown(minutes = 2, warn_when = 10, play_sound = TRUE,
-          left = "34%", bottom = "35%")
-```
-
-<br><br>
-
-<small><small><small><small>Click the timer to start the countdown</small></small></small></small>
-
-<br>
-
-
-Are you ready? Let's go!
-<br><br><br><br>
-
-???
-
-At the end, go to the live code
-
 
 ---
 name: gg-review
@@ -981,7 +794,7 @@ class: inverse, middle, center
 
 # --Your Turn--
 
-Click [HERE](https://corradolanera.shinyapps.io/text-gg-checks/#section-final-test)
+Click [HERE](https://corradolanera.shinyapps.io/text-gg-checks/)
 to test your brand-new skills in managing text in `ggplot()`s, and the efficacy of this class too ;-)
 
 ```{r, echo = FALSE}
