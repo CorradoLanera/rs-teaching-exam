@@ -46,6 +46,8 @@ class: center, inverse
 
 
 
+
+
 <style>.shareagain-bar {
 --shareagain-foreground: rgb(255, 255, 255);
 --shareagain-background: rgba(0, 0, 0, 0.5);
@@ -104,7 +106,9 @@ pre {
 
 
 
+???
 
+Goto slide 6 (`6 + &lt;RETURN&gt;`)
 
 
 
@@ -231,7 +235,9 @@ text in plots and have the basics for your own in-depth study.
 
 
 
+???
 
+"Second" course slide
 
 
 
@@ -242,6 +248,21 @@ text in plots and have the basics for your own in-depth study.
 &lt;br&gt;
 
 ![](img/concept-map-1.PNG)
+
+
+
+???
+
+So, we would like to manage text in ggplot. This mainly means 3 things:
+
+- have the possibility to draw textual data we have
+- to draw and manage its textual metadata (which are properties of the data to plot)
+- add some extra annotation
+
+After that we have to consider that text can have style we would manage, like font face, size, colour, eccetera.
+
+One important thing to keep in mind is that style modify only how we
+see the data, not what or where we see them...it is just style!
 
 
 
@@ -258,6 +279,22 @@ A `ggplot()` is made up of _layers_: &lt;small&gt;&lt;small&gt;([check your base
 ![](img/concept-map-2.PNG)
 
 
+
+???
+
+We want and can manage all those aspects within `{ggplot2}` and its
+grammar made up of layers. 
+
+We can check if we need to recap the bases with the quick tutorial I
+already send to you all (in a real class, not in 15 minutes, I will
+provide it directly, and I would have a deck of slide an a lesson to
+review the basics of `{ggplot2}` if needed)
+
+In the basics, we have the data (the information we want to plot), the aesthetics (defining "how" we want to plot "what"), the geoms (drawing the actual plot following the defined roles with the correct shape and transformations).
+
+Next, we have the scale which, like in a map, define converts the reality (our data) in something to plot. We have facets, which permit to reproduce the same pattern-plot across different levels of our data, and at the and we have the theme, managing the style 
+
+
 ---
 class: inverse, middle, center
 
@@ -270,15 +307,25 @@ You will be asked to explore it one stage at time.
 
 &lt;br&gt;&lt;br&gt;&lt;br&gt;
 
-<div class="countdown" id="timer_5f5e5745" style="bottom:35%;left:34%;" data-audio="true" data-warnwhen="10">
+
+<div class="countdown" id="timer_5f5e795d" style="bottom:35%;left:34%;" data-audio="true" data-warnwhen="10">
 <code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 
-&lt;br&gt;&lt;br&gt;&lt;br&gt;
+&lt;br&gt;&lt;br&gt;
+
+&lt;small&gt;&lt;small&gt;&lt;small&gt;&lt;small&gt;Click the timer to start the countdown&lt;/small&gt;&lt;/small&gt;&lt;/small&gt;&lt;/small&gt;
+
+&lt;br&gt;
+
 You have an entire whole minute for each stage. 
 
 Are you ready? Let's start with the first two!
 &lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+
+???
+
+At the end, go to the live code (ap to aesthetics included)
 
 
 
@@ -329,6 +376,17 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, …
 ]
 
 
+???
+
+Skip if live coded, quick descriptio of data otherwise
+
+&gt; Palmer Archipelago (Antarctica) penguin data
+&gt;
+&gt;  - 3 species
+&gt;  - 3 islands
+&gt;  - sex
+&gt;  - some body metrics
+
 
 ---
 name: gg-review
@@ -364,6 +422,17 @@ penguins %&gt;%
 ]
 
 
+???
+
+skip if live coded, otherwise describe the aesthetics
+
+&gt; x, y, coordinates
+&gt; label with the intent to scatterplot them
+&gt; colour to distinguish the species
+
+
+
+
 ---
 
 # Text in a plot: `geom_*()`etrical usage
@@ -371,6 +440,16 @@ penguins %&gt;%
 &lt;br&gt;
 
 ![](img/concept-map-3.PNG)
+
+
+
+???
+
+So we are ready to draw our scatterplot of text using the appropriate geoms, which can simply be `geom_text()` and `geom_label()` which only add a rectangular filled with colour (default white) background for a clearer visualiztion (often in case of notes)
+
+
+
+
 
 
 ---
@@ -383,15 +462,22 @@ Return to the [**TUTORIAL**](https://corradolanera.shinyapps.io/text-gg-checks/#
 
 &lt;br&gt;&lt;br&gt;&lt;br&gt;
 
-<div class="countdown" id="timer_5f5e55ec" style="bottom:35%;left:34%;" data-audio="true" data-warnwhen="10">
+<div class="countdown" id="timer_5f5e76d1" style="bottom:35%;left:34%;" data-audio="true" data-warnwhen="10">
 <code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 
-&lt;br&gt;&lt;br&gt;&lt;br&gt;
+&lt;br&gt;&lt;br&gt;
+
+&lt;small&gt;&lt;small&gt;&lt;small&gt;&lt;small&gt;Click the timer to start the countdown&lt;/small&gt;&lt;/small&gt;&lt;/small&gt;&lt;/small&gt;
+
+&lt;br&gt;
 
 Are you ready? Let's go!
 &lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
 
+???
+
+At the end, go to the live code
 
 
 
@@ -429,6 +515,16 @@ penguins %&gt;%
 ```
 ]
 
+
+
+???
+
+Skip if live-code, otherwise simply show the result and take a comment to "fixed" properties that can be set outside of the aesthetics, as usual with basic `ggplot()`s
+
+
+
+
+
 ---
 
 # Text in a plot: `annotate()`s
@@ -436,6 +532,13 @@ penguins %&gt;%
 &lt;br&gt;
 
 ![](img/concept-map-4.PNG)
+
+
+???
+
+As we said, if we like to add annotation that is only a single extra application of a **self-contained** geoms. We have the `annotate()` function we can personalize with almost every other geoms, simply calling it as character string as the first argument.
+For example we can ask for a "text" annotation or for a label annotation
+
 
 
 ---
@@ -448,15 +551,23 @@ Return to the [**TUTORIAL**](https://corradolanera.shinyapps.io/text-gg-checks/#
 
 &lt;br&gt;&lt;br&gt;&lt;br&gt;
 
-<div class="countdown" id="timer_5f5e5752" style="bottom:35%;left:34%;" data-audio="true" data-warnwhen="10">
+<div class="countdown" id="timer_5f5e7952" style="bottom:35%;left:34%;" data-audio="true" data-warnwhen="10">
 <code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 
-&lt;br&gt;&lt;br&gt;&lt;br&gt;
+&lt;br&gt;&lt;br&gt;
+
+&lt;small&gt;&lt;small&gt;&lt;small&gt;&lt;small&gt;Click the timer to start the countdown&lt;/small&gt;&lt;/small&gt;&lt;/small&gt;&lt;/small&gt;
+
+&lt;br&gt;
+
 
 Are you ready? Let's go!
 &lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
 
+???
+
+At the end, go to the live code
 
 ---
 name: gg-review
@@ -497,6 +608,19 @@ penguins %&gt;%
 ]
 
 
+
+???
+
+skip if live-code, otherwise, describe the annotation paing particular 
+attention to
+
+- the "label" argument
+- the fixed personalization (which in the geoms were possibly aesthetics)
+
+quick note on advantage of "inward" options
+
+
+
 ---
 
 # Text in a plot: scales and legends
@@ -504,6 +628,22 @@ penguins %&gt;%
 &lt;br&gt;
 
 ![](img/concept-map-5.PNG)
+
+
+
+???
+
+So we arrive to the metadata, which we founf in the legends, or as title, and caption.
+
+As we said, legends are the inverse of the scale function:
+the ferst help us to understand the reality looking at the plot, the second help the creator of the plot to draw it looking at the reality.
+
+In `{ggplot2}` they are both managed by the scales functions, which exists for each aesthetics, possibly for each different type of them (eg for the colour aestetics in case of continuous or discrete variable). 
+
+So, properties of scales and leggends are managed by the scales function. But there is a useful wrapper to define the title of all the legends (axes included) that is the `labs()` function, which take as input the name of an aesthetics and the title we would like to assign to it
+
+
+
 
 
 ---
@@ -516,16 +656,24 @@ Return to the [**TUTORIAL**](https://corradolanera.shinyapps.io/text-gg-checks/#
 
 &lt;br&gt;&lt;br&gt;&lt;br&gt;
 
-<div class="countdown" id="timer_5f5e5693" style="bottom:35%;left:34%;" data-audio="true" data-warnwhen="10">
+<div class="countdown" id="timer_5f5e796c" style="bottom:35%;left:34%;" data-audio="true" data-warnwhen="10">
 <code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 
-&lt;br&gt;&lt;br&gt;&lt;br&gt;
+&lt;br&gt;&lt;br&gt;
+
+&lt;small&gt;&lt;small&gt;&lt;small&gt;&lt;small&gt;Click the timer to start the countdown&lt;/small&gt;&lt;/small&gt;&lt;/small&gt;&lt;/small&gt;
+
+&lt;br&gt;
+
 
 Are you ready? Let's go!
 &lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
 
 
+???
+
+At the end, go to the live code
 
 
 
@@ -581,6 +729,15 @@ penguins %&gt;%
 ]
 
 
+??? skip if live coding, otherwise describe the
+
+- the different way to set the title
+- how we have change the axes' text ticks
+- and the `labs()` funciton
+
+
+
+
 ---
 
 # Text in a plot: split in `facet_*()`s
@@ -588,6 +745,14 @@ penguins %&gt;%
 &lt;br&gt;
 
 ![](img/concept-map-6.PNG)
+
+
+
+???
+
+So we can facet the plot. That is a border-line special case.
+
+In this case, to set the header of the facets strip we need to call a labeller function inside the `facet_*()` function, and they are exceptionally not managed by the scales
 
 
 
@@ -601,15 +766,23 @@ Return to the [**TUTORIAL**](https://corradolanera.shinyapps.io/text-gg-checks/#
 
 &lt;br&gt;&lt;br&gt;&lt;br&gt;
 
-<div class="countdown" id="timer_5f5e55c7" style="bottom:35%;left:34%;" data-audio="true" data-warnwhen="10">
+<div class="countdown" id="timer_5f5e791a" style="bottom:35%;left:34%;" data-audio="true" data-warnwhen="10">
 <code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 
-&lt;br&gt;&lt;br&gt;&lt;br&gt;
+&lt;br&gt;&lt;br&gt;
+
+&lt;small&gt;&lt;small&gt;&lt;small&gt;&lt;small&gt;Click the timer to start the countdown&lt;/small&gt;&lt;/small&gt;&lt;/small&gt;&lt;/small&gt;
+
+&lt;br&gt;
+
 
 Are you ready? Let's go!
 &lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
 
+???
+
+At the end, go to the live code
 
 
 ---
@@ -665,6 +838,17 @@ penguins %&gt;%
 ]
 
 
+
+???
+
+Skip if live-coding, otherwise simply put the attention on
+
+- the faceting result
+- the labeller effect (mention to see the Standard R help to going deeper with that)
+
+
+
+
 ---
 
 # Text in a plot: adding `themes()`
@@ -672,6 +856,27 @@ penguins %&gt;%
 &lt;br&gt;
 
 ![](img/concept-map-7.PNG)
+
+
+???
+
+Finaly, we arrive to the theme customization. This is simple a metter of combine what we would like to personalize: something about
+
+- the whole plot
+- a legend
+- the axis
+- the  faceting strips?
+
+
+And what of that we want to personalize, based on what that aspect as:
+
+- a title
+- or a text
+
+
+In any case, the function inside the `theme()` one is the `element_text()` which permit to personalize all the main textual axpect of the text
+
+
 
 
 ---
@@ -686,15 +891,23 @@ Return to the [**TUTORIAL**](https://corradolanera.shinyapps.io/text-gg-checks/#
 
 &lt;br&gt;&lt;br&gt;&lt;br&gt;
 
-<div class="countdown" id="timer_5f5e5654" style="bottom:35%;left:34%;" data-audio="true" data-warnwhen="10">
+<div class="countdown" id="timer_5f5e7815" style="bottom:35%;left:34%;" data-audio="true" data-warnwhen="10">
 <code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 
-&lt;br&gt;&lt;br&gt;&lt;br&gt;
+&lt;br&gt;&lt;br&gt;
+
+&lt;small&gt;&lt;small&gt;&lt;small&gt;&lt;small&gt;Click the timer to start the countdown&lt;/small&gt;&lt;/small&gt;&lt;/small&gt;&lt;/small&gt;
+
+&lt;br&gt;
+
 
 Are you ready? Let's go!
 &lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
 
+???
+
+At the end, go to the live code
 
 
 ---
@@ -754,6 +967,12 @@ penguins %&gt;%
 ]
 
 
+
+
+???
+
+Skip if live-coding, otherwhise put the attention of the combination of the key into the `theme()` function, and the option into the `element_text()`
+
 ---
 class: inverse, middle, center
 
@@ -764,7 +983,7 @@ class: inverse, middle, center
 Click [HERE](https://corradolanera.shinyapps.io/text-gg-checks/#section-final-test)
 to test your brand-new skills in managing text in `ggplot()`s, and the efficacy of this class too ;-)
 
-<div class="countdown" id="timer_5f5e54b7" style="bottom:35%;left:34%;" data-audio="true" data-warnwhen="180">
+<div class="countdown" id="timer_5f5e79e9" style="bottom:35%;left:34%;" data-audio="true" data-warnwhen="180">
 <code class="countdown-time"><span class="countdown-digits minutes">15</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 
@@ -778,12 +997,21 @@ to test your brand-new skills in managing text in `ggplot()`s, and the efficacy 
 # Thank you for your attention!
 [@CorradoLanera](https://www.CorradoLanera.it/)
 
+
+???
+
+Thanks...but in the next slide there is the overview of the concept maps!!!
+
 ---
 # Full concept map
 
 ![](img/concept-map.gif)
 
 
+
+???
+
+1 frame/second
 
 
 

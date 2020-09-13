@@ -27,6 +27,8 @@ knitr::include_graphics("img/gg-logo.png")
 
 **RStudio Instructor Certification - Teaching exam - 2020/09/14**
 
+
+
 ```{r setup, echo=FALSE}
 library(xaringanExtra)
 library(metathis)
@@ -113,7 +115,9 @@ pre {
 
 
 
+???
 
+Goto slide 6 (`6 + <RETURN>`)
 
 
 
@@ -240,7 +244,9 @@ text in plots and have the basics for your own in-depth study.
 
 
 
+???
 
+"Second" course slide
 
 
 
@@ -251,6 +257,21 @@ text in plots and have the basics for your own in-depth study.
 <br>
 
 ![](img/concept-map-1.PNG)
+
+
+
+???
+
+So, we would like to manage text in ggplot. This mainly means 3 things:
+
+- have the possibility to draw textual data we have
+- to draw and manage its textual metadata (which are properties of the data to plot)
+- add some extra annotation
+
+After that we have to consider that text can have style we would manage, like font face, size, colour, eccetera.
+
+One important thing to keep in mind is that style modify only how we
+see the data, not what or where we see them...it is just style!
 
 
 
@@ -267,6 +288,22 @@ A `ggplot()` is made up of _layers_: <small><small>([check your bases](https://c
 ![](img/concept-map-2.PNG)
 
 
+
+???
+
+We want and can manage all those aspects within `{ggplot2}` and its
+grammar made up of layers. 
+
+We can check if we need to recap the bases with the quick tutorial I
+already send to you all (in a real class, not in 15 minutes, I will
+provide it directly, and I would have a deck of slide an a lesson to
+review the basics of `{ggplot2}` if needed)
+
+In the basics, we have the data (the information we want to plot), the aesthetics (defining "how" we want to plot "what"), the geoms (drawing the actual plot following the defined roles with the correct shape and transformations).
+
+Next, we have the scale which, like in a map, define converts the reality (our data) in something to plot. We have facets, which permit to reproduce the same pattern-plot across different levels of our data, and at the and we have the theme, managing the style 
+
+
 ---
 class: inverse, middle, center
 
@@ -279,16 +316,26 @@ You will be asked to explore it one stage at time.
 
 <br><br><br>
 
+
 ```{r, echo = FALSE}
 countdown(minutes = 2, warn_when = 10, play_sound = TRUE,
           left = "34%", bottom = "35%")
 ```
 
-<br><br><br>
+<br><br>
+
+<small><small><small><small>Click the timer to start the countdown</small></small></small></small>
+
+<br>
+
 You have an entire whole minute for each stage. 
 
 Are you ready? Let's start with the first two!
 <br><br><br><br>
+
+???
+
+At the end, go to the live code (ap to aesthetics included)
 
 
 
@@ -325,6 +372,17 @@ penguins %>% #<<
 ]
 
 
+???
+
+Skip if live coded, quick descriptio of data otherwise
+
+> Palmer Archipelago (Antarctica) penguin data
+>
+>  - 3 species
+>  - 3 islands
+>  - sex
+>  - some body metrics
+
 
 ---
 name: gg-review
@@ -360,6 +418,17 @@ penguins %>%
 ]
 
 
+???
+
+skip if live coded, otherwise describe the aesthetics
+
+> x, y, coordinates
+> label with the intent to scatterplot them
+> colour to distinguish the species
+
+
+
+
 ---
 
 # Text in a plot: `geom_*()`etrical usage
@@ -367,6 +436,16 @@ penguins %>%
 <br>
 
 ![](img/concept-map-3.PNG)
+
+
+
+???
+
+So we are ready to draw our scatterplot of text using the appropriate geoms, which can simply be `geom_text()` and `geom_label()` which only add a rectangular filled with colour (default white) background for a clearer visualiztion (often in case of notes)
+
+
+
+
 
 
 ---
@@ -384,11 +463,18 @@ countdown(minutes = 1, warn_when = 10, play_sound = TRUE,
           left = "34%", bottom = "35%")
 ```
 
-<br><br><br>
+<br><br>
+
+<small><small><small><small>Click the timer to start the countdown</small></small></small></small>
+
+<br>
 
 Are you ready? Let's go!
 <br><br><br><br>
 
+???
+
+At the end, go to the live code
 
 
 
@@ -426,6 +512,16 @@ penguins %>%
 ```
 ]
 
+
+
+???
+
+Skip if live-code, otherwise simply show the result and take a comment to "fixed" properties that can be set outside of the aesthetics, as usual with basic `ggplot()`s
+
+
+
+
+
 ---
 
 # Text in a plot: `annotate()`s
@@ -433,6 +529,13 @@ penguins %>%
 <br>
 
 ![](img/concept-map-4.PNG)
+
+
+???
+
+As we said, if we like to add annotation that is only a single extra application of a **self-contained** geoms. We have the `annotate()` function we can personalize with almost every other geoms, simply calling it as character string as the first argument.
+For example we can ask for a "text" annotation or for a label annotation
+
 
 
 ---
@@ -450,11 +553,19 @@ countdown(minutes = 1, warn_when = 10, play_sound = TRUE,
           left = "34%", bottom = "35%")
 ```
 
-<br><br><br>
+<br><br>
+
+<small><small><small><small>Click the timer to start the countdown</small></small></small></small>
+
+<br>
+
 
 Are you ready? Let's go!
 <br><br><br><br>
 
+???
+
+At the end, go to the live code
 
 ---
 name: gg-review
@@ -495,6 +606,19 @@ penguins %>%
 ]
 
 
+
+???
+
+skip if live-code, otherwise, describe the annotation paing particular 
+attention to
+
+- the "label" argument
+- the fixed personalization (which in the geoms were possibly aesthetics)
+
+quick note on advantage of "inward" options
+
+
+
 ---
 
 # Text in a plot: scales and legends
@@ -502,6 +626,22 @@ penguins %>%
 <br>
 
 ![](img/concept-map-5.PNG)
+
+
+
+???
+
+So we arrive to the metadata, which we founf in the legends, or as title, and caption.
+
+As we said, legends are the inverse of the scale function:
+the ferst help us to understand the reality looking at the plot, the second help the creator of the plot to draw it looking at the reality.
+
+In `{ggplot2}` they are both managed by the scales functions, which exists for each aesthetics, possibly for each different type of them (eg for the colour aestetics in case of continuous or discrete variable). 
+
+So, properties of scales and leggends are managed by the scales function. But there is a useful wrapper to define the title of all the legends (axes included) that is the `labs()` function, which take as input the name of an aesthetics and the title we would like to assign to it
+
+
+
 
 
 ---
@@ -519,12 +659,20 @@ countdown(minutes = 1, warn_when = 10, play_sound = TRUE,
           left = "34%", bottom = "35%")
 ```
 
-<br><br><br>
+<br><br>
+
+<small><small><small><small>Click the timer to start the countdown</small></small></small></small>
+
+<br>
+
 
 Are you ready? Let's go!
 <br><br><br><br>
 
 
+???
+
+At the end, go to the live code
 
 
 
@@ -580,6 +728,15 @@ penguins %>%
 ]
 
 
+??? skip if live coding, otherwise describe the
+
+- the different way to set the title
+- how we have change the axes' text ticks
+- and the `labs()` funciton
+
+
+
+
 ---
 
 # Text in a plot: split in `facet_*()`s
@@ -587,6 +744,14 @@ penguins %>%
 <br>
 
 ![](img/concept-map-6.PNG)
+
+
+
+???
+
+So we can facet the plot. That is a border-line special case.
+
+In this case, to set the header of the facets strip we need to call a labeller function inside the `facet_*()` function, and they are exceptionally not managed by the scales
 
 
 
@@ -605,11 +770,19 @@ countdown(minutes = 1, warn_when = 10, play_sound = TRUE,
           left = "34%", bottom = "35%")
 ```
 
-<br><br><br>
+<br><br>
+
+<small><small><small><small>Click the timer to start the countdown</small></small></small></small>
+
+<br>
+
 
 Are you ready? Let's go!
 <br><br><br><br>
 
+???
+
+At the end, go to the live code
 
 
 ---
@@ -665,6 +838,17 @@ penguins %>%
 ]
 
 
+
+???
+
+Skip if live-coding, otherwise simply put the attention on
+
+- the faceting result
+- the labeller effect (mention to see the Standard R help to going deeper with that)
+
+
+
+
 ---
 
 # Text in a plot: adding `themes()`
@@ -672,6 +856,27 @@ penguins %>%
 <br>
 
 ![](img/concept-map-7.PNG)
+
+
+???
+
+Finaly, we arrive to the theme customization. This is simple a metter of combine what we would like to personalize: something about
+
+- the whole plot
+- a legend
+- the axis
+- the  faceting strips?
+
+
+And what of that we want to personalize, based on what that aspect as:
+
+- a title
+- or a text
+
+
+In any case, the function inside the `theme()` one is the `element_text()` which permit to personalize all the main textual axpect of the text
+
+
 
 
 ---
@@ -691,11 +896,19 @@ countdown(minutes = 2, warn_when = 10, play_sound = TRUE,
           left = "34%", bottom = "35%")
 ```
 
-<br><br><br>
+<br><br>
+
+<small><small><small><small>Click the timer to start the countdown</small></small></small></small>
+
+<br>
+
 
 Are you ready? Let's go!
 <br><br><br><br>
 
+???
+
+At the end, go to the live code
 
 
 ---
@@ -755,6 +968,12 @@ penguins %>%
 ]
 
 
+
+
+???
+
+Skip if live-coding, otherwhise put the attention of the combination of the key into the `theme()` function, and the option into the `element_text()`
+
 ---
 class: inverse, middle, center
 
@@ -780,12 +999,21 @@ countdown(minutes = 15, warn_when = 180, play_sound = TRUE,
 # Thank you for your attention!
 [@CorradoLanera](https://www.CorradoLanera.it/)
 
+
+???
+
+Thanks...but in the next slide there is the overview of the concept maps!!!
+
 ---
 # Full concept map
 
 ![](img/concept-map.gif)
 
 
+
+???
+
+1 frame/second
 
 
 
