@@ -213,7 +213,7 @@ class: inverse
   and how they are related/managed by `{ggplot2}`.
 
 3. **Apply** examples of different types of labeling a plot using:
-  - `geom_text()`, `geom_label()`
+  - `geom_text(alpha = 0.9, size = 3)`, `geom_label()`
   - `scale_*_*()`, `labs()` (for `facet_*` too)
   - `annotate()`
   - `theme()` (ones involving `element_text()` only)
@@ -270,7 +270,7 @@ You will be asked to explore it one stage at time.
 
 &lt;br&gt;&lt;br&gt;&lt;br&gt;
 
-<div class="countdown" id="timer_5f5e3999" style="bottom:35%;left:34%;" data-audio="true" data-warnwhen="10">
+<div class="countdown" id="timer_5f5e5745" style="bottom:35%;left:34%;" data-audio="true" data-warnwhen="10">
 <code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 
@@ -383,7 +383,7 @@ Return to the [**TUTORIAL**](https://corradolanera.shinyapps.io/text-gg-checks/#
 
 &lt;br&gt;&lt;br&gt;&lt;br&gt;
 
-<div class="countdown" id="timer_5f5e39d3" style="bottom:35%;left:34%;" data-audio="true" data-warnwhen="10">
+<div class="countdown" id="timer_5f5e55ec" style="bottom:35%;left:34%;" data-audio="true" data-warnwhen="10">
 <code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 
@@ -425,7 +425,7 @@ penguins %&gt;%
   ggplot(aes(x = bill_length_mm, y = bill_depth_mm,
     label = sex,
     colour = species)) +
-* geom_text(check_overlap = TRUE)
+* geom_text(alpha = 0.9, size = 3)
 ```
 ]
 
@@ -448,7 +448,7 @@ Return to the [**TUTORIAL**](https://corradolanera.shinyapps.io/text-gg-checks/#
 
 &lt;br&gt;&lt;br&gt;&lt;br&gt;
 
-<div class="countdown" id="timer_5f5e3923" style="bottom:35%;left:34%;" data-audio="true" data-warnwhen="10">
+<div class="countdown" id="timer_5f5e5752" style="bottom:35%;left:34%;" data-audio="true" data-warnwhen="10">
 <code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 
@@ -488,7 +488,7 @@ penguins %&gt;%
   ggplot(aes(x = bill_length_mm, y = bill_depth_mm,
     label = sex,
     colour = species)) +
-  geom_text(check_overlap = TRUE) +
+  geom_text(alpha = 0.9, size = 3) +
 * annotate("label", x = 30, y = 22.5, label = "STUMPY",
            hjust = "inward", vjust = "inward") +
 * annotate("label", x = 60, y = 12.5, label = "TAPERED",
@@ -516,7 +516,7 @@ Return to the [**TUTORIAL**](https://corradolanera.shinyapps.io/text-gg-checks/#
 
 &lt;br&gt;&lt;br&gt;&lt;br&gt;
 
-<div class="countdown" id="timer_5f5e3a56" style="bottom:35%;left:34%;" data-audio="true" data-warnwhen="10">
+<div class="countdown" id="timer_5f5e5693" style="bottom:35%;left:34%;" data-audio="true" data-warnwhen="10">
 <code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 
@@ -561,7 +561,7 @@ penguins %&gt;%
   ggplot(aes(x = bill_length_mm, y = bill_depth_mm,
     label = sex,
     colour = species)) +
-  geom_text(check_overlap = TRUE) +
+  geom_text(alpha = 0.9, size = 3) +
   annotate("label", x = 30, y = 22.5, label = "STUMPY",
            hjust = "inward", vjust = "inward") +
   annotate("label", x = 60, y = 12.5, label = "TAPERED",
@@ -570,9 +570,9 @@ penguins %&gt;%
 *   labels = scales::label_number(suffix = " cm")) +
 * scale_y_continuous("Bill depth",
 *   labels = scales::label_number(suffix = " cm")) +
-  scale_colour_manual(
-    values = c("#C55ACA", "#0E7274", "#FF6F04"),
-    breaks = c("Chinstrap", "Gentoo", "Adelie"),
+* scale_colour_manual(
+*   values = c("#C55ACA", "#0E7274", "#FF6F04"),
+*   breaks = c("Chinstrap", "Gentoo", "Adelie"),
 *   labels = c("CHINSTRAP", "GENTOO", "ADÉLIE")) +
 * labs(title = "Penguins' bills across islands",
 *      caption = "Data from {palmerpenguins} package.",
@@ -601,7 +601,7 @@ Return to the [**TUTORIAL**](https://corradolanera.shinyapps.io/text-gg-checks/#
 
 &lt;br&gt;&lt;br&gt;&lt;br&gt;
 
-<div class="countdown" id="timer_5f5e381f" style="bottom:35%;left:34%;" data-audio="true" data-warnwhen="10">
+<div class="countdown" id="timer_5f5e55c7" style="bottom:35%;left:34%;" data-audio="true" data-warnwhen="10">
 <code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 
@@ -644,7 +644,7 @@ penguins %&gt;%
   ggplot(aes(x = bill_length_mm, y = bill_depth_mm,
     label = sex,
     colour = species)) +
-  geom_text(check_overlap = TRUE) +
+  geom_text(alpha = 0.9, size = 3) +
   annotate("label", x = 30, y = 22.5, label = "STUMPY",
            hjust = "inward", vjust = "inward") +
   annotate("label", x = 60, y = 12.5, label = "TAPERED",
@@ -686,7 +686,7 @@ Return to the [**TUTORIAL**](https://corradolanera.shinyapps.io/text-gg-checks/#
 
 &lt;br&gt;&lt;br&gt;&lt;br&gt;
 
-<div class="countdown" id="timer_5f5e397c" style="bottom:35%;left:34%;" data-audio="true" data-warnwhen="10">
+<div class="countdown" id="timer_5f5e5654" style="bottom:35%;left:34%;" data-audio="true" data-warnwhen="10">
 <code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 
@@ -729,7 +729,7 @@ penguins %&gt;%
   ggplot(aes(x = bill_length_mm, y = bill_depth_mm,
     label = sex,
     colour = species)) +
-  geom_text(check_overlap = TRUE) +
+  geom_text(alpha = 0.9, size = 3) +
   annotate("label", x = 30, y = 22.5, label = "STUMPY",
            hjust = "inward", vjust = "inward") +
   annotate("label", x = 60, y = 12.5, label = "TAPERED",
@@ -764,7 +764,7 @@ class: inverse, middle, center
 Click [HERE](https://corradolanera.shinyapps.io/text-gg-checks/#section-final-test)
 to test your brand-new skills in managing text in `ggplot()`s, and the efficacy of this class too ;-)
 
-<div class="countdown" id="timer_5f5e3869" style="bottom:35%;left:34%;" data-audio="true" data-warnwhen="180">
+<div class="countdown" id="timer_5f5e54b7" style="bottom:35%;left:34%;" data-audio="true" data-warnwhen="180">
 <code class="countdown-time"><span class="countdown-digits minutes">15</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 
