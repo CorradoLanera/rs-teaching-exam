@@ -128,7 +128,8 @@ Check for yourself
 
 ```{r quiz-aes-code, exercise = TRUE, eval=FALSE}
 penguins %>% 
-  ggplot(aes(x = bill_length_mm, y = bill_depth_mm, ___ = species))
+  ggplot(aes(x = bill_length_mm, y = bill_depth_mm, ___ = species)) +
+  geom_text()
 ```
 
 
@@ -200,7 +201,7 @@ Check for yourself
 ```{r quiz-geom-code, exercise = TRUE, eval=FALSE}
 penguins %>% 
   ggplot(aes(x = bill_length_mm, y = bill_depth_mm, label = species)) +
-  geom____() + # try: colour = "blue" / aes(colour = "blue") ?
+  geom____() # try: colour = "blue" / aes(colour = "blue") ?
 ```
 
 
@@ -239,7 +240,7 @@ Check for yourself
 penguins %>% 
   ggplot(aes(x = bill_length_mm, y = bill_depth_mm, label = species)) +
   geom_text(colour = "blue") +
-  annotate(___, x = 45, y = 17.5, label = "center",
+  annotate(___, x = 45, y = 17.5, label = "center", # try both "text", and "label"
            colour = "red", fill = "blue", size = 24)
 ```
 
@@ -260,7 +261,7 @@ correct)
 quiz(caption = "Scale-quiz",
   question("What labeling functions you can use from the package
            `{scale}` (automatically imported with `{ggplot2}`) to 
-           format ticks' labels for the axes?",
+           format ticks' labels for the axes? (Note: you are not supposed to know the correct answer(s) to this question...just guess it/them ;-))",
            
     answer("`label_number()` for decimal format (e.g. 0.12, 1,234)",
            correct = TRUE,
@@ -284,8 +285,7 @@ quiz(caption = "Scale-quiz",
            correct = TRUE,
            message = random_praise()),
     answer("`label_wrong()` for answer suggestion (e.g. \"check this too: wrong!`\")",
-           correct = TRUE,
-           message = random_praise()),
+           message = "Can we suppose that `label_wrong()` could be...wrong? :-)"),
 
         
     try_again = random_encouragement(),
@@ -452,7 +452,7 @@ quiz(caption = "Theme-quiz",
            correct = TRUE,
            message = random_praise()),
     
-    answer("Setting, eg, the `title.font` option into the `labs()` call",
+    answer("Setting, eg, the `title.family` option into the `labs()` call",
            message = "Using `labs()` you can set the title (with `title = `),
            but it is used to define it only, not its style."),
     answer("Setting the aesthetic `family` in the main `aes()` into the
@@ -478,7 +478,7 @@ quiz(caption = "Theme-quiz",
            into the faceting strips' headers, i.e. it change the data
            to use for them accordingly to your interest. Anyway, it does
            not involve style, only the data."),
-    answer("`facet.*`", message = "Unfortunately, `facet.*` is not how 
+    answer("A call to `facet.*` inside `theme()`", message = "Unfortunately, `facet.*` is not how 
            `{ggplot2}` call facets when referring to them. But, they
            look like strips..."),
     

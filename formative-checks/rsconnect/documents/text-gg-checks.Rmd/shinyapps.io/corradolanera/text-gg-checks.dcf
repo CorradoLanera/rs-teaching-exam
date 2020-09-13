@@ -5,9 +5,9 @@ account: corradolanera
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 2796194
-bundleId: 3624251
+bundleId: 3624453
 url: https://corradolanera.shinyapps.io/text-gg-checks/
-when: 1600003913.87378
+when: 1600010045.65695
 asMultiple: FALSE
 asStatic: FALSE
 ignoredFiles: base-gg-checks.html|base-gg-checks.Rmd|text-gg-checks.html
