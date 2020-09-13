@@ -681,11 +681,13 @@ class: inverse, middle, center
 
 Return to the [**TUTORIAL**](https://corradolanera.shinyapps.io/text-gg-checks/#section-step-by-step-checks) for the seventh stage about `theme()`s!
 
+(You have reached the last one: you have gain a double-time gift)
+
 
 <br><br><br>
 
 ```{r, echo = FALSE}
-countdown(minutes = 1, warn_when = 10, play_sound = TRUE,
+countdown(minutes = 2, warn_when = 10, play_sound = TRUE,
           left = "34%", bottom = "35%")
 ```
 
@@ -761,7 +763,7 @@ class: inverse, middle, center
 # --Your Turn--
 
 Click [HERE](https://corradolanera.shinyapps.io/text-gg-checks/#section-final-test)
-to test your brand-new skills in managing text in `ggplot()`s, and the efficacy of this class
+to test your brand-new skills in managing text in `ggplot()`s, and the efficacy of this class too ;-)
 
 ```{r, echo = FALSE}
 countdown(minutes = 15, warn_when = 180, play_sound = TRUE,
