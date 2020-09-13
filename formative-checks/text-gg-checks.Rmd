@@ -63,8 +63,8 @@ quiz(caption = "Data-quiz",
     random_answer_order = TRUE
   ),
   
-  question("When you want to add a single piece of text in a plot, it
-           is:",
+  question("When you want to add a new (i.e., not already contained in
+           your main data) single piece of text inside a plot, it is:",
            
     answer("data",
            correct = TRUE,
@@ -98,23 +98,23 @@ Answer the following question.
 quiz(caption = "Aes-quiz",
   question("Suppose you have a variable `var` reporting textual 
            information for each observation in the data. You would like
-           to plot those pieces of information into the plot directly.
-           What aesthetics will you set for that variable into the
-           `aes()` call?",
+           to plot those pieces of information into the plot at the
+           corresponding coordinates indicated by the variables `x`,
+           and `y` (already in your data).
+           How would you set the main aesthetics into the `ggplot()`
+           call?",
            
-    answer("label: `aes(x, y, label = var)`",
+    answer("`aes(x, y, label = var)`",
            correct = TRUE,
            message = random_praise()),
     
-    answer("text: `aes(x, y, text = var)`",
+    answer("`aes(x, y, text = var)`",
            message = "geoms drawing text does not use the keyword
            `text` for that but `label`"),
     
-    answer("colour: `aes(x, y, colour = var)`",
-           message = "You can set `colour` to `var` if you want to draw
-           the text in distinct colours (one colour for each distinct
-           text) that do this...but you still miss to draw the text
-           into the plot (and so you cannot see the colours) ;-)"),
+    answer("`aes(x, y, var)`",
+           message = "Only the first two aesthetics (`x`, and `y`) are
+           positional, ie, you won't require to set them by name."),
     
     try_again = random_encouragement(),
     allow_retry = TRUE,
@@ -172,7 +172,7 @@ quiz(caption = "Geom-quiz",
   
   
   question("If you want to draw ALL your textual data in blue, How can
-           you do?",
+           you set the call to `geom_text()`?",
            
     answer("`geom_text(colour = \"blue\")`",
            correct = TRUE,
@@ -190,9 +190,27 @@ quiz(caption = "Geom-quiz",
     try_again = random_encouragement(),
     allow_retry = TRUE,
     random_answer_order = TRUE
-  ),
-  
-  
+  )
+)
+```
+
+### {data-allow-skip=TRUE}
+Check for yourself
+
+```{r quiz-geom-code, exercise = TRUE, eval=FALSE}
+penguins %>% 
+  ggplot(aes(x = bill_length_mm, y = bill_depth_mm, label = species)) +
+  geom____() + # try: colour = "blue" / aes(colour = "blue") ?
+```
+
+
+### Annotation
+
+Answer the following questions (in the first one you can select more
+than one correct answer).
+
+```{r quiz-annotation}
+quiz(caption = "Geom-quiz",
   question("What is the first argument of `annotate()`?",
            
     answer("A character string matching a (any) geom, like \"text\"",
@@ -211,24 +229,23 @@ quiz(caption = "Geom-quiz",
     allow_retry = TRUE,
     random_answer_order = TRUE
   )
-  
 )
 ```
 
 ### {data-allow-skip=TRUE}
 Check for yourself
 
-```{r quiz-geom-code, exercise = TRUE, eval=FALSE}
+```{r quiz-annotation-code, exercise = TRUE, eval=FALSE}
 penguins %>% 
   ggplot(aes(x = bill_length_mm, y = bill_depth_mm, label = species)) +
-  geom____() + # try: colour = "blue" / aes(colour = "blue") ?
+  geom_text(colour = "blue") +
   annotate(___, x = 45, y = 17.5, label = "center",
            colour = "red", fill = "blue", size = 24)
 ```
 
 
 
-
+  
 
 
 
@@ -243,7 +260,7 @@ correct)
 quiz(caption = "Scale-quiz",
   question("What labeling functions you can use from the package
            `{scale}` (automatically imported with `{ggplot2}`) to 
-           format ticks' labels for the axes",
+           format ticks' labels for the axes?",
            
     answer("`label_number()` for decimal format (e.g. 0.12, 1,234)",
            correct = TRUE,
@@ -251,26 +268,58 @@ quiz(caption = "Scale-quiz",
     answer("`label_scientific()` for scientific notation (e.g. 1e05, 1.5e-02)",
            correct = TRUE,
            message = random_praise()),
-    answer("`label_bytes()` to scale bytes into human friendly units (1 kb, 2 MB, etc)",
+    answer("`label_bytes()` to scale bytes into human friendly units (e.g. 1 kb, 2 MB, etc)",
            correct = TRUE,
            message = random_praise()),
-    answer("`label_dollar()` to label currencies (not only dollars)",
+    answer("`label_dollar()` to label currencies (i.e. not only dollars)",
            correct = TRUE,
            message = random_praise()),
-    answer("`label_percent()` for % to the number (2.5%, 50%, etc)",
+    answer("`label_percent()` for % to the number (e.g. 2.5%, 50%, etc)",
            correct = TRUE,
            message = random_praise()),
-    answer("`label_pvalue()` use \"<\" and \">\" for p-values close to 0 and 1",
+    answer("`label_pvalue()` use \"<\" and \">\" for p-values close to 0 and 1 (e.g. <0.001, 0.25, p >= 0.99)",
            correct = TRUE,
            message = random_praise()),
-    answer("`label_number_si()` use SI prefixes (2k, 1M, 5T etc)",
+    answer("`label_number_si()` use SI prefixes (e.g. 2k, 1M, 5T etc)",
            correct = TRUE,
            message = random_praise()),
-    answer("`label_wrong()` for answer suggestion (check this too: wrong!)",
+    answer("`label_wrong()` for answer suggestion (e.g. \"check this too: wrong!`\")",
            correct = TRUE,
            message = random_praise()),
 
         
+    try_again = random_encouragement(),
+    allow_retry = TRUE,
+    random_answer_order = TRUE
+  ),
+  
+  
+  question("How can you set the title of the colour legend to \"New
+           title\"?",
+           
+    answer("Using `labs(colour = \"New title\")`",
+           correct = TRUE,
+           message = random_praise()),
+    
+    answer("Using `labs(legend = \"New title\")`",
+           message = "You can have more than one legend in a plot,
+           so using `labs(legend = \"New title\")` would represent an 
+           undefidend intent"),
+    
+    answer("`scale_colour_<TYPE>(\"New title\")`",
+           correct = TRUE,
+           message = random_praise()),
+    
+    answer("`ggplot(aes(x, y, colour = \"New title\"))`",
+           message = "This will be change the whole colour aesthetics
+           to use a single colour (red, but named \"New title\") with
+           a corresponding legend's title named \"colour\". You need to
+           change the name of the legend only, and you have two options:
+           using the first argument of the corresponding
+           `scale_<AES>_<TYPE>()` call, or to call `labs()` (which aims
+           to set all the legends'names) and pass your title to its 
+           `colour` argument"),
+    
     try_again = random_encouragement(),
     allow_retry = TRUE,
     random_answer_order = TRUE
@@ -283,10 +332,12 @@ Check for yourself
 
 ```{r quiz-scales-code, exercise = TRUE, eval=FALSE}
 penguins %>% 
-  ggplot(aes(x = bill_length_mm, y = bill_depth_mm, label = species)) +
+  ggplot(aes(x = bill_length_mm, y = bill_depth_mm,
+             label = species, colour = island)) +
   geom_point() +
   scale_x_continuous(labels = scales::label____()) +
   scale_y_continuous(labels = scales::label____()) +
+  labs(___ = ___)
 ```
 
 
@@ -316,12 +367,15 @@ quiz(caption = "Facet-quiz",
            much better. Take a look at `?labeller` and  
            http://bit.ly/change-facets-titles"),
     
-    answer("Using the `strip.text` option of `theme()` and the
-           `element_text()` function",
-           message = "`theme()` can change only styles, not contents."),
-    
-    answer("d",
-           message = ""),
+    answer("Using `labs(facet = ___)`",
+           message = "`labs()` set only titles! The names of the 
+           facet's strips could seems like titles but they are actually 
+           the \"text\" of that special kind of legends (ie, they are
+           the levels of the content of the faceting
+           variables, not their names!). On the other hand, keep in mind
+           that facets are not managed by scales function as it does 
+           with all the other legends, but they require a special 
+           labeller called directly inside the `facet_*()` call."),
     
     try_again = random_encouragement(),
     allow_retry = TRUE,
@@ -365,11 +419,11 @@ facet_grid(island~sex,
 ### Theme
 
 Answer the following questions (you can select more than one correct
-answer in the second-to-last).
+answer in the first and the second-to-last ones).
 
 ```{r quiz-theme}
-quiz(caption = "Data-quiz",
-  question("What can you change using `theme()`?",
+quiz(caption = "Theme-quiz",
+  question("What can you change using `theme()`?", type = "multiple", 
            
     answer("Style",
            correct = TRUE,
@@ -391,17 +445,21 @@ quiz(caption = "Data-quiz",
   ),
   
   question("What would you use to change the style of something
-           related to the whole plot (like its title)",
+           related to the whole plot (like the font family of its
+           title)",
            
-    answer("`plot.*`",
+    answer("A call to `plot.*` inside `theme()`",
            correct = TRUE,
            message = random_praise()),
     
-    answer("`axis.*`"),
-    answer("`legend.*`"),
-    answer("`strip.*`"),
-    answer("`facet.*`"),
-    
+    answer("Setting, eg, the `title.font` option into the `labs()` call",
+           message = "Using `labs()` you can set the title (with `title = `),
+           but it is used to define it only, not its style."),
+    answer("Setting the aesthetic `family` in the main `aes()` into the
+           call to `ggplot()`",
+           message = "An aesthetic maps information inside the data, do 
+           not set how a piece of mapped information would be styled"),
+
     try_again = random_encouragement(),
     allow_retry = TRUE,
     random_answer_order = TRUE
@@ -410,13 +468,16 @@ quiz(caption = "Data-quiz",
   question("What would you use to change the style of something
            related to the faceting's strips?",
            
-    answer("`strip.*`",
+    answer("A call to `strip.*` inside `theme()`",
            correct = TRUE,
            message = random_praise()),
     
-    answer("`axis.*`"),
-    answer("`legend.*`"),
-    answer("`plot.*`"),
+    answer("Setting a `family` property into a customized `labeller` 
+           function to use inside the `facet_*()` call",
+           message = "A `labeller` produce _what_ will be displayed 
+           into the faceting strips' headers, i.e. it change the data
+           to use for them accordingly to your interest. Anyway, it does
+           not involve style, only the data."),
     answer("`facet.*`", message = "Unfortunately, `facet.*` is not how 
            `{ggplot2}` call facets when referring to them. But, they
            look like strips..."),
@@ -435,9 +496,10 @@ quiz(caption = "Data-quiz",
     
     answer("set `axis.title.x`, `axis.title.y` in the same way",
            correct = TRUE,
-           message = paste(random_praise(), "Anyway, this would not be 
+           message = paste(random_praise(), "Anyway, \"set
+           `axis.title.x`, `axis.title.y` in the same way\" would not be 
              the best choice if the changes are the same.")),
-    answer("axis.text"),
+    answer("`axis.text`"),
     answer("set `axis.text.x`, `axis.text.y` in the same way"),
 
     try_again = random_encouragement(),
@@ -447,17 +509,17 @@ quiz(caption = "Data-quiz",
   
   question("What can you set using `element_text()`?",
            
-    answer("Only the style, like font face, family, size, angle, colour,
-           etc",
+    answer("Only the style of the corresponding text: font face, family,
+           size, angle, colour, etc",
            correct = TRUE,
            message = random_praise()),
     
-    answer("Only textual elements, like lables, and their position",
+    answer("Only textual elements: like lables, and their position",
            message = paste(random_praise(), "`theme()` involves style
            only, no data nor meta-data change. Using `theme()` you can
            only change _how_ things are viewed, not _what_!")),
-    answer("All the element involved in text data, like the elements
-           displayed and their style",
+    answer("All the element involved in plotting text: fromt the
+           elements displayed to their style",
            message = paste(random_praise(), "`theme()` involves style
            only, no data nor meta-data change. Using `theme()` you can
            only change _how_ things are viewed, not _what_!")),
