@@ -445,6 +445,18 @@
       "Repository": "CRAN",
       "Hash": "a525aba14184fec243f9eaec62fbed43"
     },
+    "icon": {
+      "Package": "icon",
+      "Version": "0.1.0",
+      "Source": "GitHub",
+      "RemoteType": "github",
+      "RemoteHost": "api.github.com",
+      "RemoteRepo": "icon",
+      "RemoteUsername": "ropenscilabs",
+      "RemoteRef": "HEAD",
+      "RemoteSha": "a5bc1cc928b15a5296b06f66faa9e08264ad4064",
+      "Hash": "e8034d1dff8b07070984eff0498effb5"
+    },
     "ini": {
       "Package": "ini",
       "Version": "0.3.1",

@@ -360,7 +360,7 @@ class: inverse, center
 
 <br>
 
-# --Your Turn--
+# ---Your-Turn-->
 
 ```{r, echo = FALSE}
 countdown(minutes = 1, warn_when = 10, play_sound = TRUE,
@@ -957,48 +957,29 @@ So, we can enlarge our title, change the font-family of the legend text using mo
 
 And that's it! We have obtained our final plot which show how we can include and personalize all the kind of text in a plot using `ggplot2`.
 
+
+
 ---
 class: inverse, center
 
+<br>
 
-# --Your Turn--
-
-Click [HERE](https://corradolanera.shinyapps.io/text-gg-checks/)
-to test your brand-new skills in managing text in `ggplot()`s
-
-???
-
-Now you can test all your new skills in drawing text with `ggplot2`. The quiz I purpose you has a first review section for every step we performed, giving you also space to try your own code live. At the end you will be guided to produce a complete customized plot like the one we have produced here.
-
-> Provide the link of the slide on the chat, or on the blackboard: https://corradolanera.github.io/rs-teaching-exam/
-
-> if 1-5 work together, if 6+ breakout room or grops if in person
-
-# ---------
+# Time for questions!
 
 
---
-
-
-```{r, out.width="70%", echo=FALSE}
-knitr::include_graphics("img/concept-map.gif")
+```{r, echo = FALSE}
+countdown(minutes = 2, warn_when = 25, play_sound = TRUE,
+          left = "34%", bottom = "50%")
 ```
 
-# Thank you for your attention!
-[`r icon::fa("twitter")`](https://twitter.com/corradolanera) [@CorradoLanera](https://twitter.com/corradolanera) | 
-[`r icon::fa("telegram-plane")`](https://telegram.me/CorradoLanera) [@CorradoLanera](https://telegram.me/CorradoLanera)
+<br><br><br><br>
 
+<small><small><small><small>Click the timer to start the countdown</small></small></small></small>
 
 
 ???
 
-
-
-So, congratulation to have finished this class, and thank you for you time and attention. Please, feel free to reach me on twitter or telegram for any doubt.
-
-
-
-
+We should have two minutes left for some final question, how likes to start?
 
 
 ---
@@ -1033,6 +1014,78 @@ class: inverse
 
 ???
 
-To conclude, here I have put for you the main resources used to produce the current lesson, including the link to the source code of all the materials.
+Well, here I have put for you the main resources I have used to produce the current lesson, including the link to the source code producing all the presented materials.
 
-Thank you again. See you.
+
+
+
+
+
+
+
+
+---
+class: inverse, center
+
+# Congratulation!
+
+<br>
+
+
+```{r, out.width="70%", echo=FALSE}
+knitr::include_graphics("img/concept-map.gif")
+```
+
+# Thank you for your attention!
+[`r icon::fa("twitter")`](https://twitter.com/corradolanera) [@CorradoLanera](https://twitter.com/corradolanera) | 
+[`r icon::fa("telegram-plane")`](https://telegram.me/CorradoLanera) [@CorradoLanera](https://telegram.me/CorradoLanera) | 
+[`r icon::fa("link")` slides](https://corradolanera.github.io/rs-teaching-exam/) [rs-teaching-exam](https://corradolanera.github.io/rs-teaching-exam/)
+
+
+
+???
+
+
+
+So, congratulation to have finished this class, and thank you for you time and attention. Please, feel free to reach me on twitter or telegram for any doubt.
+
+
+---
+class: inverse, center
+
+# ---Your-Turn-->
+
+Click [HERE](https://corradolanera.shinyapps.io/text-gg-checks/)
+to test your brand-new skills in managing text in `ggplot()`s
+
+
+
+```{r, out.width="70%", echo=FALSE}
+knitr::include_graphics("img/concept-map.gif")
+```
+
+# Thank you for your attention!
+[`r icon::fa("twitter")`](https://twitter.com/corradolanera) [@CorradoLanera](https://twitter.com/corradolanera) | 
+[`r icon::fa("telegram-plane")`](https://telegram.me/CorradoLanera) [@CorradoLanera](https://telegram.me/CorradoLanera) | 
+[`r icon::fa("link")` slides](https://corradolanera.github.io/rs-teaching-exam/) [rs-teaching-exam](https://corradolanera.github.io/rs-teaching-exam/)
+
+
+???
+
+One last thing, I have prepared for you a set of quizzes, so you can test all your new skills in drawing text with `ggplot2`. Each one purpose a review for every step we performed here today, giving you also space to try your own code live. 
+
+In the last section of the quiz you will be guided to produce a complete customized plot like the one we have produced here.
+
+Have a nice day, and thank you!!
+
+> Provide the link of the slide on the chat, or on the blackboard: https://corradolanera.github.io/rs-teaching-exam/
+
+> if 1-5 work together, if 6+ breakout room or grops if in person
+
+
+
+
+
+
+
+
