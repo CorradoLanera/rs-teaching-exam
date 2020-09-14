@@ -122,7 +122,7 @@ pre {
 
 ???
 
-Welcome to the **(Meta)data texting in `{ggplot2}` class**.
+Welcome to the class on **(Meta)data texting in `{ggplot2}`**.
 This will be a practical introduction to the usage of text when you are drawing plots with `{ggplot2}`
 
 
@@ -399,7 +399,7 @@ What are the 3+1 general types of textual elements you can find in a plot?
 
 To start thinking about the text into plots, I would like you to answer a quick question: What do you think are the 3+1 general types of textual elements you can find in a plot?
 
-Please, unmute yourself and start this one-minute discussion together among yourselves.
+Please, unmute yourself and start this one-minute discussion together.
 
 - Directly ask to unmute and discuss if 1-5 people
 - breakout room (of ~3) if >5 people
@@ -431,14 +431,14 @@ Please, unmute yourself and start this one-minute discussion together among your
 
 In a plot you can include 3 main types of textual objects:
 
-- data, if you like to draw a textual label at each data point
-- metadata, which are properties of the data you plot (like the plot title or legends)
-- or, you can add extra annotation including information, like a tag, which are not structured into the main dataset you are going to use.
+- data, if you want to draw a textual label at each data point
+- meta-data, which are the properties of the data you plot or of the plot itself (like the axes labels and ticks, the legends, or the plot title)
+- or, you can add extra annotation, like a tag, which is not structured into the main data-set you are using.
 
 
 Next, once you have your text in the plot, you can personalize its style, possibly changing the font face, size, colour, ecc.
 
-One important thing to keep in mind is that style change **only how** we can see the data, not **what** data we see...it is all and only about style, not content!
+One important thing to keep in mind is that style change **only how** we can see the data, not **what** data we see...it is all and only about style, not content! ANd that is why I said 3+1.
 
 
 
@@ -477,7 +477,11 @@ And geoms, that draw the plot according to the aesthetics recipes, and using the
 
 > Have you ever see the other layers, reported in orange? (Thumbs UP)
 
-You can think to a scale as the opposite of a legend: while legends serve us to understand the reality looking at the plot, scales serve us to draw the plot looking at the reality. The facet is a side layer allowing us to replicate the rules defined for one plot stratifying it according to the data levels we have, producing a grid of plots accordingly. Finally, the theme, simply manages all the styles. 
+- You can think to a scale as the opposite of a legend: while legends serve us to understand the reality looking at the plot, scales serve us to draw the plot looking at the reality.
+
+- The facet is a side layer allowing us to replicate the rules defined for one plot stratifying it according to the data levels we have, producing a grid of plots accordingly.
+
+- Finally, the theme, simply manages all the styles. 
 
 
 
@@ -527,7 +531,7 @@ penguins %>% #<<
 
 So we can start. The first thing to do is to keep some data. Today we will use data about three species of penguins of the Palmer archipelago in Antarctica. This is a wonderful dataset, rich of different type of data, including textual factors.
 
-So, the nest step is to define what we want to see into the; and in `{ggplot2}` words, this means to define the aesthetics maps.
+So, the next step is to define what we want to see into the plot; that in `{ggplot2}` words, this means to define the aesthetics maps.
 
 
 ---
@@ -566,9 +570,11 @@ penguins %>%
 
 ???
 
-Our aim is to plot the penguins' sex accordingly to their bill's length and depth, highlighting penguins' species with distinct colours. Hence, we set the corresponding aesthetics accordingly. In particular, we use the key "label" to define which variable `ggplot()` should use for the textual data to represent, and we set other aesthetics (like x, y, and colour) as usual for a ggplot. 
+Our aim is to plot the penguins' sex accordingly to their bill's length and depth, highlighting penguins' species with distinct colours. Hence, we need to set the corresponding aesthetics accordingly.
 
-As we can see, the axes' titles are already set, as well the plot's coordinate-grid, but anything is drawing yet, so no colour nor the corresponding legend either.
+In particular, we use the key "label" to define which variable `ggplot()` should use for the textual data to represent, and we set other aesthetics (like x, y, and colour) as usual for a ggplot. 
+
+As we can see, simply defining the aesthetics maps, the axes' titles are already set too, as well as the plot's coordinate-grid. Anyway anything is drawing yet, so no colour and the corresponding legend either.
 
 
 
@@ -584,7 +590,7 @@ As we can see, the axes' titles are already set, as well the plot's coordinate-g
 
 ???
 
-Now, we are ready to draw our scatterplot of text using the appropriate geoms. For text, they can be the `geom_text()` or the `geom_label()`. The last one is different from the first simply because it adds a coloured rectangle background, filled white by default, behind each piece of text.
+Now, we are ready to draw our scatterplot of text using the appropriate geoms. For text, the geoms we can use are the `geom_text()` or the `geom_label()`. The last one is different from the first simply because it adds a coloured rectangle background, filled white by default, behind each piece of text to make it more readable.
 
 
 
@@ -629,7 +635,7 @@ penguins %>%
 ???
 
 
-We did it here using `geom_text()` and, as usual, we can also set some fixed properties (set outside of any aesthetics) like the opacity proportion, or the size of what the geom should draw.
+We did it here using `geom_text()` and, as usual, we can also set some fixed properties (set outside of any aesthetics, given that we want to set them, and not to map a variable to them) like the opacity proportion, or the size of what the geom should draw.
 
 
 
@@ -650,7 +656,7 @@ So we have seen how to draw text from our primary data. On the other hand, an an
 
 We can think of it as a single occurrence of a geom instance. So, if we want draw it in the standard way, we could (and must) define, and additional single-row data frame and use the standard "data-aesthetic-geom" stack of layers to draw it.
 
-Or... we can use the `annotate()` function, which takes a character string defining the geom we would like to use as its first argument, and next all the geom's parameter used to draw the annotation with the selected geom.
+Or... we can use the `annotate()` function instead, which takes a character string defining the geom we would like to use as its first argument, and next all the geom's parameter used to draw the annotation within the selected geom.
 
 Let's see how it works!
 
@@ -696,7 +702,7 @@ penguins %>%
 
 ???
 
-So, for example, if we want to put a single occurrence of the "geom_label" to put a tag into the plot, we can call `annotate()` using the string "label" as its first argument to ask `{ggplot2}` to use `geom_label()` function for this annotation. Next, we can pass to it the coordinate, and the label to draw with all the other parameter of choice like the colour that are originally included in the `geom_label` function.
+For example, if we want to put a single occurrence of the "geom_label" to put a tag into the plot, we can call `annotate()` using the string "label" as its first argument to ask `{ggplot2}` to use `geom_label()` function for this annotation. Next, we can pass to it the coordinate, and the label to draw with all the other parameter of choice, like the colour that are originally included in the `geom_label` function we have asked `annotate()` to use.
 
 Moreover, the `annotate()` function also has options to slightly move the annotation automatically respect to the whole plot, which could be useful when we want to draw tags near the borders to be sure they will always be visible. 
 
@@ -716,9 +722,9 @@ Moreover, the `annotate()` function also has options to slightly move the annota
 
 After drawing data, we pass to their characteristics, which are their meta-data, like the legends, the title, or the caption.
 
-The last two are simple and have only their "text" to draw; for them, we can use the `labs()` function. 
+The last two are quite simple, and they have only their "text" to draw; for that, we can use the `labs()` function. 
 
-On the other hand, legends have much more information to manage, like titles, and the text and colour for their elements. All these aspects regard the scales of the project (one scale, and one legend, for each aesthetic used). They are all managed by `scale_*` functions composed by the fix tag "scale", _underscore_ the name of the aesthetic of reference, _underscore_ the type of scale to use (like continuous or discrete). 
+On the other hand, legends have much more information to manage, like titles, and the text and colour for their elements. All these aspects regard the scales of the project (one scale, and one legend, for each aesthetic used). They are all managed by `scale_*` functions, which are all composed in the same way as a fix tag "scale", _underscore_ the name of the aesthetic of reference, _underscore_ the type of scale to use (like continuous or discrete, or manual for a complete control of the scale). 
 
 For the title of those legends, we could choose to pass it as the first argument of the corresponding scale function or to use the `labs()` function again. This could be much more convenient in readability and type-saving than using scales if we don't have other personalization to perform for them.
 
@@ -785,9 +791,11 @@ penguins %>%
 
 In our plot, we want to add the unit of measure to the axes' ticks texts, so we involve the scale functions, and we use them to set their title too.
 
-On the other hand, we like to produce legend for the colours according to the artwork by Allison Hort. So, we set all uppercase _labels_, and the corresponding colours'_value_ for each level (which `ggplot2` calls _brakes_).
+On the other hand, we like to change colours and the corresponding legend according to the artwork by Allison Hort. So, we set all uppercase _labels_, and the corresponding colours'_value_ for each level (which `ggplot2` calls _brakes_).
 
-Just for showing all the ways to use `labs()`, we use it to set the color legend's title, besides the plot title and caption, instead of setting it into the colour scale directly. 
+As you can see, for the axes we have used an automatic continuous scale, while for colours a complete custom manual one, to define levels (with their showed order), and the corresponding updated color values and labels.
+
+Just for showing all the ways we can use `labs()`, we used it to set the color legend's title, besides the plot title and caption, instead of setting it into the colour scale directly, as we did for the x and y scales. 
 
 
 
@@ -807,7 +815,7 @@ Just for showing all the ways to use `labs()`, we use it to set the color legend
 
 So, now that we have defined all the plot's data, geometries, and meta-data scale rules, we can facet the graph. As I mentioned earlier, that is a particular side case.
 
-In fact, facets are a sort of a particular legend, like the axes are. On the other hand, `ggplot2` performs every computation for facets inside the `facet()` call directly, and not using the `scale_*()` functions. For that reason, we must use a special `labeler` to manage the information to show in the facets' headers.
+In fact, facets are a sort of a particular legend, like the axes are. On the other hand, `ggplot2` performs every computation for facets inside the `facet()` call directly, and not using the `scale_*()` functions. For that reason, we must use a special `labeler` argument and corresponding functions to manage the information to show in the facets' headers.
 
 
 
@@ -867,7 +875,7 @@ penguins %>%
 
 ???
 
-As we can see, faceting the plot in rows using the island variable into our main dataset, and using, for example, the "label_both" labeler, we have added the facetting variable's title "island" before the indication of the corresponding island's name into the header.
+As we can see, faceting the plot in rows using the island variable into our main dataset by the standard R formula notation, and using, for example, the "label_both" labeler, we have added the facetting variable's title "island" before the indication of the corresponding island's name into the header.
 
 
 
@@ -888,8 +896,8 @@ So now, we have considered all the types of text we can include in a plot. It's 
 For that, we set all the specifications inside the `theme()` call. We have only to decide which general part of the plot to customize, like something related to
 
 - the whole plot
-- a legend
-- one, the other or both the axes
+- or a legend
+- or one, the other, or both the axes
 - or the faceting strips
 
 
@@ -965,7 +973,7 @@ penguins %>%
 
 ???
 
-So, we can enlarge our title, change the font-family of the legend text using monospaced characters, colouring both the axes tick's text in blue, and changing the faceting strip headers using boldface.
+So, at the end we can enlarge our title, change the font-family of the legend text using monospaced characters, colouring both the axes tick's text in blue, and changing the faceting strip headers using boldface.
 
 And that's it! We have obtained our final plot which show how we can include and personalize all the kind of text in a plot using `ggplot2`.
 
@@ -976,23 +984,32 @@ class: inverse, center
 
 <br>
 
-# Time for questions!
+# ---Your-Turn-->
+
+Click [HERE](https://corradolanera.shinyapps.io/text-gg-checks/) to access to the interactive tutorial. 
+
+Select one topic (per group) excluding the last one (ie, "Final Test")
 
 
 ```{r, echo = FALSE}
-countdown(minutes = 2, warn_when = 25, play_sound = TRUE,
-          left = "34%", bottom = "50%")
+countdown(minutes = 2, warn_when = 30, play_sound = TRUE,
+          left = "34%", bottom = "35%")
 ```
 
-<br><br><br><br>
+<br><br><br><br><br>
 
 <small><small><small><small>Click the timer to start the countdown</small></small></small></small>
 
 
 ???
 
-We should have two minutes left for some final question, how likes to start?
+Now, for the last two minutes, I have prepared a short interactive tutorial for you, covering all the aspect we explored today step-by-step. Please go to its website, following the link I put in the chat, and select one topic of your choice, with the exception of the last one. Please, thumb up when you are ready.
 
+> IF 3+, select two topics each one.
+> IF 6+, select one topic each one
+> IF 9+, divide in breakout rooms or grups
+
+Provide the link in the chat: https://corradolanera.shinyapps.io/text-gg-checks/
 
 ---
 
@@ -1059,7 +1076,7 @@ knitr::include_graphics("img/concept-map.gif")
 
 
 
-So, congratulation to have finished this class, and thank you for you time and attention. Please, feel free to reach me on twitter or telegram for any doubt.
+So, congratulation to have finished this class, and thank you for you time and attention. Please, feel free to reach me on twitter or telegram for any further doubt.
 
 
 ---
@@ -1084,11 +1101,12 @@ knitr::include_graphics("img/concept-map.gif")
 
 ???
 
-One last thing, I have prepared for you a set of quizzes, so you can test all your new skills in drawing text with `ggplot2`. Each one purpose a review for every step we performed here today, giving you also space to try your own code live. 
+One last thing, the last section of the tutorial will serve you to test all your new skills in drawing text with `ggplot2`. It will guide you to produce a complete customized plot like the one we have produced here, and giving you a free space to explore your own code, while providing some ready-to-use chunks of code.
 
-In the last section of the quiz you will be guided to produce a complete customized plot like the one we have produced here.
 
-Have a nice day, and thank you!!
+With this I have conclude my lesson, thank you again, and have a lovely day. 
+
+Thank you!!
 
 > Provide the link of the slide on the chat, or on the blackboard: https://corradolanera.github.io/rs-teaching-exam/
 
