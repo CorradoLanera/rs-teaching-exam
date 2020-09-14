@@ -108,7 +108,13 @@ pre {
 
 ???
 
-Goto slide 6 (`6 + &lt;RETURN&gt;`)
+Welcome to the **(Meta)data texting in `{ggplot2}` class**.
+
+I am Corrado, and I will be your teacher for the next fifteen minutes.
+
+
+
+GOTO slide 6 (`6 + &lt;RETURN&gt;`)
 
 
 
@@ -224,8 +230,18 @@ class: inverse
 
   and use them all together in a single plot.
 
+
+
+
+
+
+
+
+
+
+
 ---
-class: inverse, middle center
+class: inverse, center
 
 # In their terms
 
@@ -234,10 +250,76 @@ available in `{ggplot2}` to start exploring in practice how to use
 text in plots and have the basics for your own in-depth study.
 
 
+--
+
+
+&lt;img src="index_files/figure-html/unnamed-chunk-3-1.png" width="60%" /&gt;
+
+
 
 ???
 
-"Second" course slide
+
+
+What we are going to do is to practically see how `{ggplot2}` manage text.
+
+&lt;PLOT&gt; The final result could be a little ugly and not that much insightful but it will show you all the ways in which you can **draw**, **add**, **manipulate**, and **personalize** text in a plot.
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
+class: inverse, middle, center
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+
+# --Your Turn--
+
+<div class="countdown" id="timer_5f5f4ae7" style="bottom:35%;left:34%;" data-audio="true" data-warnwhen="10">
+<code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+
+&lt;small&gt;&lt;small&gt;&lt;small&gt;&lt;small&gt;Click the timer to start the countdown&lt;/small&gt;&lt;/small&gt;&lt;/small&gt;&lt;/small&gt;
+
+&lt;br&gt;
+What are the 3+1 general types of textual elements you can find in a plot?
+
+
+  1. 
+  2. 
+  3. 
+  4. 
+
+&lt;br&gt;
+
+
+???
+
+
+- Directly ask to unmute and discuss if 1-5 people
+- breakout room (of ~3) if &gt;5 people
+- Present yourself and work in pairs if in presence
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -253,16 +335,25 @@ text in plots and have the basics for your own in-depth study.
 
 ???
 
-So, we would like to manage text in ggplot. This mainly means 3 things:
+In a plot you can include 3 main types of textual objects:
 
-- have the possibility to draw textual data we have
-- to draw and manage its textual metadata (which are properties of the data to plot)
-- add some extra annotation
+- data, if you like to draw a textual label at each data point
+- metadata, which are properties of the data you plot (like the plot title or legends)
+- or, you can add extra annotation including information, like a tag, which are not structured in your main dataset you are going to use.
 
-After that we have to consider that text can have style we would manage, like font face, size, colour, eccetera.
 
-One important thing to keep in mind is that style modify only how we
-see the data, not what or where we see them...it is just style!
+Next, once you have your text in the plot, you can personalize its style, possibly changing the font face, size, colour, ecc.
+
+One important thing to keep in mind is that style change **only how** we see the data, not **what** data we see...it is about style only!
+
+
+
+
+
+
+
+
+
 
 
 
@@ -282,17 +373,26 @@ A `ggplot()` is made up of _layers_: &lt;small&gt;&lt;small&gt;([check your base
 
 ???
 
-We want and can manage all those aspects within `{ggplot2}` and its
-grammar made up of layers. 
+`{ggplot2}` can manage all these aspects taking advantage of its standard layered way to structure and define a plot. 
 
-We can check if we need to recap the bases with the quick tutorial I
-already send to you all (in a real class, not in 15 minutes, I will
-provide it directly, and I would have a deck of slide an a lesson to
-review the basics of `{ggplot2}` if needed)
+&gt; Have you all used the basics **data**, **aesthetics**, and **geom functions** layers? (Thumbs UP)
 
-In the basics, we have the data (the information we want to plot), the aesthetics (defining "how" we want to plot "what"), the geoms (drawing the actual plot following the defined roles with the correct shape and transformations).
+We have the data defining "what" we want to plot.
+The aesthetics define "which ways" we want to plot them.
+And geoms draw the plot according to the aesthetics recipes, and using the right shape and transformation of the data.
 
-Next, we have the scale which, like in a map, define converts the reality (our data) in something to plot. We have facets, which permit to reproduce the same pattern-plot across different levels of our data, and at the and we have the theme, managing the style 
+&gt; Have you ever see the other layers, reported in orange? (Thumbs UP)
+
+You can think to a scale as the opposite of a legend: while legends serve us to understand the reality looking at the plot, scales serve us to draw the plot looking at the reality. The facet is a side layer allowing us to replicate the rules for a plot stratifying it according to the data levels we have. Finally, the theme manages all the styles. 
+
+
+
+
+
+
+
+
+
 
 
 
@@ -345,14 +445,9 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, …
 
 ???
 
-Skip if live coded, quick descriptio of data otherwise
+So we can start. The first thing to do is to keep some data. Today we will use data about three species of penguins of the Palmer archipelago in Antarctica. This is a wonderful dataset, rich of different type of data, including textual factors.
 
-&gt; Palmer Archipelago (Antarctica) penguin data
-&gt;
-&gt;  - 3 species
-&gt;  - 3 islands
-&gt;  - sex
-&gt;  - some body metrics
+So, the nest step is to define what we want to see, in `{ggplot2}` words, the aesthetics.
 
 
 ---
@@ -391,12 +486,9 @@ penguins %&gt;%
 
 ???
 
-skip if live coded, otherwise describe the aesthetics
+Our aim is to plot the penguins' sex accordingly to their bill's length and depth, highlighting penguins' species with distinct colours. Hence, we set the corresponding aesthetics accordingly. In particular, we use the key "label" to define which variable `ggplot()` should use for the textual data to represent.
 
-&gt; x, y, coordinates
-&gt; label with the intent to scatterplot them
-&gt; colour to distinguish the species
-
+As we can see, the axes' titles are already set, as well the plot's coordinate-grid, but anything is drawing yet, so no colour nor the corresponding legend either.
 
 
 
@@ -412,7 +504,7 @@ skip if live coded, otherwise describe the aesthetics
 
 ???
 
-So we are ready to draw our scatterplot of text using the appropriate geoms, which can simply be `geom_text()` and `geom_label()` which only add a rectangular filled with colour (default white) background for a clearer visualiztion (often in case of notes)
+Now, we are ready to draw our scatterplot of text using the appropriate geoms. For text, they can be the `geom_text()` or the `geom_label()`, which adds a coloured rectangle background, filled white by default.
 
 
 
@@ -456,7 +548,7 @@ penguins %&gt;%
 
 ???
 
-Skip if live-code, otherwise simply show the result and take a comment to "fixed" properties that can be set outside of the aesthetics, as usual with basic `ggplot()`s
+As usual we can also set some fixed properties (set outside of any aesthetics) like the opacity proportion, or the size of what the geom should draw.
 
 
 
@@ -473,8 +565,11 @@ Skip if live-code, otherwise simply show the result and take a comment to "fixed
 
 ???
 
-As we said, if we like to add annotation that is only a single extra application of a **self-contained** geoms. We have the `annotate()` function we can personalize with almost every other geoms, simply calling it as character string as the first argument.
-For example we can ask for a "text" annotation or for a label annotation
+So we have seen how to draw text from our primary data. On the other hand, an annotation is only another extra single textual data-point to the plot!
+
+We can think of it as a single occurrence of a geom instance. We could define an additional single-row data frame an use the standard data-aesthetic-geom path to draw it.
+
+Or... we can use the `annotate()` function, which takes a character string defining the geom we would like to use as its first argument, and next al the geom's parameter used to draw the annotation.
 
 
 ---
@@ -519,13 +614,9 @@ penguins %&gt;%
 
 ???
 
-skip if live-code, otherwise, describe the annotation paing particular 
-attention to
+So, for example, if we want to put a single occurrence of the "geom_label" to put a tag into the plot, we can call `annotate()` using the string "label" as its first argument and next passing to it the coordinate, the label to draw with all the other parameter of choice like the colour.
 
-- the "label" argument
-- the fixed personalization (which in the geoms were possibly aesthetics)
-
-quick note on advantage of "inward" options
+The `annotate()` function also has options to slightly move the annotation respect to the whole plot, which could be useful when we want to draw tags near the borders to be sure they will always be visible. 
 
 
 
@@ -541,14 +632,13 @@ quick note on advantage of "inward" options
 
 ???
 
-So we arrive to the metadata, which we founf in the legends, or as title, and caption.
+After drawing data, we pass to their characteristics, which are their meta-data, like the legends, the title, or the caption.
 
-As we said, legends are the inverse of the scale function:
-the ferst help us to understand the reality looking at the plot, the second help the creator of the plot to draw it looking at the reality.
+The last two are simple and have only their "text" to draw; for them, we can use the `labs()` function. 
 
-In `{ggplot2}` they are both managed by the scales functions, which exists for each aesthetics, possibly for each different type of them (eg for the colour aestetics in case of continuous or discrete variable). 
+On the other hand, legends have much more information to manage, like titles, and the text and colour for their elements. All these aspects regard the scales of the project (one scale, and one legend, for each aesthetic used). They are all managed by `scale_*` functions composed by the tag "scale", _underscore_ the name of the aesthetic of reference, _underscore_ the type of scale to use (like continuous or discrete). 
 
-So, properties of scales and leggends are managed by the scales function. But there is a useful wrapper to define the title of all the legends (axes included) that is the `labs()` function, which take as input the name of an aesthetics and the title we would like to assign to it
+For the title of those legends, we could choose to pass it as the first argument of the scale or to use the `labs()` function again. This could be much more convenient in readability and type-saving than using scales if we don't have other personalization to perform for them.
 
 
 
@@ -607,11 +697,16 @@ penguins %&gt;%
 ]
 
 
-??? skip if live coding, otherwise describe the
 
-- the different way to set the title
-- how we have change the axes' text ticks
-- and the `labs()` funciton
+???
+
+
+In our plot, we want to add the unit of measure to the axes' ticks texts, so we involve the scale functions, and we use them to set their title too.
+
+On the other hand, we like to produce legend for the colours according to the artwork by Allison Hort. So, we set all uppercase _labels_, and the corresponding colours'_value_ for each level, or _brakes_ as they are called by `{ggplot2}`.
+
+Just for showing all the way to use `labs()`, we use it to set the color legend's title, besides the plot title and caption. 
+
 
 
 
@@ -628,9 +723,9 @@ penguins %&gt;%
 
 ???
 
-So we can facet the plot. That is a border-line special case.
+Now that we have defined all the plot's data and meta-data rules, we can facet the graph. As I mentioned earlier, that is a particular side case.
 
-In this case, to set the header of the facets strip we need to call a labeller function inside the `facet_*()` function, and they are exceptionally not managed by the scales
+In fact, facets are a sort of a particular legend, like the axes are. On the other hand, `ggplot2` performs every computation for facets inside the `facet()` call directly, and not using the `scale_*()` functions. For that reason, we must use a special `labeler` to manage the information to show in the facets' headers.
 
 
 
@@ -690,10 +785,7 @@ penguins %&gt;%
 
 ???
 
-Skip if live-coding, otherwise simply put the attention on
-
-- the faceting result
-- the labeller effect (mention to see the Standard R help to going deeper with that)
+As we can see, using, for example, the "label_both" labeler, we have added the facetting variable's title "island" before the indication of the corresponding island's name into the header.
 
 
 
@@ -709,21 +801,22 @@ Skip if live-coding, otherwise simply put the attention on
 
 ???
 
-Finaly, we arrive to the theme customization. This is simple a metter of combine what we would like to personalize: something about
+So now, we have considered all the types of text we can include in a plot. It's time to define their style!
+
+For that, we set all the specifications inside the `theme()` call. We have to decide which general part of the plot to customize, like something related to
 
 - the whole plot
 - a legend
-- the axis
-- the  faceting strips?
+- one, the other or both the axes
+- or the faceting strips
 
 
-And what of that we want to personalize, based on what that aspect as:
+Next, we compose the key we are setting adding, after a dot, the particular aspect of the selected part we want to customize, like:
 
-- a title
-- or a text
+- the title
+- or the text
 
-
-In any case, the function inside the `theme()` one is the `element_text()` which permit to personalize all the main textual axpect of the text
+In any case, the function used to style text is the `element_text()`, which permits personalizing all aspects of the text, like the font family, its typeface, and its size, angle, and colour. 
 
 
 
@@ -790,47 +883,40 @@ penguins %&gt;%
 
 ???
 
-Skip if live-coding, otherwhise put the attention of the combination of the key into the `theme()` function, and the option into the `element_text()`
+So, we can enlarge our title, change the font-family of the legend text using monospaced characters, colouring both the axes tick's text in blue, and changing the faceting strip headers using boldface, obtaining our final plot which show how we can include and personalize all the kind of text in a plot using `ggplot2`.
 
 ---
-class: inverse, middle, center
+class: inverse, center
 
-&lt;br&gt;&lt;br&gt;&lt;br&gt;
 
 # --Your Turn--
 
 Click [HERE](https://corradolanera.shinyapps.io/text-gg-checks/)
 to test your brand-new skills in managing text in `ggplot()`s, and the efficacy of this class too ;-)
 
-<div class="countdown" id="timer_5f5e8c7b" style="bottom:35%;left:34%;" data-audio="true" data-warnwhen="180">
-<code class="countdown-time"><span class="countdown-digits minutes">15</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
-</div>
+--
 
-&lt;br&gt;&lt;br&gt;&lt;br&gt;
 
-&lt;small&gt;&lt;small&gt;&lt;small&gt;&lt;small&gt;Click the timer to start the countdown&lt;/small&gt;&lt;/small&gt;&lt;/small&gt;&lt;/small&gt;
-
-&lt;br&gt;&lt;br&gt;
-
+&lt;img src="img/concept-map.gif" width="70%" /&gt;
 
 # Thank you for your attention!
 [@CorradoLanera](https://www.CorradoLanera.it/)
 
 
-???
-
-Thanks...but in the next slide there is the overview of the concept maps!!!
-
----
-# Full concept map
-
-![](img/concept-map.gif)
-
-
 
 ???
 
-1 frame/second
+Now you can test all your new skills in drawing text with `ggplot2`. It has a review section for every step we performed, giving you also space to try your own code live. At the end you will be guided to produce a complete customized plot like the one we have produced here.
+
+&gt; Provide the link of the slide on the chat, or on the blackboard: https://corradolanera.github.io/rs-teaching-exam/
+
+&gt; if 1-5 work together, if 6+ breakout room or grops if in person
+
+
+So, congratulation to have finished this class, and thank you for you time and attention. Feel free to reach me by e-mail or on twitter for any doubt.
+
+
+
 
 
 
@@ -840,22 +926,33 @@ class: inverse
 
 # Main resources
 
+- **R help** (eg, [`?labeller`](https://ggplot2.tidyverse.org/reference/labeller.html))
+
 - [**ggplot2**](https://ggplot2-book.org/) book by [**Hadley Wickham**](http://hadley.nz/) (Par: 8, 12, 13, 16)
 
 - [How to change ggplot facet labels](https://www.datanovia.com/en/blog/how-to-change-ggplot-facet-labels/) by [**kassambara**](https://www.datanovia.com/en/blog/author/kassambara/)
 
 - ggplot2 [cheatsheet](https://rstudio.com/wp-content/uploads/2019/01/Cheatsheets_2019.pdf) (Pag: 12-13)
 
-&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+&lt;br&gt;&lt;br&gt;
+
 
 ## Credits
 
-&lt;small&gt;&lt;small&gt;&lt;small&gt;
+&lt;small&gt;
 - Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan).
-- Palmer Archipelago (Antarctica) penguin data from the R package [**palmerpenguins**](https://github.com/allisonhorst/palmerpenguins), penguins' artworks by [**@allison_horst**](https://www.allisonhorst.com/).
+- Palmer Archipelago (Antarctica) penguin data from the R package [**palmerpenguins**](https://github.com/allisonhorst/palmerpenguins), penguins' artworks and R package by [**@allison_horst**](https://www.allisonhorst.com/).
 - Assessment created via the R package [**learnr**](https://rstudio.github.io/learnr/index.html) and published via [**ShinyApps.io**](https://www.shinyapps.io/) freely offered by [**RStudio**](https://rstudio.com/).
 - Interactive timer created via the R package [**countdown**](https://github.com/gadenbuie/countdown).
 - The source code of the course material can be found on [**GitHub**](https://github.com/), [**here**](https://github.com/CorradoLanera/rs-teaching-exam).
+
+
+
+
+
+???
+
+Here you can find the main resources
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
