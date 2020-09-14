@@ -46,6 +46,14 @@ style_share_again(
 )
 ```
 
+```{r xaringanExtra-clipboard, echo=FALSE}
+xaringanExtra::use_clipboard()
+```
+
+```{r xaringan-editable, echo=FALSE}
+xaringanExtra::use_editable(expires = 1)
+```
+
 ```{r meta, echo=FALSE}
 meta() %>%
   meta_general(
@@ -356,10 +364,10 @@ What we are going to do is to practically see how `{ggplot2}` manage text.
 
 
 ---
-class: inverse, center
+class: inverse
 
 <br>
-
+.center[
 # ---Your-Turn-->
 
 ```{r, echo = FALSE}
@@ -372,6 +380,10 @@ countdown(minutes = 1, warn_when = 10, play_sound = TRUE,
 <small><small><small><small>Click the timer to start the countdown</small></small></small></small>
 
 <br><br><br>
+]
+
+.can-edit[
+
 What are the 3+1 general types of textual elements you can find in a plot?
 
 
@@ -379,7 +391,7 @@ What are the 3+1 general types of textual elements you can find in a plot?
   2. 
   3. 
   4. 
-
+]
 
 
 
