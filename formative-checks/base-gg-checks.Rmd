@@ -114,9 +114,10 @@ quiz(caption = "Aesthetics-quiz",
 > Info: Geoms are the graphical objects used in the plot to draw the information
 in your data in the way described by the aesthetics.
 
-Answer the following question. Next, drag and drop the right components
-to define a valid syntax for a `{ggplot2}` plot (not all the purposed 
-component are valid).
+Answer the following question. Next, drag and drop a valid set of chunks
+from the right box to the left one to define a valid syntax for a
+`{ggplot2}` plot. Note: not all the purposed component are valid, but
+there are two valid solutions (It is enough that you find one of them).
 
 ```{r base-geom}
 quiz(caption = "Geom-quiz",

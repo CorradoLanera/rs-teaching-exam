@@ -112,6 +112,12 @@ pre {
 .remark-code {
   font-size: 60%;
 }
+
+.left-4col {
+  width: 23%;
+  float: left;
+}
+
 ```
 
 
@@ -131,13 +137,8 @@ This will be a practical introduction to the usage of text when you are drawing 
 
 
 ---
-class: inverse, center
+class: inverse, bottom, right
 
-# **RStudio Instructor Certification**
-## Teaching exam - 2020/09/14
-
-
-.right[
 
 ```{r, echo=FALSE, out.width = "40%"}
 knitr::include_graphics(c("img/profilo_CL.jpg"))
@@ -145,18 +146,22 @@ knitr::include_graphics(c("img/profilo_CL.jpg"))
 
 # Find me at...
 
-[`r icon::fa("link")`](https://www.CorradoLanera.it) [CorradoLanera.it](https://www.CorradoLanera.it)
+[`r icon::fa("link")`](https://www.CorradoLanera.it) [www.CorradoLanera.it](https://www.CorradoLanera.it)
 
-[`r icon::fa("twitter")`](https://twitter.com/corradolanera) [@CorradoLanera](https://twitter.com/corradolanera)
+[`r icon::fa("github")`](https://github.com/corradolanera)
+[`r icon::fa("twitter")`](https://twitter.com/corradolanera)
+[`r icon::fa("telegram-plane")`](https://telegram.me/CorradoLanera)
+@CorradoLanera
 
-[`r icon::fa("telegram-plane")`](https://telegram.me/CorradoLanera) [@CorradoLanera](https://telegram.me/CorradoLanera)
-]
+[`r icon::fa("telegram-plane")`](https://telegram.me/puffrbacco)
+[puffRbacco](https://telegram.me/puffrbacco)
 
+<br>
 
 
 ???
 
-I am Corrado, and I will be your teacher for the next fifteen minutes.
+I am Corrado, and I will be your teacher for the next half-an-hour.
 
 
 
@@ -291,7 +296,7 @@ class: inverse, center
 
 # In their terms
 
-This fifteen-minute hands-on will introduce you to the useful tools
+This half-an-hour hands-on will introduce you to the useful tools
 available in `{ggplot2}` to start exploring in practice how to use
 text in plots and have the basics for your own in-depth study.
 
@@ -371,7 +376,7 @@ class: inverse
 # ---Your-Turn-->
 
 ```{r, echo = FALSE}
-countdown(minutes = 1, warn_when = 10, play_sound = TRUE,
+countdown(minutes = 2, warn_when = 10, play_sound = TRUE,
           left = "34%", bottom = "50%")
 ```
 
@@ -379,34 +384,42 @@ countdown(minutes = 1, warn_when = 10, play_sound = TRUE,
 
 <small><small><small><small>Click the timer to start the countdown</small></small></small></small>
 
-<br><br><br>
+<br>
 ]
 
-.can-edit[
+In plots, what textual elements have driven you...
 
-What are the 3+1 general types of textual elements you can find in a plot?
-
-
-  1. 
-  2. 
-  3. 
-  4. 
-]
+.left-4col[.can-edit[.center[M]
+  *  
+]]
+.left-4col[.can-edit[.center[A]
+  * 
+]]
+.left-4col[.can-edit[.center[D]
+  * 
+]]
+.left-4col[.can-edit[.center[(S) ?]
+  * 
+]]
 
 
 
 ???
 
-To start thinking about the text into plots, I would like you to answer a quick question: What do you think are the 3+1 general types of textual elements you can find in a plot?
-
-Please, unmute yourself and start this one-minute discussion together.
+To start thinking about the text into plots, I would like you to answer a quick question: In plots, what textual elements have driven you mad? 
+For what you are here, which are some examples you have encounter?
 
 - Directly ask to unmute and discuss if 1-5 people
+"Please, unmute yourself and start this two-minute discussion together."
+
 - breakout room (of ~3) if >5 people
 - Present yourself and work in pairs if in presence
+"Now I will put you in a break-out room, you have two minutes to present 
+each other and to create a list of examples for types of text you can 
+encounter in a plot. Ready: go."
 
-
-
+What do you think are the headers? Feel free to unmute yourself to
+answer.
 
 
 
@@ -992,7 +1005,7 @@ Select one topic (per group) excluding the last one (ie, "Final Test")
 
 
 ```{r, echo = FALSE}
-countdown(minutes = 2, warn_when = 30, play_sound = TRUE,
+countdown(minutes = 4, warn_when = 30, play_sound = TRUE,
           left = "34%", bottom = "35%")
 ```
 
@@ -1003,13 +1016,16 @@ countdown(minutes = 2, warn_when = 30, play_sound = TRUE,
 
 ???
 
-Now, for the last two minutes, I have prepared a short interactive tutorial for you, covering all the aspect we explored today step-by-step. Please go to its website, following the link I put in the chat, and select one topic of your choice, with the exception of the last one. Please, thumb up when you are ready.
+Now, for the last four minutes, I have prepared a short interactive tutorial for you, covering all the aspect we explored today step-by-step. Please, by group, go to the website (I put the link in the chat if you have not access to the slide), discuss and answer to all the topic you like (order is not mandatory). The only exception is the last one, that I ask you NOT to select. Please, thumb up when you are ready.
 
 > IF 3+, select two topics each one.
 > IF 6+, select one topic each one
 > IF 9+, divide in breakout rooms or grups
 
-Provide the link in the chat: https://corradolanera.shinyapps.io/text-gg-checks/
+Provide the link in the chat: http://bit.ly/gg-text-checks
+
+
+- When time is finished: start a discussion for questions (a couple of minutes less than time limit)
 
 ---
 
@@ -1043,7 +1059,7 @@ class: inverse
 
 ???
 
-Well, here I have put for you the main resources I have used to produce the current lesson, including the link to the source code producing all the presented materials.
+Well, here I have put for you the main resources I have used to produce the current lesson, including the link to the source code producing all the presented materials. Please note, pressing "P" on the slides will show the presenter mode, including my transcription for this lesson for your convenience.
 
 
 
@@ -1060,15 +1076,17 @@ class: inverse, center
 
 <br>
 
-
 ```{r, out.width="70%", echo=FALSE}
 knitr::include_graphics("img/concept-map.gif")
 ```
 
 # Thank you for your attention!
-[`r icon::fa("twitter")`](https://twitter.com/corradolanera) [@CorradoLanera](https://twitter.com/corradolanera) | 
-[`r icon::fa("telegram-plane")`](https://telegram.me/CorradoLanera) [@CorradoLanera](https://telegram.me/CorradoLanera) | 
-[`r icon::fa("link")` slides](https://corradolanera.github.io/rs-teaching-exam/) [rs-teaching-exam](https://corradolanera.github.io/rs-teaching-exam/)
+
+[`r icon::fa("link")`](https://www.CorradoLanera.it) [www.CorradoLanera.it](www.CorradoLanera.it) | 
+[`r icon::fa("github")`](https://github.com/corradolanera)
+[`r icon::fa("twitter")`](https://twitter.com/corradolanera)
+[`r icon::fa("telegram-plane")`](https://telegram.me/CorradoLanera) @CorradoLanera |
+[`r icon::fa("desktop")`](https://bit.ly/gg-text-slides) [bit.ly/gg-text-slides](https://bit.ly/gg-text-slides)
 
 
 
@@ -1094,21 +1112,31 @@ knitr::include_graphics("img/concept-map.gif")
 ```
 
 # Thank you for your attention!
-[`r icon::fa("twitter")`](https://twitter.com/corradolanera) [@CorradoLanera](https://twitter.com/corradolanera) | 
-[`r icon::fa("telegram-plane")`](https://telegram.me/CorradoLanera) [@CorradoLanera](https://telegram.me/CorradoLanera) | 
-[`r icon::fa("link")` slides](https://corradolanera.github.io/rs-teaching-exam/) [rs-teaching-exam](https://corradolanera.github.io/rs-teaching-exam/)
+
+[`r icon::fa("link")`](https://www.CorradoLanera.it) [www.CorradoLanera.it](www.CorradoLanera.it) | 
+[`r icon::fa("github")`](https://github.com/corradolanera)
+[`r icon::fa("twitter")`](https://twitter.com/corradolanera)
+[`r icon::fa("telegram-plane")`](https://telegram.me/CorradoLanera) @CorradoLanera | 
+[`r icon::fa("desktop")`](https://bit.ly/gg-text-slides) [bit.ly/gg-text-slides](https://bit.ly/gg-text-slides)
+
 
 
 ???
 
-One last thing, the last section of the tutorial will serve you to test all your new skills in drawing text with `ggplot2`. It will guide you to produce a complete customized plot like the one we have produced here, and giving you a free space to explore your own code, while providing some ready-to-use chunks of code.
+One last thing, the last section of the tutorial will serve you to test all your new skills in drawing text with `ggplot2`. It will guide you to produce a complete customized plot like the one we have produced here, and giving you a free space to explore your own code, while providing some ready-to-use chunks of code. It will be there for you in the future.
+
+Also, I have put a last section in the google docs I have sent you. Please, feel that if you like to drop feedbacks. I will really appreciate that.
 
 
-With this I have conclude my lesson, thank you again, and have a lovely day. 
+With this I have conclude my lesson, thank you again, and if there are no further question: have a lovely night. 
 
 Thank you!!
 
-> Provide the link of the slide on the chat, or on the blackboard: https://corradolanera.github.io/rs-teaching-exam/
+> Provide the link of the slide on the chat, or on the blackboard: http://bit.ly/gg-text-slide
+
+> Provide the link of the checks on the chat, or on the blackboard: http://bit.ly/gg-text-checks
+
+
 
 > if 1-5 work together, if 6+ breakout room or grops if in person
 

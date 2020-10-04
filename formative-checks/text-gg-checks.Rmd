@@ -583,8 +583,8 @@ When you think you have reached the correct result, you can click on the
 `Submit Answer` to check it.
 
 > NOTE: if your answer is wrong, you can try again as much time as you
-like. But you must pass a stage to go to the next one (there is only one
-stage marked as "optional", which you can skip if you won't pass it).
+like. But you must submit some code to go to the next question (there is
+only one stage marked as "optional").
 
 
 Ready!? Let's go!
