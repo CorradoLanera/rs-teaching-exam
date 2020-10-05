@@ -4,7 +4,6 @@
     <title>(Meta)data texting in {ggplot2}</title>
     <meta charset="utf-8" />
     <meta name="author" content="Corrado Lanera" />
-    <script src="index_files/header-attrs-2.3/header-attrs.js"></script>
     <link href="index_files/remark-css-0.0.1/default.css" rel="stylesheet" />
     <link href="index_files/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
     <script src="index_files/clipboard-2.0.6/clipboard.min.js"></script>
@@ -15,7 +14,7 @@
     <link href="index_files/xaringanExtra-clipboard-0.2.3.9000/xaringanExtra-clipboard.css" rel="stylesheet" />
     <script src="index_files/xaringanExtra-clipboard-0.2.3.9000/xaringanExtra-clipboard.js"></script>
     <script>window.xaringanExtraClipboard(null, {"button":"Copy Code","success":"Copied!","error":"Press Ctrl+C to Copy"})</script>
-    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"xac6bfd43dd04ac4aa064c6a9b83a0fd","expires":1}</script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"x33bbe72b027407eae1594749257aa00","expires":1}</script>
     <script src="index_files/himalaya-1.1.0/himalaya.js"></script>
     <script src="index_files/js-cookie-3.0.0/js.cookie.js"></script>
     <link href="index_files/editable-0.2.3.9000/editable.css" rel="stylesheet" />
@@ -324,7 +323,7 @@ I will introduce you to all the general tools available in `{ggplot2}` to use te
 
 
 
-What we are going to do is to practically see how `{ggplot2}` manage text.
+What we are going to do is to practically see how `{ggplot2}` manages text.
 
 &lt;PLOT&gt; The final result could be a little ugly and not that much insightful but it will show you all the ways in which you can **draw**, **add**, **manipulate**, and **personalize** text in a plot.
 
@@ -347,8 +346,8 @@ class: inverse
 .center[
 # ---Your-Turn--&gt;
 
-<div class="countdown" id="timer_5f7b485a" style="bottom:50%;left:34%;" data-audio="true" data-warnwhen="10">
-<code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+<div class="countdown" id="timer_5f7b71c4" style="bottom:50%;left:34%;" data-audio="true" data-warnwhen="10">
+<code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 
 &lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
@@ -377,22 +376,23 @@ In plots, what textual elements have driven you...
 
 ???
 
-To start thinking about the text into plots, I would like you to answer a quick question: In plots, what textual elements have driven you mad? 
-For what you are here, which are some examples you have encounter?
+To start thinking about text into plots, I would like you to answer a quick question: In plots, what textual elements have driven you mad? 
+Which are some examples you have encounter?
 
 - Directly ask to unmute and discuss if 1-5 people
 "Please, unmute yourself and start this two-minute discussion together."
 
-- breakout room (of ~3) if &gt;5 people
+- breakout room (of ~3) if &gt;5 people:
+  "I will put you in break-out rooms now, and you have three minutes there to present each other in the room and create a list of examples for types of text you can encounter in a plot. Before to start, is everything clear, are there some questions? Ok, Ready: go."
+
 - Present yourself and work in pairs if in presence
-"Now I will put you in a break-out room, you have two minutes to present 
-each other and to create a list of examples for types of text you can 
-encounter in a plot. Ready: go."
+
+One person per group, please unmute themself and give us their examples. 
 
 What do you think are the headers? Feel free to unmute yourself to
 answer.
 
-
+Well, before going on, has everyone one stick note? Can you show me it? Wonderfull, please put it in front of the camera to cover it every time you would like to let me know you have some questions, or for any reason, you would like to unmute yourself.
 
 
 
@@ -422,7 +422,7 @@ In a plot you can include 3 main types of textual objects:
 
 Next, once you have your text in the plot, you can personalize its style, possibly changing the font face, size, colour, ecc.
 
-One important thing to keep in mind is that style change **only how** we can see the data, not **what** data we see...it is all and only about style, not content! ANd that is why I said 3+1.
+One important thing to keep in mind is that style change **only how** we can see the data, not **what** data we see...it is all and only about style, not content! And that is why I put the "S" of Style in parentheses in the previous table.
 
 
 
@@ -451,7 +451,7 @@ A `ggplot()` is made up of _layers_: &lt;small&gt;&lt;small&gt;([check your base
 
 ???
 
-`{ggplot2}` can manage all these aspects taking advantage of its standard layered way to structure and define a plot. 
+As you can immagine, `{ggplot2}` can manage all these aspects taking advantage of its standard layered way to structure and define a plot. 
 
 &gt; Have you all used the basics **data**, **aesthetics**, and **geom functions** layers? (Thumbs UP)
 
@@ -465,7 +465,7 @@ And geoms, that draw the plot according to the aesthetics recipes, and using the
 
 - The facet is a side layer allowing us to replicate the rules defined for one plot stratifying it according to the data levels we have, producing a grid of plots accordingly.
 
-- Finally, the theme, simply manages all the styles. 
+- Finally, the theme, simply manages all and only (!) the styles. 
 
 
 
@@ -529,7 +529,7 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, …
 
 So we can start. The first thing to do is to keep some data. Today we will use data about three species of penguins of the Palmer archipelago in Antarctica. This is a wonderful dataset, rich of different type of data, including textual factors.
 
-So, the next step is to define what we want to see into the plot; that in `{ggplot2}` words, this means to define the aesthetics maps.
+Once we have data, the next step is to define what we want to see in the plot; that in `{ggplot2}` words, this means to define the aesthetics maps.
 
 
 ---
@@ -652,7 +652,7 @@ We did it here using `geom_text()` and, as usual, we can also set some fixed pro
 
 So we have seen how to draw text from our primary data. On the other hand, an annotation is only another extra single textual data-point to plot!
 
-We can think of it as a single occurrence of a geom instance. So, if we want draw it in the standard way, we could (and must) define, and additional single-row data frame and use the standard "data-aesthetic-geom" stack of layers to draw it.
+We can think of it as a single occurrence of a geom instance. So, if we want draw it in the standard way, we could (and we must) define, an additional single-row data frame and use the standard "data-aesthetic-geom" stack of layers to draw it.
 
 Or... we can use the `annotate()` function instead, which takes a character string defining the geom we would like to use as its first argument, and next all the geom's parameter used to draw the annotation within the selected geom.
 
@@ -700,7 +700,7 @@ penguins %&gt;%
 
 ???
 
-For example, if we want to put a single occurrence of the "geom_label" to put a tag into the plot, we can call `annotate()` using the string "label" as its first argument to ask `{ggplot2}` to use `geom_label()` function for this annotation. Next, we can pass to it the coordinate, and the label to draw with all the other parameter of choice, like the colour that are originally included in the `geom_label` function we have asked `annotate()` to use.
+For example, if we want to put a single occurrence of the "geom_label" to put a tag into the plot, we can call `annotate()` using the string "label" as its first argument to ask `{ggplot2}` to use `geom_label()` function for this annotation. Next, we can pass to it the coordinate, and the label to draw with all the other parameter of choice (like the colour) that are originally included in the `geom_label` function we have asked `annotate()` to use.
 
 Moreover, the `annotate()` function also has options to slightly move the annotation automatically respect to the whole plot, which could be useful when we want to draw tags near the borders to be sure they will always be visible. 
 
@@ -720,11 +720,11 @@ Moreover, the `annotate()` function also has options to slightly move the annota
 
 After drawing data, we pass to their characteristics, which are their meta-data, like the legends, the title, or the caption.
 
-The last two are quite simple, and they have only their "text" to draw; for that, we can use the `labs()` function. 
+The last two are quite simple, and they have only their "text" to draw; for those, we can use the `labs()` function. 
 
-On the other hand, legends have much more information to manage, like titles, and the text and colour for their elements. All these aspects regard the scales of the project (one scale, and one legend, for each aesthetic used). They are all managed by `scale_*` functions, which are all composed in the same way as a fix tag "scale", _underscore_ the name of the aesthetic of reference, _underscore_ the type of scale to use (like continuous or discrete, or manual for a complete control of the scale). 
+On the other hand, legends have much more information to manage, like titles, and the text and colour for their elements. All these aspects regard the scales of the project (because remember that we have one scale, and one legend, for each aesthetic used). They are all managed by `scale_*` functions, which are all composed in the same way as a fix tag "scale", _underscore_ the name of the aesthetic of reference, _underscore_ the type of scale to use (like continuous or discrete, or manual for a complete control of the scale). 
 
-For the title of those legends, we could choose to pass it as the first argument of the corresponding scale function or to use the `labs()` function again. This could be much more convenient in readability and type-saving than using scales if we don't have other personalization to perform for them.
+For the title of those legends we have two options: we could choose to pass it as the first argument of the corresponding scale function or to use the `labs()` function again. This could be much more convenient in readability and type-saving than using full scales calls if we don't have other customization to perform for them or the corresponding legends.
 
 
 
@@ -789,7 +789,7 @@ penguins %&gt;%
 
 In our plot, we want to add the unit of measure to the axes' ticks texts, so we involve the scale functions, and we use them to set their title too.
 
-On the other hand, we like to change colours and the corresponding legend according to the artwork by Allison Hort. So, we set all uppercase _labels_, and the corresponding colours'_value_ for each level (which `ggplot2` calls _brakes_).
+On the other hand, we like to change colours and the corresponding legend according to the artwork by Allison Horst. So, we set all uppercase _labels_, and the corresponding colours'_value_ for each level (which `ggplot2` calls _brakes_).
 
 As you can see, for the axes we have used an automatic continuous scale, while for colours a complete custom manual one, to define levels (with their showed order), and the corresponding updated color values and labels.
 
@@ -971,9 +971,9 @@ penguins %&gt;%
 
 ???
 
-So, at the end we can enlarge our title, change the font-family of the legend text using monospaced characters, colouring both the axes tick's text in blue, and changing the faceting strip headers using boldface.
+So, at the end we can, for example, enlarge our title, change the font-family of the legend text using monospaced characters, colouring both the axes tick's text in blue, and changing the faceting strip headers using boldface.
 
-And that's it! We have obtained our final plot which show how we can include and personalize all the kind of text in a plot using `ggplot2`.
+And that's it! We have obtained our final ugly-but-useful plot which show how we can include and personalize all the kind of text in a plot using `ggplot2`.
 
 
 
@@ -989,7 +989,7 @@ Click [HERE](https://corradolanera.shinyapps.io/text-gg-checks/) to access to th
 Select one topic (per group) excluding the last one (ie, "Final Test")
 
 
-<div class="countdown" id="timer_5f7b47b5" style="bottom:35%;left:34%;" data-audio="true" data-warnwhen="30">
+<div class="countdown" id="timer_5f7b7424" style="bottom:35%;left:34%;" data-audio="true" data-warnwhen="30">
 <code class="countdown-time"><span class="countdown-digits minutes">04</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 
@@ -1000,7 +1000,8 @@ Select one topic (per group) excluding the last one (ie, "Final Test")
 
 ???
 
-Now, for the last four minutes, I have prepared a short interactive tutorial for you, covering all the aspect we explored today step-by-step. Please, by group, go to the website (I put the link in the chat if you have not access to the slide), discuss and answer to all the topic you like (order is not mandatory). The only exception is the last one, that I ask you NOT to select. Please, thumb up when you are ready.
+Now, for the last four minutes, I have prepared a short interactive tutorial for you, covering all the aspect we explored today step-by-step. Once in your breakout room, go to the website, discuss and answer to all the topic you like, with the only exception of the last one, that I ask you NOT to select. Note that order is suggested but not mandatory. I put the link in the chat, please, thumb up when you are ready to go.
+
 
 &gt; IF 3+, select two topics each one.
 &gt; IF 6+, select one topic each one
@@ -1043,7 +1044,7 @@ class: inverse
 
 ???
 
-Well, here I have put for you the main resources I have used to produce the current lesson, including the link to the source code producing all the presented materials. Please note, pressing "P" on the slides will show the presenter mode, including my transcription for this lesson for your convenience.
+Well, here I have put for you the main resources I have used to produce the current lesson, including the link to the source code producing all the presented materials. Please note that pressing "p" on the slides will show you the _presenter mode_, including my transcription for this lesson for your convenience.
 
 
 
@@ -1103,12 +1104,12 @@ to test your brand-new skills in managing text in `ggplot()`s
 
 ???
 
-One last thing, the last section of the tutorial will serve you to test all your new skills in drawing text with `ggplot2`. It will guide you to produce a complete customized plot like the one we have produced here, and giving you a free space to explore your own code, while providing some ready-to-use chunks of code. It will be there for you in the future.
+BUT... One last thing, the last section of the tutorial will serve you to test all your new skills in drawing text with `ggplot2`. It will guide you to produce a complete customized plot like the one we have produced here, and it gives you a free space to explore your code, while providing some ready-to-use chunks of code. It is there for you from now in the future. Use it at your convenience.
 
-Also, I have put a last section in the google docs I have sent you. Please, feel that if you like to drop feedbacks. I will really appreciate that.
+Also, I have put a last section in the google docs I have sent you yesterday. Please, fill that table to drop a feedbacks to improve this and other lesson in the future. I will really appreciate that.
 
 
-With this I have conclude my lesson, thank you again, and if there are no further question: have a lovely night. 
+With this, I have finally conclude my lesson. Thank you again to have joined it, and if there are no further question: have a lovely night. 
 
 Thank you!!
 
@@ -1119,14 +1120,6 @@ Thank you!!
 
 
 &gt; if 1-5 work together, if 6+ breakout room or grops if in person
-
-
-
-
-
-
-
-
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

@@ -375,8 +375,8 @@
       "Package": "gradethis",
       "Version": "0.1.0.9004",
       "Source": "GitHub",
-      "Remotes": "rstudio/learnr",
       "RemoteType": "github",
+      "Remotes": "rstudio/learnr",
       "RemoteHost": "api.github.com",
       "RemoteRepo": "gradethis",
       "RemoteUsername": "rstudio-education",
@@ -517,8 +517,8 @@
       "Package": "learnr",
       "Version": "0.10.1.9006",
       "Source": "GitHub",
-      "Remotes": "rstudio/htmltools, rstudio/shinytest",
       "RemoteType": "github",
+      "Remotes": "rstudio/htmltools, rstudio/shinytest",
       "RemoteHost": "api.github.com",
       "RemoteRepo": "learnr",
       "RemoteUsername": "rstudio",
@@ -628,8 +628,8 @@
       "Package": "parsons",
       "Version": "0.0.3.9000",
       "Source": "GitHub",
-      "Remotes": "rstudio/sortable, rstudio/learnr",
       "RemoteType": "github",
+      "Remotes": "rstudio/sortable, rstudio/learnr",
       "RemoteHost": "api.github.com",
       "RemoteRepo": "parsons",
       "RemoteUsername": "rstudio",
@@ -767,7 +767,7 @@
       "Package": "renv",
       "Version": "0.12.0",
       "Source": "Repository",
-      "Repository": "CRAN",
+      "Repository": "RSPM",
       "Hash": "7340c71f46a0fd16506cfa804e224e44"
     },
     "reprex": {
@@ -1029,15 +1029,15 @@
     },
     "xaringanExtra": {
       "Package": "xaringanExtra",
-      "Version": "0.2.3",
+      "Version": "0.2.3.9000",
       "Source": "GitHub",
       "RemoteType": "github",
       "RemoteHost": "api.github.com",
       "RemoteUsername": "gadenbuie",
       "RemoteRepo": "xaringanExtra",
       "RemoteRef": "master",
-      "RemoteSha": "d35febfd54dd63f31c1f9b7765309240dca23b93",
-      "Hash": "73abe9725c8a7a8b13cf74ca8e86f9d6"
+      "RemoteSha": "0b8e76ef2cadd32bd2380d9476ea6451e07d2d54",
+      "Hash": "0cd0dcb128b13c16a418bd5412686ba3"
     },
     "xfun": {
       "Package": "xfun",
