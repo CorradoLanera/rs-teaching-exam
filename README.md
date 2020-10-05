@@ -25,9 +25,7 @@ The slides include:
   - presenter mode including the transcription of the lesson (just type
     “p” during the presentation)
 
-<iframe src="https://corradolanera.github.io/rs-teaching-exam/" width="100%" height="400px">
-
-</iframe>
+![](img/concept-map.gif)<!-- -->
 
 ## Assessments
 
