@@ -114,10 +114,7 @@ quiz(caption = "Aesthetics-quiz",
 > Info: Geoms are the graphical objects used in the plot to draw the information
 in your data in the way described by the aesthetics.
 
-Answer the following question. Next, drag and drop a valid set of chunks
-from the right box to the left one to define a valid syntax for a
-`{ggplot2}` plot. Note: not all the purposed component are valid, but
-there are two valid solutions (It is enough that you find one of them).
+Answer the following question.
 
 ```{r base-geom}
 quiz(caption = "Geom-quiz",
@@ -136,8 +133,17 @@ quiz(caption = "Geom-quiz",
     try_again = random_encouragement(),
     allow_retry = TRUE,
     random_answer_order = TRUE
-  ),
-  
+  )
+)
+```
+
+Now, drag and drop a valid set of chunks
+from the left box to the right one to define a valid syntax for a
+`{ggplot2}` plot. Note: not all the purposed component are valid, but
+there are two valid solutions (It is enough that you find one of them).
+
+```{r base-geom-parson}
+quiz(caption = "Geom-quiz",
   question_parsons(
     initial = c(
       "ggplot(penguins)",
