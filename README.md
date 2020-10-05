@@ -40,7 +40,7 @@ The lesson include the following interactive `{learner}` assessments:
 
 ## Certificate
 
-<img src="img/crst_cl_tidyverse.png" width="960" />
+![](img/crst_cl_tidyverse.png)<!-- -->
 
 ## License
 
