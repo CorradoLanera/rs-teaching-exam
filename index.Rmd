@@ -41,6 +41,7 @@ options(width = 59) # fit into the rigth-column slides
 ```
 
 ```{r style-share-again, echo=FALSE}
+xaringanExtra::use_share_again()
 style_share_again(
   share_buttons = c("twitter", "linkedin", "pocket")
 )
