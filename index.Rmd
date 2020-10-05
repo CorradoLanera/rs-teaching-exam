@@ -55,6 +55,10 @@ xaringanExtra::use_clipboard()
 xaringanExtra::use_editable(expires = 1)
 ```
 
+```{r broadcast, echo=FALSE}
+xaringanExtra::use_broadcast()
+```
+
 ```{r meta, echo=FALSE}
 meta() %>%
   meta_general(
